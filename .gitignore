@@ -15,10 +15,6 @@ yarn-error.log*
 assets/css/*.css
 assets/css/*.css.map
 
-# Docker
-docker/*.log
-docker/*.pid
-docker-compose.override.yml
 
 # Archivos de compilación de .NET
 backend/bin/
