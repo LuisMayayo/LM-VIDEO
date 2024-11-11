@@ -1,0 +1,19 @@
+// Importaciones de Layout
+@import "layout/header";
+@import "layout/footer";
+@import "layout/grid";
+
+// Importaciones de Pages
+@import "pages/home";
+@import "pages/booking";
+@import "pages/confirmation";
+
+// Importaciones de Components
+@import "components/navbar";
+@import "components/card";
+@import "components/modal";
+
+// Importaciones de Buttons
+@import "buttons/primary";
+@import "buttons/secondary";
+@import "buttons/icon";

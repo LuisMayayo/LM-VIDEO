@@ -1,0 +1,34 @@
+# Archivos y carpetas de sistema
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos y carpetas de compilación y caché de SCSS
+assets/css/*.css
+assets/css/*.css.map
+
+# Docker
+docker/*.log
+docker/*.pid
+docker-compose.override.yml
+
+# Archivos de compilación de .NET
+backend/bin/
+backend/obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+
+# Archivos y carpetas específicos de AWS (si se usa para despliegue)
+.aws-sam/
+.aws/
