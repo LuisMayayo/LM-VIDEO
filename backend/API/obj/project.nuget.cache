@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oQ0UgeTOmVk=",
+  "dgSpecHash": "9wa3UR8YKuk=",
   "success": true,
-  "projectFilePath": "D:\\Marcos Larraga\\Cine\\LM-VIDEO\\backend\\LMVIDEOS\\LMVIDEOS.csproj",
+  "projectFilePath": "D:\\Marcos Larraga\\Cine\\LM-VIDEO\\backend\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\S2-PC00\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.6\\microsoft.aspnetcore.openapi.8.0.6.nupkg.sha512",
     "C:\\Users\\S2-PC00\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
