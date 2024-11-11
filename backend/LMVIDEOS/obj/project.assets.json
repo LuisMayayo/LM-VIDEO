@@ -466,11 +466,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Marcos Larraga\\Cine\\LM-VIDEO\\backend\\LMVIDEOS-booking\\LMVIDEOS-booking.csproj",
-      "projectName": "LMVIDEOS-booking",
-      "projectPath": "D:\\Marcos Larraga\\Cine\\LM-VIDEO\\backend\\LMVIDEOS-booking\\LMVIDEOS-booking.csproj",
+      "projectUniqueName": "D:\\Marcos Larraga\\Cine\\LM-VIDEO\\backend\\LMVIDEOS\\LMVIDEOS.csproj",
+      "projectName": "LMVIDEOS",
+      "projectPath": "D:\\Marcos Larraga\\Cine\\LM-VIDEO\\backend\\LMVIDEOS\\LMVIDEOS.csproj",
       "packagesPath": "C:\\Users\\S2-PC00\\.nuget\\packages\\",
-      "outputPath": "D:\\Marcos Larraga\\Cine\\LM-VIDEO\\backend\\LMVIDEOS-booking\\obj\\",
+      "outputPath": "D:\\Marcos Larraga\\Cine\\LM-VIDEO\\backend\\LMVIDEOS\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
