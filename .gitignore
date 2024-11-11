@@ -29,6 +29,3 @@ backend/obj/
 *.sln.docstates
 .vs/
 
-# Archivos y carpetas específicos de AWS (si se usa para despliegue)
-.aws-sam/
-.aws/
