@@ -1,0 +1,50 @@
+$color-fondo: #000;
+$color-texto: #fff;
+$color-destacado: #00aaff;
+$font-family: 'Roboto', sans-serif;
+
+.navbar {
+  background-color: $color-fondo;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  font-family: $font-family;
+
+  &__menu {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__item {
+    color: $color-texto;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+
+    &:hover {
+      color: $color-destacado;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+  }
+
+  &__logo-image {
+    height: 80px;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    padding: 20px 40px;
+  }
+
+  .navbar__item {
+    font-size: 1.2rem;
+  }
+}
