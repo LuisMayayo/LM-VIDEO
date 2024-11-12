@@ -61,8 +61,11 @@ namespace CineAPI.Controllers
 
         public static void InicializarDatos()
         {
-            asientos.Add(new Asiento(1, 1, true));
-            asientos.Add(new Asiento(2, 2, true));
+            for (int i = 1; i <= 25; i++)
+            {
+                asientos.Add(new Asiento(i, i, true));
+            }
         }
+
     }
 }

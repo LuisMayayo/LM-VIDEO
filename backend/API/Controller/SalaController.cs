@@ -62,8 +62,9 @@ namespace CineAPI.Controllers
         // Método para inicializar datos de prueba
         public static void InicializarDatos()
         {
-            salas.Add(new Sala(1, "Sala A", 100));
-            salas.Add(new Sala(2, "Sala B", 75));
+            salas.Add(new Sala(1, "Sala A", 25));
+            salas.Add(new Sala(2, "Sala B", 25));
+            salas.Add(new Sala(3, "Sala C", 25));
         }
     }
 }
