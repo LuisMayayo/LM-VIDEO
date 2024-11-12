@@ -3,10 +3,10 @@ public class Pelicula
     public int Id { get; set; }
     public string Titulo { get; set; }
     public string Descripcion { get; set; }
-    public int Duracion { get; set; } // Duración en minutos
-    public string FotoUrl { get; set; } // URL o ruta de la foto
+    public string Duracion { get; set; } // Cambiado a string para formato de horas y minutos
+    public string FotoUrl { get; set; }
 
-    public Pelicula(int id, string titulo, string descripcion, int duracion, string fotoUrl)
+    public Pelicula(int id, string titulo, string descripcion, string duracion, string fotoUrl)
     {
         Id = id;
         Titulo = titulo;
