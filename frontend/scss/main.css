@@ -53,7 +53,16 @@ html, body {
   height: auto;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
+  .navbar {
+    padding: 20px 100px;
+  }
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  .hero__image {
+    max-width: 800px;
+  }
   .navbar {
     flex-direction: row;
     justify-content: space-between;
@@ -71,16 +80,5 @@ html, body {
   }
   .hero__image {
     max-width: 600px;
-  }
-}
-@media (min-width: 768px) {
-  .navbar {
-    padding: 20px 100px;
-  }
-  .hero__title {
-    font-size: 2.5rem;
-  }
-  .hero__image {
-    max-width: 800px;
   }
 }/*# sourceMappingURL=main.css.map */
