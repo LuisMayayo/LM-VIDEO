@@ -3,24 +3,33 @@ $color-texto: #fff;
 $color-destacado: #00aaff;
 $font-family: 'Roboto', sans-serif;
 
+html, body {
+  background-color: $color-fondo;
+  color: $color-texto;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+}
+
 .navbar {
   background-color: $color-fondo;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 15px 20px;
-  font-family: $font-family;
+  padding: 10px;
 
   &__menu {
     display: flex;
-    gap: 30px;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__item {
     color: $color-texto;
     font-weight: bold;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     letter-spacing: 1px;
 
     &:hover {
@@ -31,20 +40,64 @@ $font-family: 'Roboto', sans-serif;
   &__logo {
     display: flex;
     justify-content: center;
-    flex: 1;
+    margin: 10px 0;
   }
 
   &__logo-image {
-    height: 80px;
+    height: 60px;
+  }
+}
+
+.hero {
+  text-align: center;
+  padding: 20px;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
   }
 }
 
 @media (min-width: 768px) {
   .navbar {
-    padding: 20px 40px;
+    padding: 20px 100px;
   }
 
-  .navbar__item {
-    font-size: 1.2rem;
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__image {
+    max-width: 800px;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 20px;
+  }
+
+  .navbar__menu {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .navbar__logo-image {
+    height: 80px;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__image {
+    max-width: 600px;
   }
 }
