@@ -28,7 +28,7 @@ html, body {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: #000;
+  background-color: rgba(27, 27, 27, 0.9450980392);
   padding: 20px;
   border-radius: 5px;
 }
@@ -84,6 +84,7 @@ html, body {
     position: static;
     flex-direction: row;
     gap: 30px;
+    background-color: transparent;
   }
   .navbar__toggle {
     display: none;

@@ -1,6 +1,7 @@
 $color-fondo: #000;
 $color-texto: #fff;
 $color-destacado: #00aaff;
+$color-fondo-menu: #1b1b1bf1;
 $font-family: 'Roboto', sans-serif;
 
 html, body {
@@ -35,7 +36,7 @@ html, body {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: $color-fondo;
+    background-color: $color-fondo-menu;
     padding: 20px;
     border-radius: 5px;
 
@@ -100,6 +101,7 @@ html, body {
     position: static;
     flex-direction: row;
     gap: 30px;
+    background-color: transparent;
   }
 
   .navbar__toggle {
