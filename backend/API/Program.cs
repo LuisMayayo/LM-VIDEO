@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using CineAPI.Controllers; 
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,10 +22,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Inicializar los datos inicio de la aplicación
+PeliculaController.InicializarDatos();
+SalaController.InicializarDatos();
+PagoController.InicializarDatos();
+FuncionController.InicializarDatos();
+
+
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
