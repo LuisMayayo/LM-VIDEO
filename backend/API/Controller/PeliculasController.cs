@@ -10,6 +10,8 @@ namespace CineAPI.Controllers
     {
         private static List<Pelicula> peliculas = new List<Pelicula>();
 
+        
+
         [HttpGet]
         public ActionResult<IEnumerable<Pelicula>> GetPeliculas()
         {
@@ -71,7 +73,5 @@ namespace CineAPI.Controllers
             peliculas.Add(new Pelicula(5, "Red One", "Después de que un villano secuestra a Santa Claus del Polo Norte, un agente de ELF debe asociarse con el rastreador más experimentado del mundo para encontrar a Santa Claus y salvar la Navidad.", "2 horas 3 minutos", "Fotos/red_one.jpg"));
             peliculas.Add(new Pelicula(6, "Smile 2", "A punto de embarcarse en una nueva gira mundial, la sensación pop global Skye Riley (Naomi Scott) comienza a experimentar eventos cada vez más aterradores e inexplicables.", "2 horas 7 minutos", "Fotos/smile_2.jpg"));
         }
-
-
     }
 }
