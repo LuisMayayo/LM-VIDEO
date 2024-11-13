@@ -14,15 +14,34 @@ html, body {
 .navbar {
   background-color: $color-fondo;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 10px 20px;
+  position: relative;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo-image {
+    height: 60px;
+  }
 
   &__menu {
-    display: flex;
-    gap: 15px;
+    display: none;
     flex-direction: column;
-    align-items: center;
+    gap: 15px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: $color-fondo;
+    padding: 20px;
+    border-radius: 5px;
+
+    &.is-active {
+      display: flex;
+    }
   }
 
   &__item {
@@ -37,14 +56,20 @@ html, body {
     }
   }
 
-  &__logo {
+  &__toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
     display: flex;
-    justify-content: center;
-    margin: 10px 0;
-  }
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
 
-  &__logo-image {
-    height: 60px;
+    &-icon {
+      width: 25px;
+      height: 3px;
+      background-color: $color-texto;
+    }
   }
 }
 
@@ -53,7 +78,7 @@ html, body {
   padding: 20px;
 
   &__title {
-    font-size: 1.5rem;
+    font-size: 15px;
     font-weight: bold;
     margin-bottom: 15px;
   }
@@ -67,37 +92,17 @@ html, body {
 
 @media (min-width: 768px) {
   .navbar {
-    padding: 20px 100px;
-  }
-
-  .hero__title {
-    font-size: 2.5rem;
-  }
-
-  .hero__image {
-    max-width: 800px;
-  }
-
-  .navbar {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 15px 20px;
+    padding: 15px 40px;
   }
 
   .navbar__menu {
+    display: flex;
+    position: static;
     flex-direction: row;
     gap: 30px;
   }
 
-  .navbar__logo-image {
-    height: 80px;
-  }
-
-  .hero__title {
-    font-size: 2rem;
-  }
-
-  .hero__image {
-    max-width: 600px;
+  .navbar__toggle {
+    display: none;
   }
 }
