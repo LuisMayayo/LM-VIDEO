@@ -57,6 +57,7 @@ html, body {
 .navbar__toggle-icon {
   width: 25px;
   height: 3px;
+  border-radius: 2px;
   background-color: #fff;
 }
 
