@@ -2,14 +2,15 @@ $color-fondo: #000;
 $color-texto: #fff;
 $color-destacado: #00aaff;
 $color-fondo-menu: #1b1b1bf1;
-$font-family: 'Roboto', sans-serif;
+$font-primary: 'Bebas Neue', sans-serif;
+$font-secondary: 'Roboto', sans-serif; // Fuente secundaria para lugares específicos, si es necesario
 
 html, body {
   background-color: $color-fondo;
   color: $color-texto;
   margin: 0;
   padding: 0;
-  font-family: $font-family;
+  font-family: $font-primary; // Aplica Bebas Neue como fuente principal
 }
 
 .navbar {
@@ -51,6 +52,7 @@ html, body {
     text-decoration: none;
     font-size: 1rem;
     letter-spacing: 1px;
+    font-family: $font-primary; // Fuente Bebas Neue para elementos del menú
 
     &:hover {
       color: $color-destacado;
@@ -75,20 +77,97 @@ html, body {
   }
 }
 
+.content {
+  padding: 20px;
+  font-family: $font-primary; // Aplica Bebas Neue en el contenido principal
+}
+
 .hero {
   text-align: center;
-  padding: 20px;
 
   &__title {
     font-size: 23px;
     font-weight: bold;
     margin-bottom: 15px;
+    font-family: $font-primary; // Fuente Bebas Neue para el título
   }
 
   &__image {
     width: 100%;
     max-width: 400px;
     height: auto;
+  }
+}
+
+.carousel {
+  text-align: center;
+  margin: 20px;
+  color: #fff;
+
+  &__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &__track {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+  }
+
+  &__item {
+    min-width: 200px;
+    margin: 0 10px;
+    transition: transform 0.3s;
+  }
+
+  &__item img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  &__button {
+    background: none;
+    border: none;
+    color: #00aaff;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  &__button--left {
+    left: 10px;
+  }
+
+  &__button--right {
+    right: 10px;
+  }
+
+  &__button:hover {
+    color: #fff;
+  }
+}
+
+
+.footer {
+  font-family: $font-primary; // Aplica Bebas Neue en el footer
+
+  &__link,
+  &__copyright {
+    font-family: $font-secondary; // Opcional: cambia a Roboto en enlaces y texto de copyright si prefieres variedad
   }
 }
 

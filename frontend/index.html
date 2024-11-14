@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,48 +14,71 @@
 <body>
   <nav class="navbar">
     <div class="navbar__logo">
-        <img src="Fotos/logo.png" alt="Logo LM Video" class="navbar__logo-image">
+      <img src="Fotos/logo.png" alt="Logo LM Video" class="navbar__logo-image">
     </div>
     <button class="navbar__toggle" aria-label="Abrir menú">
-        <span class="navbar__toggle-icon"></span>
-        <span class="navbar__toggle-icon"></span>
-        <span class="navbar__toggle-icon"></span>
+      <span class="navbar__toggle-icon"></span>
+      <span class="navbar__toggle-icon"></span>
+      <span class="navbar__toggle-icon"></span>
     </button>
     <div class="navbar__menu">
-        <!-- Botón de cerrar dentro del menú hamburguesa -->
-        <button class="navbar__close" aria-label="Cerrar menú">✕</button>
-        <a href="#home" class="navbar__item">HOME</a>
-        <a href="#cartelera" class="navbar__item">CARTELERA</a>
-        <a href="#estrenos" class="navbar__item">PRÓXIMOS ESTRENOS</a>
-        <a href="#nosotros" class="navbar__item">SOBRE NOSOTROS</a>
-        <a href="#contacto" class="navbar__item">CONTACTO</a>
+      <button class="navbar__close" aria-label="Cerrar menú">✕</button>
+      <a href="#home" class="navbar__item">HOME</a>
+      <a href="#cartelera" class="navbar__item">CARTELERA</a>
+      <a href="#estrenos" class="navbar__item">PRÓXIMOS ESTRENOS</a>
+      <a href="#nosotros" class="navbar__item">SOBRE NOSOTROS</a>
+      <a href="#contacto" class="navbar__item">CONTACTO</a>
     </div>
   </nav>
 
-  <section class="hero">
-    <h1 class="hero__title">BIENVENIDOS A LM VIDEO, LOS MEJORES CINES EUROPEOS</h1>
-    <img src="Fotos/cine.jpg" alt="Imagen de cine" class="hero__image">
-  </section>
+  <div class="content">
+    <section class="hero">
+      <h1 class="hero__title">BIENVENIDOS A LM VIDEO, LOS MEJORES CINES EUROPEOS</h1>
+      <img src="Fotos/cine.jpg" alt="Imagen de cine" class="hero__image">
+    </section>
+  </div>
 
-</body>
-<footer class="footer">
-  <div class="footer__top">
-    <a href="#aviso-legal" class="footer__link">Aviso Legal</a>
-    <a href="#politica-privacidad" class="footer__link">Política de privacidad</a>
-    <a href="#politica-cookies" class="footer__link">Política de Cookies</a>
-  </div>
-  <div class="footer__logo">
-    <img src="Fotos/logo.png" alt="Logo LM Video" class="footer__logo-image">
-  </div>
-  <div class="footer__bottom">
-    <p class="footer__copyright">© Copyright 2024 LM VIDEO</p>
-    <div class="footer__social">
-      <a href="#" class="footer__social-icon"><i class="fab fa-instagram"></i></a>
-      <a href="#" class="footer__social-icon"><i class="fab fa-twitter"></i></a>
-      <a href="#" class="footer__social-icon"><i class="fab fa-facebook"></i></a>
+  <!-- Carrusel -->
+  <div class="carousel">
+    <h2 class="carousel__title">PELICULAS ACTUALES</h2>
+    <div class="carousel__container">
+      <button class="carousel__button carousel__button--left" aria-label="Anterior">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="carousel__track">
+        <div class="carousel__item"><img src="Fotos/venom.jpg" alt="Venom"></div>
+        <div class="carousel__item"><img src="Fotos/terrifier3.jpg" alt="Terrifier 3"></div>
+        <div class="carousel__item"><img src="Fotos/wild robot.jpg" alt="The Wild Robot"></div>
+        <div class="carousel__item"><img src="Fotos/gladiator.jpg" alt="Gladiator"></div>
+        <div class="carousel__item"><img src="Fotos/redone.jpg" alt="Red One"></div>
+        <div class="carousel__item"><img src="Fotos/smile2.jpg" alt="Smile 2"></div>
+      </div>
+      <button class="carousel__button carousel__button--right" aria-label="Siguiente">
+        <i class="fas fa-chevron-right"></i>
+      </button>
     </div>
   </div>
-</footer>
 
-<script src="../frontend/js/home.js"></script>
+  <footer class="footer">
+    <div class="footer__top">
+      <a href="#aviso-legal" class="footer__link">Aviso Legal</a>
+      <a href="#politica-privacidad" class="footer__link">Política de privacidad</a>
+      <a href="#politica-cookies" class="footer__link">Política de Cookies</a>
+    </div>
+    <div class="footer__logo">
+      <img src="Fotos/logo.png" alt="Logo LM Video" class="footer__logo-image">
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">© Copyright 2024 LM VIDEO</p>
+      <div class="footer__social">
+        <a href="#" class="footer__social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="footer__social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="footer__social-icon"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../frontend/js/home.js"></script>
+  <script src="js/carousel.js"></script> <!-- Asegúrate de enlazar el archivo JS -->
+</body>
 </html>
