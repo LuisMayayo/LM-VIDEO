@@ -2,52 +2,66 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proximos esternos</title>
-  <link rel="stylesheet" href="scss/main.css">
-  <link rel="stylesheet" href="scss/footer.css">
-  <link rel="stylesheet" href="scss/header.css">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proximos esternos</title>
+    <link rel="stylesheet" href="scss/proximos-estrenos.css">
+    <link rel="stylesheet" href="scss/footer.css">
+    <link rel="stylesheet" href="scss/header.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="navbar__logo">
-        <img src="../Fotos/logo.png" alt="Logo LM Video" class="navbar__logo-image">
-    </div>
-    <button class="navbar__toggle" aria-label="Abrir menú">
-        <span class="navbar__toggle-icon"></span>
-        <span class="navbar__toggle-icon"></span>
-        <span class="navbar__toggle-icon"></span>
-    </button>
-    <div class="navbar__menu">
-        <a href="#cartelera" class="navbar__item">CARTELERA</a>
-        <a href="#estrenos" class="navbar__item">PROXIMOS ESTRENOS</a>
-        <a href="#nosotros" class="navbar__item">SOBRE NOSOTROS</a>
-        <a href="#contacto" class="navbar__item">CONTACTO</a>
-    </div>
-</nav>
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <img src="../frontend/Fotos/logo.png" alt="Logo LM Video" class="navbar__logo-image">
+        </div>
+        <button class="navbar__toggle" aria-label="Abrir menú">
+            <span class="navbar__toggle-icon"></span>
+            <span class="navbar__toggle-icon"></span>
+            <span class="navbar__toggle-icon"></span>
+        </button>
+        <div class="navbar__menu">
+            <a href="#cartelera" class="navbar__item">CARTELERA</a>
+            <a href="#estrenos" class="navbar__item">PROXIMOS ESTRENOS</a>
+            <a href="#nosotros" class="navbar__item">SOBRE NOSOTROS</a>
+            <a href="#contacto" class="navbar__item">CONTACTO</a>
+        </div>
+    </nav>
 
-<script src="../frontend/js/home.js"></script>
+    <section class="promo">
+        <h1 class="promo__title">Estos son los mejores próximos estrenos en LM Video</h1>
+        <div class="promo__content">
+            <img src="../frontend/Fotos/rayo mqeen.jpg" alt="Cars 4 Poster" class="promo__content-image">
+            <div class="promo__content-details">
+                <h2>Cars 4</h2>
+                <p>¡La espera ha terminado! La película más esperada por los fans de Cars ya tiene fecha de estreno.</p>
+                <p>Cars 4 llegará a los cines el 20 de junio de 2025. Prepárate para una nueva aventura sobre ruedas con
+                    Rayo McQueen y sus amigos.</p>
+                <p>¿Estás listo para acelerar a toda velocidad? Mantente al tanto de más detalles y no te pierdas las
+                    últimas noticias de Pixar.</p>
+            </div>
+        </div>
+    </section>
 </body>
 <footer class="footer">
-  <div class="footer__top">
-    <a href="#aviso-legal" class="footer__link">Aviso Legal</a>
-    <a href="#politica-privacidad" class="footer__link">Política de privacidad</a>
-    <a href="#politica-cookies" class="footer__link">Política de Cookies</a>
-  </div>
-  <div class="footer__logo">
-    <img src="../Fotos/logo.png" alt="Logo LM Video" class="footer__logo-image">
-  </div>
-  <div class="footer__bottom">
-    <p class="footer__copyright">© Copyright 2024 AMC Theatres</p>
-    <div class="footer__social">
-      <a href="#" class="footer__social-icon"><img src="../Fotos/instagram-icon.png" alt="Instagram"></a>
-      <a href="#" class="footer__social-icon"><img src="../Fotos/twitter-icon.png" alt="Twitter"></a>
-      <a href="#" class="footer__social-icon"><img src="../Fotos/facebook-icon.png" alt="Facebook"></a>
+    <div class="footer__top">
+        <a href="#aviso-legal" class="footer__link">Aviso Legal</a>
+        <a href="#politica-privacidad" class="footer__link">Política de privacidad</a>
+        <a href="#politica-cookies" class="footer__link">Política de Cookies</a>
     </div>
-  </div>
+    <div class="footer__logo">
+        <img src="../frontend/Fotos/logo.png" alt="Logo LM Video" class="footer__logo-image">
+    </div>
+    <div class="footer__bottom">
+        <p class="footer__copyright">© Copyright 2024 AMC Theatres</p>
+        <div class="footer__social">
+            <a href="#" class="footer__social-icon"><img src="../Fotos/instagram-icon.png" alt="Instagram"></a>
+            <a href="#" class="footer__social-icon"><img src="../Fotos/twitter-icon.png" alt="Twitter"></a>
+            <a href="#" class="footer__social-icon"><img src="../Fotos/facebook-icon.png" alt="Facebook"></a>
+        </div>
+    </div>
 </footer>
+<script src="../frontend/js/home.js"></script>
 
 </html>
