@@ -82,40 +82,42 @@ html, body {
   height: auto;
 }
 
-.carousel {
+.carousel-container {
+  padding: 20px;
   text-align: center;
-  margin: 20px;
-  color: #fff;
 }
-.carousel__title {
-  font-family: "Bebas Neue", sans-serif;
+.carousel-container .carousel-title {
   font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
   margin-bottom: 10px;
 }
-.carousel__container {
-  display: flex;
-  align-items: center;
+.carousel-container .carousel {
   position: relative;
 }
-.carousel__track {
+.carousel-container .carousel__container {
   display: flex;
+  align-items: center;
   overflow: hidden;
-  scroll-behavior: smooth;
+}
+.carousel-container .carousel__track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel-container .carousel__item {
+  flex: 0 0 45%;
+  max-width: 180px;
+  height: 270px;
+  margin: 0 5px;
+  overflow: hidden;
+}
+.carousel-container .carousel__item img {
   width: 100%;
-}
-.carousel__item {
-  min-width: 200px;
-  margin: 0 10px;
-  transition: transform 0.3s;
-}
-.carousel__item img {
-  width: 200px;
-  height: 300px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 100%;
+  object-fit: cover;
   border-radius: 5px;
 }
-.carousel__button {
+.carousel-container .carousel__button {
   background: none;
   border: none;
   color: #00aaff;
@@ -126,13 +128,13 @@ html, body {
   transform: translateY(-50%);
   z-index: 1;
 }
-.carousel__button--left {
+.carousel-container .carousel__button--left {
   left: 10px;
 }
-.carousel__button--right {
+.carousel-container .carousel__button--right {
   right: 10px;
 }
-.carousel__button:hover {
+.carousel-container .carousel__button:hover {
   color: #fff;
 }
 
@@ -157,4 +159,11 @@ html, body {
   .navbar__toggle {
     display: none;
   }
-}/*# sourceMappingURL=main.css.map */
+  .carousel__item {
+    flex: 0 0 30%;
+    max-width: 200px;
+    margin: 0 10px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

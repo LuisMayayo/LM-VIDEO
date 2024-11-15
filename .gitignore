@@ -1,0 +1,18 @@
+# Archivos y carpetas de configuración de Visual Studio y VS Code
+.vs/
+.vscode/
+
+# Archivos de configuración locales
+slnx.sqlite
+
+# Ignorar solo los mapas de fuente de CSS generados por SCSS
+frontend/css/*.css.map
+
+# Compilados y mapas de fuente de SCSS
+*.css.map
+
+# Archivos temporales de compilación o respaldo
+*.tmp
+*.log
+*.bak
+*.swp

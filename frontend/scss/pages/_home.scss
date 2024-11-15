@@ -1,10 +1,12 @@
+// Variables
 $color-fondo: #000;
 $color-texto: #fff;
 $color-destacado: #00aaff;
 $color-fondo-menu: #1b1b1bf1;
 $font-primary: 'Bebas Neue', sans-serif;
-$font-secondary: 'Roboto', sans-serif; // Fuente secundaria para lugares específicos, si es necesario
+$font-secondary: 'Roboto', sans-serif;
 
+// Estilos Globales
 html, body {
   background-color: $color-fondo;
   color: $color-texto;
@@ -13,6 +15,7 @@ html, body {
   font-family: $font-primary; // Aplica Bebas Neue como fuente principal
 }
 
+// Navbar
 .navbar {
   background-color: $color-fondo;
   display: flex;
@@ -77,11 +80,13 @@ html, body {
   }
 }
 
+// Contenido Principal
 .content {
   padding: 20px;
   font-family: $font-primary; // Aplica Bebas Neue en el contenido principal
 }
 
+// Hero Section
 .hero {
   text-align: center;
 
@@ -99,69 +104,74 @@ html, body {
   }
 }
 
-.carousel {
-  text-align: center;
-  margin: 20px;
-  color: #fff;
+// Carrusel
+.carousel-container {
+  padding: 20px; // Añade padding alrededor del carrusel
+  text-align: center; // Centra el título
 
-  &__title {
-    font-family: 'Bebas Neue', sans-serif;
+  .carousel-title {
     font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-weight: bold;
+    color: $color-texto;
+    margin-bottom: 10px; // Espacio entre el título y el carrusel
   }
 
-  &__container {
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
+  .carousel {
+    position: relative; // Necesario para posicionar los botones de forma absoluta
 
-  &__track {
-    display: flex;
-    overflow: hidden;
-    scroll-behavior: smooth;
-    width: 100%;
-  }
+    &__container {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
 
-  &__item {
-    min-width: 200px;
-    margin: 0 10px;
-    transition: transform 0.3s;
-  }
+    &__track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
 
-  &__item img {
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 5px;
-  }
+    &__item {
+      flex: 0 0 45%; // Ocupa aproximadamente el 45% del ancho para mostrar dos ítems en pantalla
+      max-width: 180px; // Limita el ancho máximo
+      height: 270px; // Altura fija para que todas las imágenes tengan el mismo tamaño
+      margin: 0 5px; // Espacio entre cada imagen
+      overflow: hidden; // Oculta cualquier parte de la imagen que sobresalga
+    }
 
-  &__button {
-    background: none;
-    border: none;
-    color: #00aaff;
-    font-size: 2rem;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-  }
+    &__item img {
+      width: 100%;
+      height: 100%; // Fuerza que la imagen ocupe toda la altura del contenedor
+      object-fit: cover; // Corta o ajusta la imagen para llenar el área sin deformarse
+      border-radius: 5px;
+    }
 
-  &__button--left {
-    left: 10px;
-  }
+    &__button {
+      background: none;
+      border: none;
+      color: $color-destacado; // O el color que prefieras
+      font-size: 2rem;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%); // Centra los botones verticalmente
+      z-index: 1;
+    }
 
-  &__button--right {
-    right: 10px;
-  }
+    &__button--left {
+      left: 10px; // Ajusta según tu diseño
+    }
 
-  &__button:hover {
-    color: #fff;
+    &__button--right {
+      right: 10px; // Ajusta según tu diseño
+    }
+
+    &__button:hover {
+      color: $color-texto; // Cambia el color al hacer hover, si es necesario
+    }
   }
 }
 
-
+// Footer
 .footer {
   font-family: $font-primary; // Aplica Bebas Neue en el footer
 
@@ -171,6 +181,7 @@ html, body {
   }
 }
 
+// Media Query para Escritorio
 @media (min-width: 768px) {
   .navbar {
     padding: 15px 40px;
@@ -186,5 +197,11 @@ html, body {
 
   .navbar__toggle {
     display: none;
+  }
+
+  .carousel__item {
+    flex: 0 0 30%; // Ajusta el tamaño del ítem en pantallas más grandes para mostrar más elementos
+    max-width: 200px; // Aumenta el ancho máximo en escritorio
+    margin: 0 10px; // Espacio mayor en pantallas grandes
   }
 }
