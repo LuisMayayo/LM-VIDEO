@@ -14,33 +14,58 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-   // Carrusel
-   const track = document.querySelector(".carousel__track");
-   const items = document.querySelectorAll(".carousel__item");
-   const nextButton = document.querySelector(".carousel__button--right");
-   const prevButton = document.querySelector(".carousel__button--left");
- 
-   let currentIndex = 0;
- 
-   // Función para mover el carrusel
-   const updateCarousel = () => {
-     const itemWidth = items[0].offsetWidth + 20; // Ajusta el ancho de cada ítem con el margen
-     const offset = -currentIndex * itemWidth;
-     track.style.transform = `translateX(${offset}px)`;
-   };
- 
-   // Botón siguiente
-   nextButton.addEventListener("click", () => {
-     currentIndex = (currentIndex + 1) % items.length; // Ciclo al principio si se excede
-     updateCarousel();
-   });
- 
-   // Botón anterior
-   prevButton.addEventListener("click", () => {
-     currentIndex = (currentIndex - 1 + items.length) % items.length; // Ciclo al final si es menor a 0
-     updateCarousel();
-   });
- 
-   // Configuración inicial
-   updateCarousel();
- });
+  // Carrusel
+  const track = document.querySelector(".carousel__track");
+  const items = Array.from(document.querySelectorAll(".carousel__item"));
+  const nextButton = document.querySelector(".carousel__button--right");
+  const prevButton = document.querySelector(".carousel__button--left");
+
+  let currentIndex = 1;
+  const itemWidth = items[0].offsetWidth + 10; // Incluye el margen en el cálculo
+
+  // Clonar el primer y último elemento
+  const firstClone = items[0].cloneNode(true);
+  const lastClone = items[items.length - 1].cloneNode(true);
+
+  // Añadir los clones al track
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, items[0]);
+
+  // Actualizar la lista de ítems incluyendo los clones
+  const updatedItems = Array.from(document.querySelectorAll(".carousel__item"));
+  
+  // Posicionar el carrusel en el primer elemento real
+  track.style.transform = `translateX(${-itemWidth * currentIndex}px)`;
+
+  // Función para mover el carrusel
+  const updateCarousel = () => {
+    track.style.transition = "transform 0.5s ease-in-out";
+    track.style.transform = `translateX(${-itemWidth * currentIndex}px)`;
+  };
+
+  // Botón siguiente
+  nextButton.addEventListener("click", () => {
+    currentIndex++;
+    updateCarousel();
+    if (currentIndex === updatedItems.length - 1) {
+      setTimeout(() => {
+        track.style.transition = "none";
+        currentIndex = 1;
+        track.style.transform = `translateX(${-itemWidth * currentIndex}px)`;
+      }, 500); // Espera a que termine la animación
+    }
+  });
+
+  // Botón anterior
+  prevButton.addEventListener("click", () => {
+    currentIndex--;
+    updateCarousel();
+    if (currentIndex === 0) {
+      setTimeout(() => {
+        track.style.transition = "none";
+        currentIndex = updatedItems.length - 2;
+        track.style.transform = `translateX(${-itemWidth * currentIndex}px)`;
+      }, 500); // Espera a que termine la animación
+    }
+  });
+});

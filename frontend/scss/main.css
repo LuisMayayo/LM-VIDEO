@@ -92,20 +92,24 @@ html, body {
   color: #fff;
   margin-bottom: 10px;
 }
+.carousel-container .carousel__track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 800%;
+}
 .carousel-container .carousel {
   position: relative;
 }
 .carousel-container .carousel__container {
-  display: flex;
-  align-items: center;
   overflow: hidden;
 }
 .carousel-container .carousel__track {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  width: 600%;
 }
 .carousel-container .carousel__item {
-  flex: 0 0 45%;
+  flex: 0 0 33.33%;
   max-width: 180px;
   height: 270px;
   margin: 0 5px;
