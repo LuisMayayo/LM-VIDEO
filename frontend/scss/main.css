@@ -114,7 +114,8 @@ html, body {
 .carousel-container .carousel__item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 5px;
 }
 .carousel-container .carousel__button {
@@ -164,6 +165,4 @@ html, body {
     max-width: 200px;
     margin: 0 10px;
   }
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
