@@ -1,0 +1,62 @@
+.peliculas {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+.peliculas__card {
+  display: flex;
+  background-color: #181818;
+  border-radius: 8px;
+  overflow: hidden;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+.peliculas__card:hover {
+  transform: scale(1.02);
+}
+.peliculas__image {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px 0 0 8px;
+}
+.peliculas__info {
+  padding: 20px;
+  flex: 1;
+}
+.peliculas__info h2 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+  font-family: "Bebas Neue", sans-serif;
+}
+.peliculas__info p {
+  margin: 5px 0;
+  font-family: "Roboto", sans-serif;
+}
+.peliculas__info .peliculas__button {
+  background-color: #00aaff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.peliculas__info .peliculas__button:hover {
+  background-color: #0088cc;
+}
+@media (max-width: 768px) {
+  .peliculas__card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .peliculas__card .peliculas__image {
+    margin: 0 auto;
+    border-radius: 8px 8px 0 0;
+  }
+}
+
+/*# sourceMappingURL=cartelera.css.map */

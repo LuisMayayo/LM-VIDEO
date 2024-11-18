@@ -1,33 +1,28 @@
-// URL del endpoint de la API
-const apiUrl = "http://localhost:5000/api/pelicula";
-
-// Contenedor donde se mostrarán las películas
+const apiUrl = "http://localhost:5028/api/pelicula";
 const peliculasContainer = document.querySelector(".peliculas__container");
 
-// Función para obtener las películas desde la API
 async function cargarPeliculas() {
   try {
-    const response = await fetch(apiUrl); // Hacemos la petición GET
-    if (!response.ok) {
-      throw new Error("Error al obtener las películas");
-    }
-    const peliculas = await response.json(); // Convertimos la respuesta a JSON
-    mostrarPeliculas(peliculas); // Llamamos a la función que muestra las películas
+    const response = await fetch(apiUrl);
+    if (!response.ok) throw new Error("Error al obtener las películas");
+    const peliculas = await response.json();
+    mostrarPeliculas(peliculas);
   } catch (error) {
     console.error("Hubo un problema con la petición:", error);
   }
 }
 
-// Función para renderizar las películas en el DOM
 function mostrarPeliculas(peliculas) {
-  peliculasContainer.innerHTML = ""; // Limpiamos el contenedor
+  peliculasContainer.innerHTML = "";
   peliculas.forEach((pelicula) => {
-    // Creamos los elementos HTML para cada película
+    // Usa la ruta relativa correcta para las imágenes
+    const imagenUrl = pelicula.fotoUrl;
+
     const peliculaCard = document.createElement("article");
     peliculaCard.className = "peliculas__card";
 
     peliculaCard.innerHTML = `
-      <img src="${pelicula.fotoUrl}" alt="${pelicula.titulo}" class="peliculas__image">
+      <img src="${imagenUrl}" alt="${pelicula.titulo}" class="peliculas__image">
       <div class="peliculas__info">
         <h2 class="peliculas__title">${pelicula.titulo}</h2>
         <p class="peliculas__description">${pelicula.descripcion}</p>
@@ -40,5 +35,5 @@ function mostrarPeliculas(peliculas) {
   });
 }
 
-// Llamamos a la función al cargar la página
+
 cargarPeliculas();

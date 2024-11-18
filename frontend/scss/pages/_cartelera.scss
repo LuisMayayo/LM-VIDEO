@@ -1,56 +1,79 @@
-// Estilo del contenedor principal de las películas
+// Variables generales
+$color-fondo-card: #181818;
+$color-texto: #fff;
+$color-destacado: #00aaff;
+$font-primary: 'Bebas Neue', sans-serif;
+$font-secondary: 'Roboto', sans-serif;
+
+// Sección de películas
 .peliculas {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+
+  &__card {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    background-color: $color-fondo-card;
+    border-radius: 8px;
+    overflow: hidden;
+    color: $color-texto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+
+  &__image {
+    width: 150px;
+    height: 200px; // Asegura un tamaño uniforme para las imágenes
+    object-fit: cover;
+    border-radius: 8px 0 0 8px;
+  }
+
+  &__info {
     padding: 20px;
-    background-color: #121212;
-    color: #fff;
-  
-    &__card {
-      display: flex;
-      background-color: #181818;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex: 1;
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 1.5rem;
+      font-family: $font-primary;
     }
-  
-    &__image {
-      width: 150px;
-      height: auto;
-      object-fit: cover;
+
+    p {
+      margin: 5px 0;
+      font-family: $font-secondary;
     }
-  
-    &__info {
-      padding: 20px;
-      flex: 1;
-  
-      h2 {
-        margin: 0 0 10px;
-        font-size: 1.5rem;
-      }
-  
-      p {
-        margin: 5px 0;
-        font-size: 1rem;
-      }
-  
-      .peliculas__button {
-        display: inline-block;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 4px;
-        cursor: pointer;
-        text-align: center;
-        margin-top: 10px;
-        text-decoration: none;
-  
-        &:hover {
-          background-color: #0056b3;
-        }
+
+    .peliculas__button {
+      background-color: $color-destacado;
+      color: $color-texto;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($color-destacado, 10%);
       }
     }
   }
-  
+
+  // Responsividad para pantallas pequeñas
+  @media (max-width: 768px) {
+    &__card {
+      flex-direction: column;
+      text-align: center;
+
+      .peliculas__image {
+        margin: 0 auto;
+        border-radius: 8px 8px 0 0;
+      }
+    }
+  }
+}
