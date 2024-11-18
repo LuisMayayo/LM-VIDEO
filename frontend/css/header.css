@@ -30,7 +30,6 @@
   align-items: center;
   z-index: 10;
 }
-
 .navbar__menu.is-active {
   display: flex;
 }
@@ -74,7 +73,5 @@
   border-radius: 2px;
   background-color: #fff;
 }
-
-
 
 /*# sourceMappingURL=header.css.map */

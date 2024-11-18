@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../scss/proximos-estrenos.css"],"names":[],"mappings":"AAEA","file":"proximos-estrenos.css"}
+{"version":3,"sourceRoot":"","sources":["pages/_proximos-estrenos.scss"],"names":[],"mappings":"AAKA;EACI,aAHkB;EAIlB,kBANc;EAOd,OARY;EASZ;EACA;;;AAGJ;EACI;EACA;EACA,OAhBY;;AAkBZ;EACI;EACA;EACA;;AAGJ;EACI;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;EACA;;AAGJ;EACI;EACA;EACA;;AAEA;EACI;EACA,OA7CE;EA8CF;;AAGJ;EACI;EACA","file":"proximos-estrenos.css"}
