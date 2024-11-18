@@ -1,28 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
-  <link rel="stylesheet" href="scss/cartelera.css">
+  <link rel="stylesheet" href="../css/cartelera.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
 </head>
 
 <body>
   <nav class="navbar">
     <div class="navbar__logo">
-        <img src="../Fotos/logo.png" alt="Logo LM Video" class="navbar__logo-image">
+      <img src="../Fotos/logo.png" alt="Logo LM Video" class="navbar__logo-image">
     </div>
     <button class="navbar__toggle" aria-label="Abrir menú">
-        <span class="navbar__toggle-icon"></span>
-        <span class="navbar__toggle-icon"></span>
-        <span class="navbar__toggle-icon"></span>
+      <span class="navbar__toggle-icon"></span>
+      <span class="navbar__toggle-icon"></span>
+      <span class="navbar__toggle-icon"></span>
     </button>
     <div class="navbar__menu">
-        <a href="#cartelera" class="navbar__item">Cartelera</a>
-        <a href="#estrenos" class="navbar__item">Próximos Estrenos</a>
-        <a href="#nosotros" class="navbar__item">Sobre Nosotros</a>
-        <a href="#contacto" class="navbar__item">Contacto</a>
+      <button class="navbar__close" aria-label="Cerrar menú">✕</button>
+      <a href="#home" class="navbar__item">HOME</a>
+      <a href="#cartelera" class="navbar__item">CARTELERA</a>
+      <a href="#estrenos" class="navbar__item">PRÓXIMOS ESTRENOS</a>
+      <a href="#nosotros" class="navbar__item">SOBRE NOSOTROS</a>
+      <a href="#contacto" class="navbar__item">CONTACTO</a>
     </div>
-</nav>
+  </nav>
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Películas</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+  <main class="peliculas">
+    <!-- Contenedor principal de las tarjetas -->
+    <div class="peliculas__container">
+      <!-- Cada tarjeta se generará dinámicamente con JavaScript -->
+      <!-- Ejemplo de estructura para una tarjeta de película -->
+      <article class="peliculas__card">
+        <img src="Fotos/venom.jpg" alt="Venom: El Último Baile" class="peliculas__image">
+        <div class="peliculas__info">
+          <h2 class="peliculas__title">Venom: El Último Baile</h2>
+          <p class="peliculas__description">
+            Eddie y Venom están prófugos. Perseguidos por sus dos mundos y con la red cerrándose sobre ellos,
+            el dúo se ve obligado a tomar una decisión devastadora.
+          </p>
+          <p class="peliculas__duration"><strong>Duración:</strong> 1 hora 49 minutos</p>
+          <a href="#" class="peliculas__button">Entrar</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Carga de JavaScript -->
+  <script src="../js/cartelera.js"></script>
+</body>
+</html>
+
+
+  
+
+  <footer class="footer">
+    <div class="footer__top">
+      <a href="#aviso-legal" class="footer__link">Aviso Legal</a>
+      <a href="#politica-privacidad" class="footer__link">Política de privacidad</a>
+      <a href="#politica-cookies" class="footer__link">Política de Cookies</a>
+    </div>
+    <div class="footer__logo">
+      <img src="../Fotos/logo.png" alt="Logo LM Video" class="footer__logo-image">
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">© Copyright 2024 LM VIDEO</p>
+      <div class="footer__social">
+        <a href="#" class="footer__social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="footer__social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="footer__social-icon"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../frontend/js/home.js"></script>
+  <script src="../js/home.js"></script> <!-- Asegúrate de enlazar el archivo JS -->
+</body>
+</html>
