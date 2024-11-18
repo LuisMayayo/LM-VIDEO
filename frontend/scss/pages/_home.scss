@@ -12,7 +12,7 @@ html, body {
   color: $color-texto;
   margin: 0;
   padding: 0;
-  font-family: $font-primary; // Aplica Bebas Neue como fuente principal
+  font-family: $font-primary; // Fuente principal
 }
 
 // Navbar
@@ -22,15 +22,14 @@ html, body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  position: relative;
 
   &__logo {
     display: flex;
     align-items: center;
-  }
 
-  &__logo-image {
-    height: 60px;
+    &-image {
+      height: 60px;
+    }
   }
 
   &__menu {
@@ -54,8 +53,7 @@ html, body {
     font-weight: bold;
     text-decoration: none;
     font-size: 1rem;
-    letter-spacing: 1px;
-    font-family: $font-primary; // Fuente Bebas Neue para elementos del menú
+    font-family: $font-primary;
 
     &:hover {
       color: $color-destacado;
@@ -83,7 +81,6 @@ html, body {
 // Contenido Principal
 .content {
   padding: 20px;
-  font-family: $font-primary; // Aplica Bebas Neue en el contenido principal
 }
 
 // Hero Section
@@ -94,7 +91,7 @@ html, body {
     font-size: 23px;
     font-weight: bold;
     margin-bottom: 15px;
-    font-family: $font-primary; // Fuente Bebas Neue para el título
+    font-family: $font-primary;
   }
 
   &__image {
@@ -104,109 +101,241 @@ html, body {
   }
 }
 
-// Carrusel
 .carousel-container {
-  padding: 20px; // Añade padding alrededor del carrusel
-  text-align: center; // Centra el título
+  padding: 20px;
+  text-align: center;
+}
 
-  .carousel-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: $color-texto;
-    margin-bottom: 10px; // Espacio entre el título y el carrusel
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &__track-container {
+    overflow: hidden;
+    width: 100%;
   }
 
-  .carousel__track {
+  &__track {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: calc(100% * 8); // Ajusta este valor según el número de elementos en el carrusel (6 originales + 2 clones)
   }
-  
-  .carousel {
-    position: relative; // Necesario para posicionar los botones de forma absoluta
 
-    &__container {
-      overflow: hidden; // Oculta el desbordamiento
+  &__item {
+    flex: 0 0 25%; /* Muestra 4 imágenes por fila en pantallas grandes */
+    max-width: 25%;
+    padding: 10px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta las imágenes al contenedor */
+    border-radius: 5px;
+  }
+
+  /* Ajustes para Desktop */
+  @media (min-width: 1024px) {
+    .carousel__item {
+      flex: 0 0 20%; /* Muestra 5 imágenes en pantallas más grandes */
+      max-width: 20%;
     }
+  }
 
-    &__track {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-      width: calc(100% * 6); // Ajusta el ancho de acuerdo al número de elementos (en este caso 6)
-    }
-
-    &__item {
-      flex: 0 0 33.33%; // Ocupa aproximadamente un tercio del ancho para mostrar tres ítems en pantalla
-      max-width: 180px; // Limita el ancho máximo
-      height: 270px; // Altura fija para que todas las imágenes tengan el mismo tamaño
-      margin: 0 5px; // Espacio entre cada imagen
-      overflow: hidden; // Oculta cualquier parte de la imagen que sobresalga
-    }
-
-    &__item img {
-      width: 100%;
-      height: 100%; // Fuerza que la imagen ocupe toda la altura del contenedor
-      object-fit: cover; // Corta o ajusta la imagen para llenar el área sin deformarse
-      border-radius: 5px;
-    }
-
-    &__button {
-      background: none;
-      border: none;
-      color: $color-destacado;
-      font-size: 2rem;
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%); // Centra los botones verticalmente
-      z-index: 1;
-    }
-
-    &__button--left {
-      left: 10px;
-    }
-
-    &__button--right {
-      right: 10px;
-    }
-
-    &__button:hover {
-      color: $color-texto;
+  /* Ajustes para Mobile */
+  @media (max-width: 768px) {
+    .carousel__item {
+      flex: 0 0 50%; /* Muestra 2 imágenes en pantallas pequeñas */
+      max-width: 50%;
     }
   }
 }
+
+.carousel__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px;
+
+  &:hover {
+    background: #00aaff;
+  }
+
+  &--left {
+    left: 10px;
+  }
+
+  &--right {
+    right: 10px;
+  }
+}
+
+
+
+// Promo Section (Moana)
+.promo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+  color: #fff;
+  background-image: url("../Fotos/fondomoana.jpg"); // Asegúrate de que esta ruta sea correcta
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  &__image {
+    z-index: 1;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+  }
+
+  &__text {
+    z-index: 1;
+    text-align: center;
+
+    &--title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    &--description {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+}
+
+.trailers {
+  padding: 20px;
+  text-align: center;
+  color: $color-texto;
+
+  &__title {
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: "Bebas Neue", sans-serif;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  &__item {
+    flex: 1 1 calc(25% - 20px); // Ocupa un 25% menos el espacio del gap
+    max-width: 200px;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      flex: 1 1 calc(50% - 20px); // Para pantallas más pequeñas, 50%
+    }
+
+    @media (max-width: 480px) {
+      flex: 1 1 100%; // Una columna en pantallas muy pequeñas
+    }
+  }
+
+  &__thumbnail {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; // Relación de aspecto 16:9
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #000;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .trailers__play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.6);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      color: #fff;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-decoration: none; // Elimina subrayado en el enlace
+    
+      &:hover {
+        background: $color-destacado;
+      }
+    }
+    
+  }
+
+  &__name {
+    font-size: 1rem;
+    font-family: $font-primary;
+    margin-top: 10px;
+    text-transform: uppercase;
+  }
+
+}
+
 
 // Footer
 .footer {
-  font-family: $font-primary; // Aplica Bebas Neue en el footer
+  font-family: $font-primary;
 
   &__link,
   &__copyright {
-    font-family: $font-secondary; // Opcional: cambia a Roboto en enlaces y texto de copyright si prefieres variedad
+    font-family: $font-secondary;
   }
 }
 
-// Media Query para Escritorio
+// Media Queries (Escritorio)
 @media (min-width: 768px) {
   .navbar {
     padding: 15px 40px;
-  }
 
-  .navbar__menu {
-    display: flex;
-    position: static;
-    flex-direction: row;
-    gap: 30px;
-    background-color: transparent;
-  }
+    &__menu {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      position: static;
+      background-color: transparent;
+    }
 
-  .navbar__toggle {
-    display: none;
+    &__toggle {
+      display: none;
+    }
   }
 
   .carousel__item {
-    flex: 0 0 30%; // Ajusta el tamaño del ítem en pantallas más grandes para mostrar más elementos
-    max-width: 200px; // Aumenta el ancho máximo en escritorio
-    margin: 0 10px; // Espacio mayor en pantallas grandes
+    flex: 0 0 30%;
+    max-width: 200px;
+    margin: 0 10px;
   }
 }

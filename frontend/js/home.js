@@ -1,71 +1,45 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Navbar Toggle
-  const toggleButton = document.querySelector(".navbar__toggle");
-  const closeButton = document.querySelector(".navbar__close");
-  const menu = document.querySelector(".navbar__menu");
-
-  toggleButton.addEventListener("click", () => {
-    menu.classList.add("is-active");
-  });
-
-  if (closeButton) {
-    closeButton.addEventListener("click", () => {
-      menu.classList.remove("is-active");
-    });
-  }
-
-  // Carrusel
+document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".carousel__track");
   const items = Array.from(document.querySelectorAll(".carousel__item"));
   const nextButton = document.querySelector(".carousel__button--right");
   const prevButton = document.querySelector(".carousel__button--left");
 
-  let currentIndex = 1;
-  const itemWidth = items[0].offsetWidth + 10; // Incluye el margen en el cálculo
+  const visibleItems = () => {
+    // Detecta el número de imágenes visibles según el ancho de la ventana
+    if (window.innerWidth >= 1024) return 5; // Desktop
+    if (window.innerWidth >= 768) return 4; // Tablet
+    return 2; // Móvil
+  };
 
-  // Clonar el primer y último elemento
-  const firstClone = items[0].cloneNode(true);
-  const lastClone = items[items.length - 1].cloneNode(true);
-
-  // Añadir los clones al track
-  track.appendChild(firstClone);
-  track.insertBefore(lastClone, items[0]);
-
-  // Actualizar la lista de ítems incluyendo los clones
-  const updatedItems = Array.from(document.querySelectorAll(".carousel__item"));
-  
-  // Posicionar el carrusel en el primer elemento real
-  track.style.transform = `translateX(${-itemWidth * currentIndex}px)`;
+  let currentIndex = 0; // Índice actual
+  const totalItems = items.length;
+  const moveBy = visibleItems(); // Cuántas imágenes desplazar
+  const itemWidth = items[0].getBoundingClientRect().width;
 
   // Función para mover el carrusel
-  const updateCarousel = () => {
-    track.style.transition = "transform 0.5s ease-in-out";
-    track.style.transform = `translateX(${-itemWidth * currentIndex}px)`;
-  };
+  function moveCarousel(index) {
+    const offset = -index * itemWidth;
+    track.style.transform = `translateX(${offset}px)`;
+  }
 
   // Botón siguiente
   nextButton.addEventListener("click", () => {
-    currentIndex++;
-    updateCarousel();
-    if (currentIndex === updatedItems.length - 1) {
-      setTimeout(() => {
-        track.style.transition = "none";
-        currentIndex = 1;
-        track.style.transform = `translateX(${-itemWidth * currentIndex}px)`;
-      }, 500); // Espera a que termine la animación
+    if (currentIndex < totalItems - moveBy) {
+      currentIndex += moveBy;
+      moveCarousel(currentIndex);
     }
   });
 
   // Botón anterior
   prevButton.addEventListener("click", () => {
-    currentIndex--;
-    updateCarousel();
-    if (currentIndex === 0) {
-      setTimeout(() => {
-        track.style.transition = "none";
-        currentIndex = updatedItems.length - 2;
-        track.style.transform = `translateX(${-itemWidth * currentIndex}px)`;
-      }, 500); // Espera a que termine la animación
+    if (currentIndex > 0) {
+      currentIndex -= moveBy;
+      moveCarousel(currentIndex);
     }
+  });
+
+  // Ajustar tamaño dinámicamente
+  window.addEventListener("resize", () => {
+    moveCarousel(currentIndex); // Recalcular posición al cambiar el tamaño de la ventana
   });
 });
