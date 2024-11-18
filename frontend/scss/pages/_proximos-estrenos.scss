@@ -10,128 +10,149 @@ $font-secondary: 'Roboto', sans-serif;
 $color-destacado: #00aaff;
 
 body {
-    font-family: $font-family-primary;
-    background-color: $secondary-color;
-    color: $primary-color;
-    margin: 0;
-    padding: 0;
+  font-family: $font-family-primary;
+  background-color: $secondary-color;
+  color: $primary-color;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar {
-    background-color: $color-fondo;
+  background-color: $color-fondo;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+
+  &__logo {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    position: relative;
-  
-    &__logo {
+  }
+
+  &__logo-image {
+    height: 60px;
+  }
+
+  &__menu {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: $color-fondo-menu;
+    padding: 20px;
+    border-radius: 5px;
+
+    &.is-active {
       display: flex;
-      align-items: center;
-    }
-  
-    &__logo-image {
-      height: 60px;
-    }
-  
-    &__menu {
-      display: none;
-      flex-direction: column;
-      gap: 15px;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      background-color: $color-fondo-menu;
-      padding: 20px;
-      border-radius: 5px;
-  
-      &.is-active {
-        display: flex;
-      }
-    }
-  
-    &__item {
-      color: $color-texto;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 1rem;
-      letter-spacing: 1px;
-      font-family: $font-primary; // Fuente Bebas Neue para elementos del menú
-  
-      &:hover {
-        color: $color-destacado;
-      }
-    }
-  
-    &__toggle {
-      background: none;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-  
-      &-icon {
-        width: 25px;
-        height: 3px;
-        border-radius: 2px;
-        background-color: $color-texto;
-      }
     }
   }
 
-  .footer {
-    font-family: $font-primary; // Aplica Bebas Neue en el footer
-  
-    &__link,
-    &__copyright {
-      font-family: $font-secondary; // Opcional: cambia a Roboto en enlaces y texto de copyright si prefieres variedad
+  &__item {
+    color: $color-texto;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-family: $font-primary;
+
+    &:hover {
+      color: $color-destacado;
     }
   }
+
+  &__toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    &-icon {
+      width: 25px;
+      height: 3px;
+      border-radius: 2px;
+      background-color: $color-texto;
+    }
+  }
+}
+
+.footer {
+  font-family: $font-primary;
+
+  &__link,
+  &__copyright {
+    font-family: $font-secondary;
+  }
+}
 
 .promo {
+  padding: 2rem;
+  text-align: center;
+  color: $primary-color;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 1rem;
     padding: 2rem;
-    text-align: center;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
     color: $primary-color;
 
-    &__title {
-        font-size: 2rem;
-        font-weight: bold;
-        text-transform: uppercase;
+    // Fondo para cada sección
+    &:nth-child(1) {
+      background-image: url('../../Fotos/fondo\ cars.jpg'); // Fondo para Cars 4
     }
 
-    &__content {
-        display: flex;
-        flex-direction: row;
-        gap: 1.5rem;
-        align-items: flex-start;
-        justify-content: center;
-        margin-top: 1rem;
-        flex-direction: column;
-
-        &-image {
-            max-width: 300px;
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        &-details {
-            max-width: 400px;
-            padding: 1rem;
-            text-align: left;
-
-            h2 {
-                font-size: 1.8rem;
-                color: $highlight-color;
-                margin-bottom: 0.5rem;
-            }
-
-            p {
-                font-size: 1rem;
-                line-height: 1.6;
-            }
-        }
+    &:nth-child(2) {
+      background-image: url('../../Fotos/fondoavatar.jpg'); // Fondo para Avatar
     }
+
+    &:nth-child(3) {
+      background-image: url('../../Fotos/fondo\ FastFurius11.jpg'); // Fondo para Fast & Furious
+    }
+
+    &:nth-child(4) {
+      background-image: url('../../Fotos/fondo\ jurassicworld.jpg'); // Fondo para Jurassic World
+    }
+
+    &-image {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    &-details {
+      max-width: 400px;
+      padding: 1rem;
+      text-align: left;
+
+      h2 {
+        font-size: 1.8rem;
+        color: $highlight-color;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+  }
 }
