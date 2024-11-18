@@ -1,7 +1,13 @@
 $primary-color: #fff;
 $secondary-color: #000;
-$highlight-color: #e50914;
+$highlight-color: #00aaff;
 $font-family-primary: 'Bebas Neue', sans-serif;
+$color-fondo: #000;
+$color-fondo-menu: #1b1b1bf1;
+$color-texto: #fff;
+$font-primary: 'Bebas Neue', sans-serif;
+$font-secondary: 'Roboto', sans-serif;
+$color-destacado: #00aaff;
 
 body {
     font-family: $font-family-primary;
@@ -10,6 +16,79 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.navbar {
+    background-color: $color-fondo;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+  
+    &__logo {
+      display: flex;
+      align-items: center;
+    }
+  
+    &__logo-image {
+      height: 60px;
+    }
+  
+    &__menu {
+      display: none;
+      flex-direction: column;
+      gap: 15px;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: $color-fondo-menu;
+      padding: 20px;
+      border-radius: 5px;
+  
+      &.is-active {
+        display: flex;
+      }
+    }
+  
+    &__item {
+      color: $color-texto;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      font-family: $font-primary; // Fuente Bebas Neue para elementos del menú
+  
+      &:hover {
+        color: $color-destacado;
+      }
+    }
+  
+    &__toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+  
+      &-icon {
+        width: 25px;
+        height: 3px;
+        border-radius: 2px;
+        background-color: $color-texto;
+      }
+    }
+  }
+
+  .footer {
+    font-family: $font-primary; // Aplica Bebas Neue en el footer
+  
+    &__link,
+    &__copyright {
+      font-family: $font-secondary; // Opcional: cambia a Roboto en enlaces y texto de copyright si prefieres variedad
+    }
+  }
 
 .promo {
     padding: 2rem;
