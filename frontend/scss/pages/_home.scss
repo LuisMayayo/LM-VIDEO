@@ -1,3 +1,4 @@
+// Variables
 $color-fondo: #000;
 $color-texto: #fff;
 $color-destacado: #00aaff;
@@ -5,14 +6,16 @@ $color-fondo-menu: #1b1b1bf1;
 $font-primary: 'Bebas Neue', sans-serif;
 $font-secondary: 'Roboto', sans-serif;
 
+// Estilos Globales
 html, body {
   background-color: $color-fondo;
   color: $color-texto;
   margin: 0;
   padding: 0;
-  font-family: $font-primary;
+  font-family: $font-primary; // Aplica Bebas Neue como fuente principal
 }
 
+// Navbar
 .navbar {
   background-color: $color-fondo;
   display: flex;
@@ -52,7 +55,7 @@ html, body {
     text-decoration: none;
     font-size: 1rem;
     letter-spacing: 1px;
-    font-family: $font-primary;
+    font-family: $font-primary; // Fuente Bebas Neue para elementos del menú
 
     &:hover {
       color: $color-destacado;
@@ -77,12 +80,13 @@ html, body {
   }
 }
 
+// Contenido Principal
 .content {
   padding: 20px;
-  font-family: $font-primary;
-
+  font-family: $font-primary; // Aplica Bebas Neue en el contenido principal
 }
 
+// Hero Section
 .hero {
   text-align: center;
 
@@ -90,7 +94,7 @@ html, body {
     font-size: 23px;
     font-weight: bold;
     margin-bottom: 15px;
-    font-family: $font-primary;
+    font-family: $font-primary; // Fuente Bebas Neue para el título
   }
 
   &__image {
@@ -102,14 +106,14 @@ html, body {
 
 // Carrusel
 .carousel-container {
-  padding: 20px;
-  text-align: center;
+  padding: 20px; // Añade padding alrededor del carrusel
+  text-align: center; // Centra el título
 
   .carousel-title {
     font-size: 1.5rem;
     font-weight: bold;
     color: $color-texto;
-    margin-bottom: 10px;
+    margin-bottom: 10px; // Espacio entre el título y el carrusel
   }
 
   .carousel__track {
@@ -119,7 +123,7 @@ html, body {
   }
   
   .carousel {
-    position: relative;
+    position: relative; // Necesario para posicionar los botones de forma absoluta
 
     &__container {
       overflow: hidden; // Oculta el desbordamiento
@@ -141,8 +145,8 @@ html, body {
 
     &__item img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: 100%; // Fuerza que la imagen ocupe toda la altura del contenedor
+      object-fit: cover; // Corta o ajusta la imagen para llenar el área sin deformarse
       border-radius: 5px;
     }
 
@@ -154,7 +158,7 @@ html, body {
       cursor: pointer;
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
+      transform: translateY(-50%); // Centra los botones verticalmente
       z-index: 1;
     }
 
@@ -174,11 +178,11 @@ html, body {
 
 // Footer
 .footer {
-  font-family: $font-primary;
+  font-family: $font-primary; // Aplica Bebas Neue en el footer
 
   &__link,
   &__copyright {
-    font-family: $font-secondary;
+    font-family: $font-secondary; // Opcional: cambia a Roboto en enlaces y texto de copyright si prefieres variedad
   }
 }
 
@@ -201,8 +205,8 @@ html, body {
   }
 
   .carousel__item {
-    flex: 0 0 30%;
-    max-width: 200px;
-    margin: 0 10px;
+    flex: 0 0 30%; // Ajusta el tamaño del ítem en pantallas más grandes para mostrar más elementos
+    max-width: 200px; // Aumenta el ancho máximo en escritorio
+    margin: 0 10px; // Espacio mayor en pantallas grandes
   }
 }
