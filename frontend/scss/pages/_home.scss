@@ -132,19 +132,11 @@ html, body {
     }
 
     &__item {
-<<<<<<< HEAD
       flex: 0 0 33.33%; // Ocupa aproximadamente un tercio del ancho para mostrar tres ítems en pantalla
       max-width: 180px; // Limita el ancho máximo
       height: 270px; // Altura fija para que todas las imágenes tengan el mismo tamaño
       margin: 0 5px; // Espacio entre cada imagen
       overflow: hidden; // Oculta cualquier parte de la imagen que sobresalga
-=======
-      flex: 0 0 45%;
-      max-width: 180px;
-      height: 270px;
-      margin: 0 5px;
-      overflow: hidden;
->>>>>>> 15cfab5ec30ad681cd0993e53bcada44d52303c4
     }
 
     &__item img {
