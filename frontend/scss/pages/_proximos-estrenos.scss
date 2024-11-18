@@ -1,9 +1,9 @@
 $primary-color: #fff;
-$secondary-color: #000;
+$secondary-color: #0000003a;
 $highlight-color: #00aaff;
 $font-family-primary: 'Bebas Neue', sans-serif;
-$color-fondo: #000;
-$color-fondo-menu: #1b1b1bf1;
+$color-fondo: #0000003b;
+$color-fondo-menu: #1b1b1b96;
 $color-texto: #fff;
 $font-primary: 'Bebas Neue', sans-serif;
 $font-secondary: 'Roboto', sans-serif;
@@ -113,29 +113,30 @@ body {
     background-size: cover;
     background-position: center;
     color: $primary-color;
+    min-height: 300px;
 
     // Fondo para cada sección
     &:nth-child(1) {
-      background-image: url('../../Fotos/fondo\ cars.jpg'); // Fondo para Cars 4
+      background-image: url('../../Fotos/fondo-cars.jpg'); // Fondo para Cars 4
     }
 
     &:nth-child(2) {
-      background-image: url('../../Fotos/fondoavatar.jpg'); // Fondo para Avatar
+      background-image: url('../../Fotos/fondo-avatar.jpg'); // Fondo para Avatar
     }
 
     &:nth-child(3) {
-      background-image: url('../../Fotos/fondo\ FastFurius11.jpg'); // Fondo para Fast & Furious
+      background-image: url('../../Fotos/fondo-FastFurius11.jpg'); // Fondo para Fast & Furious
     }
 
     &:nth-child(4) {
-      background-image: url('../../Fotos/fondo\ jurassicworld.jpg'); // Fondo para Jurassic World
+      background-image: url('../../Fotos/fondo-jurassicworld.jpg'); // Fondo para Jurassic World
     }
 
     &-image {
       max-width: 300px;
       width: 100%;
       border-radius: 8px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.37);
     }
 
     &-details {

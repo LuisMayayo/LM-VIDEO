@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body {
   background-color: #000;
   color: #fff;
@@ -12,7 +13,6 @@ html, body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  position: relative;
 }
 .navbar__logo {
   display: flex;
@@ -40,7 +40,6 @@ html, body {
   font-weight: bold;
   text-decoration: none;
   font-size: 1rem;
-  letter-spacing: 1px;
   font-family: "Bebas Neue", sans-serif;
 }
 .navbar__item:hover {
@@ -64,7 +63,6 @@ html, body {
 
 .content {
   padding: 20px;
-  font-family: "Bebas Neue", sans-serif;
 }
 
 .hero {
@@ -86,61 +84,181 @@ html, body {
   padding: 20px;
   text-align: center;
 }
-.carousel-container .carousel-title {
+
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* Ajustes para Desktop */
+  /* Ajustes para Mobile */
+}
+.carousel__track-container {
+  overflow: hidden;
+  width: 100%;
+}
+.carousel__track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel__item {
+  flex: 0 0 25%; /* Muestra 4 imágenes por fila en pantallas grandes */
+  max-width: 25%;
+  padding: 10px;
+}
+.carousel img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; /* Ajusta las imágenes al contenedor */
+  border-radius: 5px;
+}
+@media (min-width: 1024px) {
+  .carousel .carousel__item {
+    flex: 0 0 20%; /* Muestra 5 imágenes en pantallas más grandes */
+    max-width: 20%;
+  }
+}
+@media (max-width: 768px) {
+  .carousel .carousel__item {
+    flex: 0 0 50%; /* Muestra 2 imágenes en pantallas pequeñas */
+    max-width: 50%;
+  }
+}
+
+.carousel__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px;
+}
+.carousel__button:hover {
+  background: #00aaff;
+}
+.carousel__button--left {
+  left: 10px;
+}
+.carousel__button--right {
+  right: 10px;
+}
+
+.promo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+  color: #fff;
+  background-image: url("../Fotos/fondomoana.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.promo__image {
+  z-index: 1;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+}
+.promo__text {
+  z-index: 1;
+  text-align: center;
+}
+.promo__text--title {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #fff;
   margin-bottom: 10px;
 }
-.carousel-container .carousel__track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 800%;
+.promo__text--description {
+  font-size: 1rem;
+  line-height: 1.5;
 }
-.carousel-container .carousel {
+
+.trailers {
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+.trailers__title {
+  font-size: 23px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-family: "Bebas Neue", sans-serif;
+}
+.trailers__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.trailers__item {
+  flex: 1 1 calc(25% - 20px);
+  max-width: 200px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .trailers__item {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+@media (max-width: 480px) {
+  .trailers__item {
+    flex: 1 1 100%;
+  }
+}
+.trailers__thumbnail {
   position: relative;
-}
-.carousel-container .carousel__container {
+  width: 100%;
+  padding-top: 56.25%;
   overflow: hidden;
+  border-radius: 8px;
+  background-color: #000;
 }
-.carousel-container .carousel__track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 600%;
-}
-.carousel-container .carousel__item {
-  flex: 0 0 33.33%;
-  max-width: 180px;
-  height: 270px;
-  margin: 0 5px;
-  overflow: hidden;
-}
-.carousel-container .carousel__item img {
+.trailers__thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 5px;
+  border-radius: 8px;
 }
-.carousel-container .carousel__button {
-  background: none;
-  border: none;
-  color: #00aaff;
-  font-size: 2rem;
-  cursor: pointer;
+.trailers__thumbnail .trailers__play-button {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-}
-.carousel-container .carousel__button--left {
-  left: 10px;
-}
-.carousel-container .carousel__button--right {
-  right: 10px;
-}
-.carousel-container .carousel__button:hover {
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
   color: #fff;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+.trailers__thumbnail .trailers__play-button:hover {
+  background: #00aaff;
+}
+.trailers__name {
+  font-size: 1rem;
+  font-family: "Bebas Neue", sans-serif;
+  margin-top: 10px;
+  text-transform: uppercase;
 }
 
 .footer {
@@ -156,9 +274,9 @@ html, body {
   }
   .navbar__menu {
     display: flex;
-    position: static;
     flex-direction: row;
     gap: 30px;
+    position: static;
     background-color: transparent;
   }
   .navbar__toggle {
