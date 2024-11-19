@@ -75,7 +75,9 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(`Botón de la película con ID ${peliculaId} fue clicado.`);
 
       // Redirigir a la página SalaPeliculaFuncion con el ID como parámetro
-      window.location.href = `/SalaPeliculaFuncion.html?id=${peliculaId}`;
+      window.location.href = `html/SalaPeliculaFuncion.html?id=${peliculaId}`;
+
+
     }
   });
 
