@@ -1,17 +1,17 @@
 @use '../base/variables' as vars;
 
 .navbar {
-  background-color: vars.$color-fondo; // Fondo del navbar
+  background-color: vars.$color-fondo;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3%; // Espaciado del navbar
+  padding: 3%;
   position: relative;
 
-  // Ajustes para escritorio
+
   @media (min-width: 768px) {
-    justify-content: center; // Centra el contenido
-    padding: 1rem 5%; // Ajusta el espaciado
+    justify-content: center; 
+    padding: 1rem 5%;
   }
 }
 
@@ -20,62 +20,62 @@
   align-items: center;
 
   @media (min-width: 768px) {
-    margin-right: 3rem; // Espaciado del logo en escritorio
+    margin-right: 3rem;
   }
 }
 
 .navbar__logo-image {
-  height: 60px; // Tamaño fijo del logo
+  height: 60px;
 
   @media (min-width: 768px) {
-    height: 80px; // Tamaño mayor del logo en escritorio
+    height: 80px;
   }
 }
 
 .navbar__menu {
-  display: none; // Oculto en móvil
+  display: none;
   flex-direction: column;
-  gap: 7%; // Espaciado entre los elementos
+  gap: 7%;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; // Ancho completo en móvil
-  height: 100%; // Alto completo en móvil
-  background-color: rgba(27, 27, 27, 0.95); // Fondo oscuro semitransparente
+  width: 100%;
+  height: 100%;
+  background-color: rgba(27, 27, 27, 0.95);
   justify-content: center;
   align-items: center;
   z-index: 10;
 
   &.is-active {
-    display: flex; // Mostrar el menú en móvil cuando está activo
+    display: flex;
   }
 
   @media (min-width: 768px) {
-    display: flex; // Visible en escritorio
-    flex-direction: row; // Elementos en fila
+    display: flex;
+    flex-direction: row;
     position: static;
     height: auto;
     width: auto;
-    background-color: transparent; // Fondo transparente en escritorio
-    gap: 3rem; // Espaciado entre elementos
+    background-color: transparent;
+    gap: 3rem;
     align-items: center;
   }
 }
 
 .navbar__item {
-  color: vars.$color-texto; // Color del texto
+  color: vars.$color-texto;
   font-weight: bold;
   text-decoration: none;
-  font-size: 1.5rem; // Tamaño en móvil
-  letter-spacing: 1px; // Espaciado entre letras
-  font-family: vars.$font-primary; // Fuente principal
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  font-family: vars.$font-primary;
 
   &:hover {
-    color: vars.$color-destacado; // Color en hover
+    color: vars.$color-destacado;
   }
 
   @media (min-width: 768px) {
-    font-size: 20px; // Tamaño mayor en escritorio
+    font-size: 20px;
   }
 }
 
@@ -86,11 +86,11 @@
   background: none;
   border: none;
   font-size: 2rem;
-  color: vars.$color-texto; // Color del botón de cerrar
+  color: vars.$color-texto;
   cursor: pointer;
 
   @media (min-width: 768px) {
-    display: none; // Oculta el botón en escritorio
+    display: none;
   }
 }
 
@@ -104,13 +104,13 @@
   gap: 4px;
 
   @media (min-width: 768px) {
-    display: none; // Oculta el toggle en escritorio
+    display: none;
   }
 }
 
 .navbar__toggle-icon {
-  width: 25px; // Ancho del ícono
-  height: 3px; // Alto del ícono
-  border-radius: 2px; // Bordes redondeados
-  background-color: vars.$color-texto; // Color del ícono
+  width: 25px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: vars.$color-texto;
 }
