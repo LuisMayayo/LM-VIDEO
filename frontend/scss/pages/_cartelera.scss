@@ -1,23 +1,14 @@
-// Variables generales
-$color-fondo-card: #181818;
-$color-fondo: #000;
-$color-texto: #fff;
-$color-destacado: #00aaff;
-$color-borde: #333;
-$font-primary: 'Bebas Neue', sans-serif;
-$font-secondary: 'Roboto', sans-serif;
+@use '../base/variables' as vars;
 
 // Estilos Globales
 html, body {
-  background-color: $color-fondo;
-  color: $color-texto;
+  background-color: vars.$color-fondo; // Fondo global
+  color: vars.$color-texto; // Color de texto global
   margin: 0;
   padding: 0;
-  font-family: $font-primary; // Fuente principal
+  font-family: vars.$font-primary; // Fuente principal
   overflow-x: hidden; // Evita scroll lateral inesperado
 }
-
-
 
 // Contenido Principal
 .content {
@@ -40,11 +31,11 @@ html, body {
   &__card {
     display: flex;
     align-items: center;
-    background-color: $color-fondo-card;
-    border: 1px solid $color-borde;
+    background-color: vars.$color-fondo-card; // Fondo de las tarjetas
+    border: 1px solid vars.$color-borde; // Borde de las tarjetas
     border-radius: 10px;
     overflow: hidden;
-    color: $color-texto;
+    color: vars.$color-texto; // Color del texto dentro de las tarjetas
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s, box-shadow 0.3s;
 
@@ -58,7 +49,7 @@ html, body {
     width: 150px;
     height: 220px;
     object-fit: cover;
-    border-right: 3px solid $color-destacado;
+    border-right: 3px solid vars.$color-destacado; // Borde derecho destacado
   }
 
   &__info {
@@ -68,33 +59,33 @@ html, body {
     h2 {
       margin: 0 0 10px;
       font-size: 1.8rem;
-      font-family: $font-primary;
+      font-family: vars.$font-primary; // Fuente principal para títulos
     }
 
     p {
       margin: 5px 0;
-      font-family: $font-secondary;
+      font-family: vars.$font-secondary; // Fuente secundaria para descripciones
       line-height: 1.5;
-      white-space: normal; /* Permite texto multilineal */
-      overflow-wrap: break-word; /* Maneja palabras largas */
+      white-space: normal; // Permite texto multilineal
+      overflow-wrap: break-word; // Maneja palabras largas
     }
 
     .peliculas__button {
       display: inline-block;
       margin-top: 10px;
-      background-color: $color-destacado;
-      color: $color-texto;
+      background-color: vars.$color-destacado; // Fondo del botón
+      color: vars.$color-texto; // Color del texto del botón
       padding: 10px 20px;
       border: none;
       border-radius: 5px;
       text-align: center;
       text-decoration: none;
-      font-family: $font-primary;
+      font-family: vars.$font-primary; // Fuente principal para el botón
       font-size: 1rem;
       cursor: pointer;
 
       &:hover {
-        background-color: darken($color-destacado, 10%);
+        background-color: darken(vars.$color-destacado, 10%);
       }
     }
   }
@@ -107,10 +98,10 @@ html, body {
 
       .peliculas__image {
         margin: 0 auto;
-        width: 100%;
+        width: 100%; // Imagen ocupa todo el ancho
         height: auto;
         border-right: none;
-        border-bottom: 3px solid $color-destacado;
+        border-bottom: 3px solid vars.$color-destacado; // Borde inferior destacado
       }
     }
   }

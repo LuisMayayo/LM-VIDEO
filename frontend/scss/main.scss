@@ -1,3 +1,9 @@
-@import 'base/variables';
-@import 'base/reset';
-@import 'pages/home';
+// scss/main.scss
+@use 'base/variables'; // Importa variables globalmente
+@use 'base/reset';
+
+@use 'layout/header';
+@use 'layout/footer';
+@use 'pages/peliculas';
+@use 'pages/home';
+@use 'pages/proximos-estrenos';
