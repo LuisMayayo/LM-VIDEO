@@ -1,26 +1,133 @@
+html, body {
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: "Bebas Neue", sans-serif;
+  overflow-x: hidden;
+}
+
+.navbar {
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 10;
+}
+.navbar__logo {
+  display: flex;
+  align-items: center;
+}
+.navbar__logo-image {
+  height: 60px;
+}
+.navbar__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 15;
+}
+.navbar__menu.is-active {
+  transform: translateY(0);
+}
+.navbar__menu__item {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+.navbar__menu__item:hover {
+  color: #00aaff;
+}
+.navbar__toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+.navbar__toggle-icon {
+  width: 25px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #fff;
+}
+.navbar__close .navbar__close {
+  position: absolute;
+  top: 20px;
+  left: 10%;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.hero__title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.hero__image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.content {
+  padding: 20px;
+}
+
 .peliculas {
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 20px;
 }
+.peliculas__container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
 .peliculas__card {
   display: flex;
+  align-items: center;
   background-color: #181818;
-  border-radius: 8px;
+  border: 1px solid #333;
+  border-radius: 10px;
   overflow: hidden;
   color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 .peliculas__card:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 .peliculas__image {
   width: 150px;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 8px 0 0 8px;
+  border-right: 3px solid #00aaff;
 }
 .peliculas__info {
   padding: 20px;
@@ -28,21 +135,28 @@
 }
 .peliculas__info h2 {
   margin: 0 0 10px;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-family: "Bebas Neue", sans-serif;
 }
 .peliculas__info p {
   margin: 5px 0;
   font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  white-space: normal; /* Permite texto multilineal */
+  overflow-wrap: break-word; /* Maneja palabras largas */
 }
 .peliculas__info .peliculas__button {
+  display: inline-block;
+  margin-top: 10px;
   background-color: #00aaff;
   color: #fff;
-  padding: 10px 15px;
+  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   text-align: center;
   text-decoration: none;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1rem;
   cursor: pointer;
 }
 .peliculas__info .peliculas__button:hover {
@@ -55,7 +169,10 @@
   }
   .peliculas__card .peliculas__image {
     margin: 0 auto;
-    border-radius: 8px 8px 0 0;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 3px solid #00aaff;
   }
 }
 
