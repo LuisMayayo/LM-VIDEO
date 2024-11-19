@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <h2 class="peliculas__title">${pelicula.titulo}</h2>
           <p class="peliculas__description">${pelicula.descripcion}</p>
           <p class="peliculas__duration"><strong>Duración:</strong> ${pelicula.duracion}</p>
-          <a href="#" class="peliculas__button">Entrar</a>
+          <a href="#" class="peliculas__button" data-id="${pelicula.id}">Entrar</a>
         </div>
       `;
 
@@ -65,6 +65,19 @@ document.addEventListener("DOMContentLoaded", function () {
       peliculasContainer.appendChild(peliculaCard);
     });
   }
+
+  // Evento para capturar clics en los botones de las tarjetas
+  peliculasContainer.addEventListener("click", (event) => {
+    const button = event.target;
+
+    if (button.classList.contains("peliculas__button")) {
+      const peliculaId = button.getAttribute("data-id");
+      console.log(`Botón de la película con ID ${peliculaId} fue clicado.`);
+
+      // Redirigir a la página SalaPeliculaFuncion con el ID como parámetro
+      window.location.href = `/SalaPeliculaFuncion.html?id=${peliculaId}`;
+    }
+  });
 
   // Llamar a la función para cargar las películas
   cargarPeliculas();
