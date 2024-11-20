@@ -1,0 +1,131 @@
+@use '../base/variables' as vars;
+.asientos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: vars.$color-texto;
+    font-family: vars.$font-secondary;
+  
+    .leyenda {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+  
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.9rem;
+        font-family: vars.$font-primary;
+  
+        .icon {
+          width: 20px;
+          height: 20px;
+          border: 2px solid vars.$color-borde;
+          border-radius: 5px;
+          display: inline-block;
+  
+          &.disponible {
+            background-color: vars.$color-texto; // Blanco
+          }
+  
+          &.seleccionado {
+            background-color: vars.$color-destacado; // Azul destacado
+          }
+  
+          &.ocupado {
+            background-color: darken(vars.$color-destacado, 30%); // Rojo oscuro derivado de $color-destacado
+          }
+        }
+      }
+    }
+  
+    .pantalla {
+      width: 80%;
+      height: 10px;
+      background-color: lighten(vars.$color-fondo-card, 10%);
+      margin-bottom: 20px;
+      border-radius: 5px;
+      text-align: center;
+      line-height: 2;
+      color: vars.$color-borde;
+      font-size: 0.8rem;
+      font-family: vars.$font-secondary;
+    }
+  
+    #asientos {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr); // 10 columnas de asientos por fila
+      gap: 10px;
+      justify-content: center;
+      margin: 20px auto;
+  
+      .asiento {
+        width: 40px;
+        height: 40px;
+        border: 2px solid vars.$color-borde;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+  
+        &.disponible {
+          background-color: vars.$color-texto; // Blanco
+          color: vars.$color-fondo; // Negro
+        }
+  
+        &.ocupado {
+          background-color: darken(vars.$color-destacado, 30%); // Rojo oscuro derivado de $color-destacado
+          color: vars.$color-texto;
+          cursor: not-allowed;
+        }
+  
+        &.seleccionado {
+          background-color: vars.$color-destacado; // Azul destacado
+          color: vars.$color-texto;
+        }
+  
+        &:hover:not(.ocupado) {
+          transform: scale(1.1);
+          transition: transform 0.2s ease;
+        }
+      }
+    }
+  
+    .acciones {
+      margin-top: 20px;
+      text-align: center;
+  
+      #reservar {
+        background-color: lighten(vars.$color-fondo-card, 10%);
+        color: vars.$color-texto;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: bold;
+        font-family: vars.$font-primary;
+        cursor: pointer;
+  
+        &:disabled {
+          background-color: vars.$color-borde;
+          cursor: not-allowed;
+        }
+  
+        &:hover:not(:disabled) {
+          background-color: lighten(vars.$color-fondo-card, 20%);
+          transition: background-color 0.3s ease;
+        }
+      }
+  
+      .seleccionados {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        font-family: vars.$font-secondary;
+        color: vars.$color-texto;
+      }
+    }
+  }
+  
