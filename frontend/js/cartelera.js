@@ -70,14 +70,18 @@ document.addEventListener("DOMContentLoaded", function () {
   peliculasContainer.addEventListener("click", (event) => {
     const button = event.target;
 
+    // Verifica si el elemento clicado es un botón con la clase 'peliculas__button'
     if (button.classList.contains("peliculas__button")) {
+      // Obtén el ID de la película desde el atributo data-id del botón
       const peliculaId = button.getAttribute("data-id");
-      console.log(`Botón de la película con ID ${peliculaId} fue clicado.`);
 
-      // Redirigir a la página SalaPeliculaFuncion con el ID como parámetro
-      window.location.href = `html/SalaPeliculaFuncion.html?id=${peliculaId}`;
+      if (!peliculaId) {
+        console.error("El ID de la película no está definido.");
+        return;
+      }
 
-
+      // Redirige a la página con el ID de la película como parámetro en la URL
+      window.location.href = `../html/SalaPeliculaFuncion.html?id=${peliculaId}`;
     }
   });
 
