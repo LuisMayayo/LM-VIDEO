@@ -1,0 +1,113 @@
+.asientos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+.asientos-container .leyenda {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.asientos-container .leyenda .item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+  font-family: "Bebas Neue", sans-serif;
+}
+.asientos-container .leyenda .item .icon {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  display: inline-block;
+}
+.asientos-container .leyenda .item .icon.disponible {
+  background-color: #fff;
+}
+.asientos-container .leyenda .item .icon.seleccionado {
+  background-color: #00aaff;
+}
+.asientos-container .leyenda .item .icon.ocupado {
+  background-color: #004466;
+}
+.asientos-container .pantalla {
+  width: 80%;
+  height: 10px;
+  background-color: #323232;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 2;
+  color: #333;
+  font-size: 0.8rem;
+  font-family: "Roboto", sans-serif;
+}
+.asientos-container #asientos {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+  justify-content: center;
+  margin: 20px auto;
+}
+.asientos-container #asientos .asiento {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.asientos-container #asientos .asiento.disponible {
+  background-color: #fff;
+  color: #000;
+}
+.asientos-container #asientos .asiento.ocupado {
+  background-color: #004466;
+  color: #fff;
+  cursor: not-allowed;
+}
+.asientos-container #asientos .asiento.seleccionado {
+  background-color: #00aaff;
+  color: #fff;
+}
+.asientos-container #asientos .asiento:hover:not(.ocupado) {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+.asientos-container .acciones {
+  margin-top: 20px;
+  text-align: center;
+}
+.asientos-container .acciones #reservar {
+  background-color: #323232;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "Bebas Neue", sans-serif;
+  cursor: pointer;
+}
+.asientos-container .acciones #reservar:disabled {
+  background-color: #333;
+  cursor: not-allowed;
+}
+.asientos-container .acciones #reservar:hover:not(:disabled) {
+  background-color: #4b4b4b;
+  transition: background-color 0.3s ease;
+}
+.asientos-container .acciones .seleccionados {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+/*# sourceMappingURL=Butacas.css.map */

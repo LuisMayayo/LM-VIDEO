@@ -1,95 +1,92 @@
 @use '../base/variables' as vars;
 
 main {
-  // Estilo general del contenedor principal
   padding: 20px;
-  background-color: vars.$color-fondo; // Fondo general definido en las variables
-  min-height: calc(100vh - 150px); // Ocupa el espacio restante entre header y footer
+  background-color: vars.$color-fondo;
   display: flex;
-  justify-content: center; // Centra el contenido horizontalmente
-  align-items: center; // Centra el contenido verticalmente
+  flex-direction: column;
+  align-items: center;
 
   .pelicula {
     display: flex;
-    gap: 30px; // Espaciado entre la imagen y el texto
-    max-width: 1200px; // Ancho máximo del contenedor
-    width: 100%; // Ocupa todo el ancho disponible
-    align-items: center; // Centra verticalmente la imagen y el texto
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
 
     &__image {
-      flex: 1; // Imagen ocupa un espacio proporcional menor
-      max-width: 400px; // Ancho máximo de la imagen
-      width: 65%; // Imagen responsiva
-      height: auto; // Mantiene proporciones
-      object-fit: cover; // Ajusta la imagen sin deformarla
-      border-radius: 5px; // Bordes redondeados
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra sutil
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     &__info {
-      flex: 2; // Información ocupa más espacio
-      text-align: left; // Alineación del texto a la izquierda
+      flex: 1;
+      text-align: left;
       color: vars.$color-texto;
 
       .pelicula__title {
-        font-size: 2rem; // Tamaño del título
-        font-family: vars.$font-primary; // Fuente principal
-        margin-bottom: 15px; // Separación inferior
-        color: vars.$color-texto; // Color del título
+        font-size: 2rem;
+        font-family: vars.$font-primary;
+        margin-bottom: 15px;
+        color: vars.$color-texto;
       }
 
       .pelicula__description {
-        font-size: 1rem; // Tamaño del texto descriptivo
-        font-family: vars.$font-secondary; // Fuente secundaria
-        line-height: 1.6; // Mejora la legibilidad
-        margin-bottom: 15px; // Separación inferior
-        color: lighten(vars.$color-texto, 10%); // Texto ligeramente más claro
+        font-size: 1rem;
+        font-family: vars.$font-secondary;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        color: lighten(vars.$color-texto, 10%);
       }
 
       .pelicula__duration {
-        font-size: 1rem; // Tamaño del texto
-        font-family: vars.$font-primary; // Fuente principal
-        font-weight: bold; // Texto en negrita
-        color: vars.$color-destacado; // Usa el color destacado
-        margin-top: 10px; // Espaciado superior
+        font-size: 1rem;
+        font-family: vars.$font-primary;
+        font-weight: bold;
+        color: vars.$color-destacado;
+        margin-top: 10px;
       }
     }
   }
 
-  // Responsividad para pantallas pequeñas
+  // Media query para pantallas pequeñas
   @media (max-width: 768px) {
     .pelicula {
-      flex-direction: column; // Cambia la disposición a columna
+      flex-direction: column; // Cambia a disposición vertical
       text-align: center; // Centra el texto
-      align-items: center; // Centra el contenido
 
       &__image {
-        max-width: 100%; // Imagen ocupa todo el ancho
+        width: 80%; // La imagen ocupa el 80% del ancho del contenedor
+        margin-bottom: 20px; // Separación entre imagen y texto
       }
 
       &__info {
+        text-align: center; // Centra el texto
         .pelicula__title {
           font-size: 1.8rem; // Reduce el tamaño del título
         }
-
         .pelicula__description {
-          font-size: 0.9rem; // Reduce el tamaño del texto descriptivo
+          font-size: 1rem; // Ajusta el tamaño de la descripción
         }
-
         .pelicula__duration {
-          font-size: 0.9rem; // Reduce el tamaño del texto
+          font-size: 1rem; // Ajusta el tamaño de la duración
         }
       }
     }
   }
+
+
   .funciones {
-    margin-top: 20px;
+    margin-top: 30px;
+    width: 100%;
+    max-width: 800px;
     padding: 20px;
-    background-color: vars.$color-fondo-card;
     border-radius: 10px;
-    border: 1px solid vars.$color-borde;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
+
     &__title {
       font-size: 1.5rem;
       font-family: vars.$font-primary;
@@ -97,37 +94,38 @@ main {
       color: vars.$color-texto;
       text-align: center;
     }
-  
+
     &__list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
+      display: flex;
+      flex-wrap: wrap; // Permite que las tarjetas se ajusten en varias filas
+      justify-content: center; // Centra las tarjetas
+      gap: 20px; // Espaciado entre tarjetas
     }
-  
+
     .funcion {
-      padding: 15px;
-      background-color: vars.$color-fondo;
-      border-radius: 8px;
-      border: 1px solid vars.$color-borde;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  
-      p {
-        margin: 5px 0;
-        font-size: 1rem;
-        color: vars.$color-texto;
-  
-        &:first-child {
-          font-weight: bold;
-        }
+      background-color: #007bff; // Fondo azul
+      color: #ffffff; // Texto blanco
+      padding: 10px 20px;
+      border-radius: 15px 0 15px 0;
+      font-family: vars.$font-primary;
+      font-size: 25px;
+      text-align: center;
+      display: flex;
+      flex-direction: column; // Apila elementos verticalmente
+      align-items: center;
+      text-decoration: none;
+      min-width: 55px; // Tamaño mínimo para uniformidad
+
+      span {
+        display: block;
       }
-  
+
       &:hover {
-        background-color: lighten(vars.$color-fondo, 5%);
-        transform: scale(1.02);
+        background-color: #0056b3; // Cambia el color al pasar el cursor
+        transform: scale(1.05); // Efecto de agrandamiento
         transition: all 0.3s ease;
       }
     }
   }
-  
   
 }

@@ -7,7 +7,7 @@
   <title>Home</title>
 
   <!-- CSS Local -->
-  <link rel="stylesheet" href="../css/SalaPeliculaFuncion.css">
+  <link rel="stylesheet" href="../css/Butacas.css">
   <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="../css/header.css">
 
@@ -38,36 +38,14 @@
   </nav>
 
   <main>
-    <!-- Información de la película -->
-    <div class="pelicula">
-      <img src="" alt="Título de la película" class="pelicula__image">
-      <div class="pelicula__info">
-        <h1 class="pelicula__title">VENOM: EL ÚLTIMO BAILE</h1>
-        <p class="pelicula__description">
-          Eddie y Venom están prófugos. Perseguidos por sus dos mundos y con la red cerrándose sobre ellos, el dúo se ve obligado a tomar una decisión devastadora.
-        </p>
-        <p class="pelicula__duration"><strong>Duración:</strong> 1 hora 49 minutos</p>
-      </div>
+    <div class="asientos-container">
+        <h2>Asientos Disponibles</h2>
+        <div id="asientos"></div>
+        <p id="mensaje-error" style="display: none; color: red;">No se especificó una función válida.</p>
+        <button id="reservar" disabled>Reservar Asientos</button>
     </div>
-  
-    <!-- Contenedor para las funciones -->
-    <section class="funciones">
-      <div class="funciones__list">
-        <div class="funcion">
-          <span class="funcion__hora">13:00</span>
-          <span class="funcion__sala">S1</span>
-        </div>
-        <div class="funcion">
-          <span class="funcion__hora">14:00</span>
-          <span class="funcion__sala">S2</span>
-        </div>
-        <div class="funcion">
-          <span class="funcion__hora">13:00</span>
-          <span class="funcion__sala">S3</span>
-        </div>
-      </div>
-    </section>
-  </main>
+</main>
+
   
   
   
@@ -93,7 +71,7 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="../js/SalaPeliculaFuncion.js"></script>
+  <script src="../js/Butacas.js"></script>
 </body>
 
 </html>

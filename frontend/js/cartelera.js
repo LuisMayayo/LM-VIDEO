@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <h2 class="peliculas__title">${pelicula.titulo}</h2>
           <p class="peliculas__description">${pelicula.descripcion}</p>
           <p class="peliculas__duration"><strong>Duración:</strong> ${pelicula.duracion}</p>
-          <a href="#" class="peliculas__button" data-id="${pelicula.id}">Entrar</a>
+          <button class="peliculas__button" data-id="${pelicula.id}">Ver Funciones</button>
         </div>
       `;
 
