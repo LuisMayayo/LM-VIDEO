@@ -23,9 +23,9 @@ body {
   &__content {
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; // Por defecto en móvil
     gap: 1.5rem;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     margin: 0;
     padding: 2rem;
@@ -36,7 +36,6 @@ body {
     min-height: 300px;
     overflow: hidden;
 
-    /* Capa opaca sobre la imagen de fondo */
     &::before {
       content: '';
       position: absolute;
@@ -49,32 +48,16 @@ body {
       border-radius: 0;
     }
 
-    /* Asegurar que el contenido esté por encima de la capa opaca */
     > * {
       position: relative;
       z-index: 2;
-    }
-
-    &--cars {
-      background-image: url('../Fotos/fondo-cars.jpg');
-    }
-
-    &--avatar {
-      background-image: url('../Fotos/fondo-avatar.jpg');
-    }
-
-    &--fastfurious {
-      background-image: url('../Fotos/fondo-FastFurius11.jpg');
-    }
-
-    &--jurassic {
-      background-image: url('../Fotos/fondo-jurassicworld.jpg');
     }
 
     &-image {
       max-width: 300px;
       width: 100%;
       border-radius: 8px;
+      transition: all 0.3s ease;
     }
 
     &-details {
@@ -94,6 +77,65 @@ body {
         font-family: vars.$font-secondary;
         color: vars.$color-texto;
       }
+    }
+
+    /* Estilos específicos para Cars y Fast & Furious */
+    &--cars,
+    &--fastfurious {
+      @media (min-width: 768px) { // Para pantallas más grandes
+        flex-direction: row-reverse; // Imagen a la derecha
+      }
+    }
+
+    /* Estilos para Avatar y Jurassic (por defecto) */
+    &--avatar,
+    &--jurassic {
+      @media (min-width: 768px) { // Para pantallas más grandes
+        flex-direction: row; // Imagen a la izquierda
+      }
+    }
+
+    /* Imágenes de fondo */
+    &--cars {
+      background-image: url('../Fotos/fondo-cars.jpg');
+    }
+
+    &--avatar {
+      background-image: url('../Fotos/fondo-avatar.jpg');
+    }
+
+    &--fastfurious {
+      background-image: url('../Fotos/fondo-FastFurius11.jpg');
+    }
+
+    &--jurassic {
+      background-image: url('../Fotos/fondo-jurassicworld.jpg');
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__content {
+      align-items: center;
+      gap: 2rem;
+
+      &-image {
+        max-width: 500px; // Tamaño más grande en desktop
+      }
+
+      &-details {
+        max-width: 600px; // Ancho más grande para el texto
+        h2 {
+          font-size: 2.4rem; // Títulos más grandes
+        }
+        p {
+          font-size: 1.2rem; // Texto más grande
+        }
+      }
+    }
+
+    &__title {
+      font-size: 3rem; // Título más grande
+      padding: 3rem 0;
     }
   }
 }
