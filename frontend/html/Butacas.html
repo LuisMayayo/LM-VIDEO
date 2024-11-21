@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
+  <title>Cartelera</title>
 
   <!-- CSS Local -->
   <link rel="stylesheet" href="../css/Butacas.css">
@@ -37,18 +37,47 @@
     </div>
   </nav>
 
+  <!-- Contenedor de asientos -->
   <main>
-    <div class="asientos-container">
-        <h2>Asientos Disponibles</h2>
-        <div id="asientos"></div>
-        <p id="mensaje-error" style="display: none; color: red;">No se especificó una función válida.</p>
-        <button id="reservar" disabled>Reservar Asientos</button>
-    </div>
-</main>
+    <main>
+      <div id="asientos-container">
+        <h1>Seleccione sus Asientos</h1>
 
-  
-  
-  
+        <!-- Leyenda -->
+        <div class="leyenda">
+          <div class="leyenda__item">
+            <div class="icon disponible"></div>
+            <span>DISPONIBLE</span>
+          </div>
+          <div class="leyenda__item">
+            <div class="icon seleccionado"></div>
+            <span>SELECCIONADO</span>
+          </div>
+          <div class="leyenda__item">
+            <div class="icon ocupado"></div>
+            <span>OCUPADO</span>
+          </div>
+        </div>
+
+        <!-- Pantalla del cine -->
+        <div class="pantalla"></div>
+
+        <!-- Contenedor de asientos -->
+        <div id="asientos" class="asientos-grid"></div>
+
+        <!-- Botón para comprar -->
+        <button id="reservar" disabled>COMPRAR</button>
+
+        <!-- Mostrar asientos seleccionados -->
+        <div id="seleccionados">
+          <span>ASIENTOS SELECCIONADOS:</span>
+          <span class="seleccionados__lista"></span>
+        </div>
+      </div>
+    </main>
+
+
+  </main>
 
   <!-- Footer -->
   <footer class="footer">

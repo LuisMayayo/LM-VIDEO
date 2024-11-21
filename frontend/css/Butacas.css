@@ -1,113 +1,106 @@
-.asientos-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #fff;
-  font-family: "Roboto", sans-serif;
+#asientos-container {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+  text-align: center;
 }
-.asientos-container .leyenda {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+#asientos-container h1 {
+  font-family: "Bebas Neue", sans-serif;
+  color: #fff;
+  font-size: 2rem;
   margin-bottom: 20px;
 }
-.asientos-container .leyenda .item {
+#asientos-container .leyenda {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+#asientos-container .leyenda .leyenda__item {
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-size: 0.9rem;
-  font-family: "Bebas Neue", sans-serif;
+  gap: 10px;
 }
-.asientos-container .leyenda .item .icon {
+#asientos-container .leyenda .leyenda__item .icon {
   width: 20px;
   height: 20px;
+  border-radius: 3px;
   border: 2px solid #333;
-  border-radius: 5px;
-  display: inline-block;
 }
-.asientos-container .leyenda .item .icon.disponible {
-  background-color: #fff;
+#asientos-container .leyenda .leyenda__item .icon.disponible {
+  background-color: #00ff00;
 }
-.asientos-container .leyenda .item .icon.seleccionado {
-  background-color: #00aaff;
+#asientos-container .leyenda .leyenda__item .icon.seleccionado {
+  background-color: #0000ff;
 }
-.asientos-container .leyenda .item .icon.ocupado {
-  background-color: #004466;
+#asientos-container .leyenda .leyenda__item .icon.ocupado {
+  background-color: #ff0000;
 }
-.asientos-container .pantalla {
-  width: 80%;
-  height: 10px;
-  background-color: #323232;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  text-align: center;
-  line-height: 2;
-  color: #333;
-  font-size: 0.8rem;
+#asientos-container .leyenda .leyenda__item span {
   font-family: "Roboto", sans-serif;
-}
-.asientos-container #asientos {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 10px;
-  justify-content: center;
-  margin: 20px auto;
-}
-.asientos-container #asientos .asiento {
-  width: 40px;
-  height: 40px;
-  border: 2px solid #333;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-.asientos-container #asientos .asiento.disponible {
-  background-color: #fff;
+  font-size: 0.9rem;
   color: #000;
 }
-.asientos-container #asientos .asiento.ocupado {
-  background-color: #004466;
-  color: #fff;
-  cursor: not-allowed;
-}
-.asientos-container #asientos .asiento.seleccionado {
-  background-color: #00aaff;
-  color: #fff;
-}
-.asientos-container #asientos .asiento:hover:not(.ocupado) {
-  transform: scale(1.1);
-  transition: transform 0.2s ease;
-}
-.asientos-container .acciones {
-  margin-top: 20px;
-  text-align: center;
-}
-.asientos-container .acciones #reservar {
-  background-color: #323232;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
+#asientos-container .pantalla {
+  width: 100%;
+  height: 30px;
+  background-color: #d6d6c2;
+  margin: 20px 0;
   border-radius: 5px;
-  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
-  font-family: "Bebas Neue", sans-serif;
+  text-align: center;
+  line-height: 30px;
+  color: #b3b3b3;
+}
+#asientos-container #asientos {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+  justify-content: center;
+}
+#asientos-container #asientos .asiento {
+  width: 40px;
+  height: 40px;
+  background-image: url("../Fotos/butaca.png");
+  background-size: cover;
+  border-radius: 5px;
   cursor: pointer;
 }
-.asientos-container .acciones #reservar:disabled {
-  background-color: #333;
+#asientos-container #asientos .asiento.disponible {
+  background-color: #00ff00;
+}
+#asientos-container #asientos .asiento.ocupado {
+  background-color: #ff0000;
   cursor: not-allowed;
 }
-.asientos-container .acciones #reservar:hover:not(:disabled) {
-  background-color: #4b4b4b;
-  transition: background-color 0.3s ease;
+#asientos-container #asientos .asiento.seleccionado {
+  background-color: #0000ff;
 }
-.asientos-container .acciones .seleccionados {
-  margin-top: 10px;
-  font-size: 0.9rem;
-  font-family: "Roboto", sans-serif;
+#asientos-container #reservar {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
   color: #fff;
+  background-color: #00aaff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#asientos-container #reservar:disabled {
+  background-color: #555555;
+  cursor: not-allowed;
+}
+#asientos-container #seleccionados {
+  margin-top: 15px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #fff;
+}
+#asientos-container #seleccionados .seleccionados__lista {
+  margin-left: 5px;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=Butacas.css.map */

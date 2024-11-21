@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+    console.log("Script cargado correctamente");
+
+    // Variables y elementos
     const asientosContainer = document.getElementById("asientos");
     const reservarButton = document.getElementById("reservar");
     let asientosSeleccionados = []; // Almacena los asientos seleccionados
@@ -11,111 +14,91 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     console.log(`Cargando asientos para la función: ${funcionId}`);
-    cargarAsientos(); // Llamar a la función para cargar los asientos
+    cargarAsientos();
 
-
-
-    // Fetch para obtener todos los asientos de una función
+    // Función para cargar los asientos desde la API
     async function cargarAsientos() {
-        const apiUrl = `http://localhost:5028/api/asiento/Todos/${funcionId}`;
-
         try {
+            const apiUrl = `http://localhost:5028/api/asiento/Todos/${funcionId}`;
+            console.log(`Obteniendo asientos desde la API: ${apiUrl}`);
+
             const response = await fetch(apiUrl);
+
             if (!response.ok) {
-                throw new Error("Error al obtener los asientos");
+                throw new Error(`Error al obtener los asientos: ${response.statusText}`);
             }
 
             const asientos = await response.json();
-            console.log("Asientos obtenidos:", asientos);
-            mostrarAsientos(asientos);
+            console.log("Datos obtenidos de la API:", asientos);
+
+            if (!Array.isArray(asientos)) {
+                throw new Error("La respuesta de la API no es un array válido.");
+            }
+
+            mostrarAsientos(asientos); // Mostrar los asientos reales obtenidos de la API
         } catch (error) {
             console.error("Error al cargar los asientos:", error.message);
         }
     }
 
-    // Renderizar los asientos en el DOM
+    // Función para mostrar los asientos en el DOM
     function mostrarAsientos(asientos) {
-        asientosContainer.innerHTML = ""; // Limpiar el contenedor
-        asientos.forEach(asiento => {
-            const asientoDiv = document.createElement("div");
-            asientoDiv.className = `asiento ${asiento.Disponible === "Disponible" ? "disponible" : "ocupado"}`;
-            asientoDiv.textContent = asiento.Numero;
+        console.log("Mostrando asientos...");
+        if (!asientosContainer) {
+            console.error("Contenedor de asientos no encontrado.");
+            return;
+        }
 
-            if (asiento.Disponible === "Disponible") {
-                asientoDiv.addEventListener("click", () => seleccionarAsiento(asiento.Numero));
+        asientosContainer.innerHTML = "";
+
+        if (asientos.length === 0) {
+            asientosContainer.innerHTML = "<p>No hay asientos disponibles.</p>";
+            return;
+        }
+
+        asientos.forEach((asiento) => {
+            console.log("Procesando asiento:", asiento);
+
+            // Crear el elemento HTML para el asiento
+            const div = document.createElement("div");
+            div.className = `asiento ${asiento.disponible ? "disponible" : "ocupado"}`; // Evalúa como booleano
+            div.textContent = asiento.Numero;
+            div.id = `asiento-${asiento.Numero}`; // Asignar un ID único al asiento
+
+            if (asiento.Disponible) {
+                div.addEventListener("click", () => seleccionarAsiento(asiento.Numero, div));
             }
 
-            asientosContainer.appendChild(asientoDiv);
+            asientosContainer.appendChild(div);
         });
     }
 
     // Manejar la selección de un asiento
-    function seleccionarAsiento(numero) {
+    function seleccionarAsiento(numero, div) {
+        console.log(`Seleccionando asiento: ${numero}`);
         if (asientosSeleccionados.includes(numero)) {
-            // Si ya está seleccionado, lo deseleccionamos
-            asientosSeleccionados = asientosSeleccionados.filter(n => n !== numero);
+            // Deseleccionar asiento
+            asientosSeleccionados = asientosSeleccionados.filter((n) => n !== numero);
+            div.classList.remove("seleccionado");
+            console.log(`Asiento deseleccionado: ${numero}`);
         } else {
-            // Seleccionamos el asiento
+            // Seleccionar asiento
             asientosSeleccionados.push(numero);
+            div.classList.add("seleccionado");
+            console.log(`Asiento seleccionado: ${numero}`);
         }
 
-        console.log("Asientos seleccionados:", asientosSeleccionados);
+        console.log("Asientos seleccionados actualmente:", asientosSeleccionados);
 
-        // Actualizar estado del botón de reserva
+        // Habilitar o deshabilitar el botón de reservar
         reservarButton.disabled = asientosSeleccionados.length === 0;
-
-        // Actualizar el estilo de los asientos seleccionados
-        actualizarEstiloSeleccionados();
     }
-
-    function actualizarEstiloSeleccionados() {
-        document.querySelectorAll(".asiento").forEach(asiento => {
-            const numero = parseInt(asiento.textContent, 10);
-            if (asientosSeleccionados.includes(numero)) {
-                asiento.classList.add("seleccionado");
-            } else {
-                asiento.classList.remove("seleccionado");
-            }
-        });
-    }
-
-    // Enviar la reserva de los asientos seleccionados al servidor
-    async function reservarAsientos() {
-        const apiUrl = `http://localhost:5028/api/asiento/Elegir/${funcionId}`;
-
-        try {
-            const response = await fetch(apiUrl, {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(asientosSeleccionados),
-            });
-
-            if (!response.ok) {
-                const error = await response.text();
-                throw new Error(error);
-            }
-
-            console.log("Asientos reservados correctamente:", asientosSeleccionados);
-            alert("Asientos reservados correctamente");
-            asientosSeleccionados = []; // Limpiar la selección
-            reservarButton.disabled = true; // Deshabilitar el botón
-            cargarAsientos(); // Recargar asientos
-        } catch (error) {
-            console.error("Error al reservar asientos:", error.message);
-            alert("Error al reservar los asientos: " + error.message);
-        }
-    }
-
-    reservarButton.addEventListener("click", reservarAsientos);
-
-    // Cargar asientos al inicio
-    cargarAsientos();
 
     // Obtener parámetros de la URL
     function obtenerParametroUrl(nombre) {
         const params = new URLSearchParams(window.location.search);
-        return params.get(nombre);
+        const valor = params.get(nombre);
+        console.log(`Parámetro obtenido de la URL - ${nombre}: ${valor}`);
+        return valor;
     }
 });
