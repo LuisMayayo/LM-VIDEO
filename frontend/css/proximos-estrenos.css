@@ -91,10 +91,10 @@ body {
   background-image: url("../Fotos/fondo-avatar.jpg");
 }
 .promo__content--fastfurious {
-  background-image: url("../Fotos/fast-furious11-estreno.jpg");
+  background-image: url("../Fotos/fondo-FastFurius11.jpg");
 }
 .promo__content--jurassic {
-  background-image: url("../Fotos/fondo-FastFurius11.jpg");
+  background-image: url("../Fotos/fondo-jurassicworld.jpg");
 }
 @media (min-width: 768px) {
   .promo__content {
