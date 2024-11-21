@@ -1,26 +1,23 @@
 @use '../base/variables' as vars;
 
-// Estilos Globales
-html, body {
-  background-color: vars.$color-fondo; // Fondo global
-  color: vars.$color-texto; // Color de texto global
+html,
+body {
+  background-color: vars.$color-fondo;
+  color: vars.$color-texto;
   margin: 0;
   padding: 0;
-  font-family: vars.$font-primary; // Fuente principal global
+  font-family: vars.$font-primary;
 }
 
-// Contenido Principal
 .content {
   padding: 20px;
 }
 
-// Hero Section
 .hero {
   text-align: center;
-  padding: 20px;
 
   &__title {
-    font-size: 1.5rem;
+    font-size: 23px;
     font-weight: bold;
     margin-bottom: 15px;
     font-family: vars.$font-primary;
@@ -30,11 +27,9 @@ html, body {
     width: 100%;
     max-width: 400px;
     height: auto;
-    border-radius: 8px;
   }
 }
 
-// Carousel
 .carousel-container {
   padding: 20px;
   text-align: center;
@@ -56,65 +51,82 @@ html, body {
   }
 
   &__item {
-    flex: 0 0 50%; // 2 imágenes por fila en móvil
-    max-width: 50%;
+    flex: 0 0 25%;
+    max-width: 25%;
     padding: 10px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+    }
   }
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
+  @media (min-width: 1024px) {
+    &__item {
+      flex: 0 0 20%;
+      max-width: 20%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__item {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1;
+    padding: 10px;
+
+    &:hover {
+      background: #00aaff;
+    }
+
+    &--left {
+      left: 10px;
+    }
+
+    &--right {
+      right: 10px;
+    }
   }
 }
 
-.carousel__button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: vars.$color-texto;
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 1;
-  padding: 10px;
-
-  &:hover {
-    background: vars.$color-destacado;
-  }
-
-  &--left {
-    left: 10px;
-  }
-
-  &--right {
-    right: 10px;
-  }
-}
-
-// Promo Section
 .promo {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
   gap: 20px;
-  color: vars.$color-texto;
+  color: #fff;
   background-image: url("../Fotos/fondomoana.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow: hidden;
 
   &__image {
+    z-index: 1;
     width: 100%;
     max-width: 300px;
     border-radius: 8px;
   }
 
   &__text {
+    z-index: 1;
     text-align: center;
 
     &--title {
@@ -130,17 +142,16 @@ html, body {
   }
 }
 
-// Trailers Section
 .trailers {
   padding: 20px;
   text-align: center;
   color: vars.$color-texto;
 
   &__title {
-    font-size: 1.5rem;
+    font-size: 23px;
     font-weight: bold;
     margin-bottom: 15px;
-    font-family: vars.$font-primary;
+    font-family: "Bebas Neue", sans-serif;
   }
 
   &__list {
@@ -148,193 +159,93 @@ html, body {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    margin-top: 20px;
   }
 
   &__item {
-    flex: 1 1 calc(50% - 20px);
-    max-width: calc(50% - 20px);
+    flex: 1 1 calc(25% - 20px);
+    max-width: 200px;
+    text-align: center;
 
-    &__thumbnail {
-      position: relative;
+    @media (max-width: 768px) {
+      flex: 1 1 calc(50% - 20px);
+    }
+
+    @media (max-width: 480px) {
+      flex: 1 1 100%;
+    }
+  }
+
+  &__thumbnail {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #000;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      padding-top: 56.25%;
-      overflow: hidden;
+      height: 100%;
+      object-fit: cover;
       border-radius: 8px;
-
-      img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 8px;
-      }
-
-      .trailers__play-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(0, 0, 0, 0.6);
-        border: none;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        color: vars.$color-texto;
-        font-size: 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-
-        &:hover {
-          background: vars.$color-destacado;
-        }
-      }
     }
 
-    &__name {
-      font-size: 1rem;
-      margin-top: 10px;
+    .trailers__play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.6);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      color: #fff;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-decoration: none;
+
+      &:hover {
+        background: vars.$color-destacado;
+      }
     }
+  }
+
+  &__name {
+    font-size: 1rem;
+    font-family: vars.$font-primary;
+    margin-top: 10px;
+    text-transform: uppercase;
   }
 }
 
-// Footer
-.footer {
-  padding: 20px;
-  text-align: center;
-  background-color: vars.$color-destacado;
-
-  &__top {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 15px;
-  }
-
-  &__logo {
-    margin: 15px 0;
-  }
-
-  &__social {
-    display: flex;
-    gap: 10px;
-
-    .footer__social-icon {
-      font-size: 1.2rem;
-    }
-  }
-
-  &__copyright {
-    font-size: 0.9rem;
-  }
-}
-
-// Media Queries
 @media (min-width: 768px) {
+  .navbar {
+    padding: 15px 40px;
+
+    &__menu {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      position: static;
+      background-color: transparent;
+    }
+
+    &__toggle {
+      display: none;
+    }
+  }
+
   .carousel__item {
     flex: 0 0 30%;
-    max-width: 30%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: left;
-    padding: 40px;
-
-    &__title {
-      font-size: 2.5rem;
-      max-width: 50%;
-    }
-
-    &__image {
-      max-width: 500px;
-    }
-  }
-
-  .carousel-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px;
-  }
-
-  .carousel__item {
-    flex: 0 0 calc(20% - 20px); // 5 imágenes en pantalla grande
-    max-width: calc(20% - 20px);
-    padding: 10px;
-  }
-
-  .promo {
-    flex-direction: row;
-    padding: 40px;
-
-    &__image {
-      max-width: 50%;
-    }
-
-    &__text {
-      max-width: 50%;
-      padding: 0 20px;
-
-      &--title {
-        font-size: 2rem;
-      }
-
-      &--description {
-        font-size: 1.2rem;
-      }
-    }
-  }
-
-  .trailers {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px;
-
-    &__list {
-      gap: 30px;
-    }
-
-    &__item {
-      flex: 1 1 calc(20% - 30px); // 5 elementos por fila
-      max-width: calc(20% - 30px);
-    }
-
-    &__thumbnail {
-      img {
-        border-radius: 10px;
-      }
-
-      .trailers__play-button {
-        width: 60px;
-        height: 60px;
-        font-size: 2rem;
-      }
-    }
-
-    &__name {
-      font-size: 1.2rem;
-    }
-  }
-
-  .footer {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    &__top,
-    &__bottom {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
+    max-width: 200px;
+    margin: 0 10px;
   }
 }

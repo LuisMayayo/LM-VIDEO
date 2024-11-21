@@ -2,58 +2,250 @@
 
 html,
 body {
-    background-color: vars.$color-fondo;
-    color: vars.$color-texto;
-    margin: 0;
-    padding: 0;
-    font-family: vars.$font-primary;
+  background-color: vars.$color-fondo;
+  color: vars.$color-texto;
+  margin: 0;
+  padding: 0;
+  font-family: vars.$font-primary;
 }
 
-.section {
-    padding: 20px;
+.content {
+  padding: 20px;
 }
 
 .hero {
+  text-align: center;
+
+  &__title {
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: vars.$font-primary;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+}
+
+.carousel-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &__track-container {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &__track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  &__item {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 10px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &__item {
+      flex: 0 0 20%;
+      max-width: 20%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__item {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1;
+    padding: 10px;
+
+    &:hover {
+      background: #00aaff;
+    }
+
+    &--left {
+      left: 10px;
+    }
+
+    &--right {
+      right: 10px;
+    }
+  }
+}
+
+.promo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+  color: #fff;
+  background-image: url("../Fotos/fondomoana.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  &__image {
+    z-index: 1;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+  }
+
+  &__text {
+    z-index: 1;
     text-align: center;
 
-    &__title {
-        font-size: 23px;
-        font-weight: bold;
-        margin-bottom: 15px;
-        font-family: vars.$font-primary;
+    &--title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
     }
 
-    &__image {
-        width: 100%;
-        max-width: 400px;
-        height: auto;
+    &--description {
+      font-size: 1rem;
+      line-height: 1.5;
     }
+  }
 }
 
-.privacy-policy {
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 800px;
+.trailers {
+  padding: 20px;
+  text-align: center;
+  color: vars.$color-texto;
 
-    h1,
-    h2,
-    p,
-    ul {
-        margin-bottom: 15px;
-        text-align: center;
+  &__title {
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: "Bebas Neue", sans-serif;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  &__item {
+    flex: 1 1 calc(25% - 20px);
+    max-width: 200px;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      flex: 1 1 calc(50% - 20px);
     }
 
-    ul {
-        padding-left: 20px;
-        list-style-position: inside;
+    @media (max-width: 480px) {
+      flex: 1 1 100%;
     }
-}
+  }
 
-.footer {
+  &__thumbnail {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #000;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .trailers__play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.6);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      color: #fff;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      text-decoration: none;
+
+      &:hover {
+        background: vars.$color-destacado;
+      }
+    }
+  }
+
+  &__name {
+    font-size: 1rem;
     font-family: vars.$font-primary;
+    margin-top: 10px;
+    text-transform: uppercase;
+  }
+}
 
-    &__link,
-    &__copyright {
-        font-family: vars.$font-secondary;
+@media (min-width: 768px) {
+  .navbar {
+    padding: 15px 40px;
+
+    &__menu {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      position: static;
+      background-color: transparent;
     }
+
+    &__toggle {
+      display: none;
+    }
+  }
+
+  .carousel__item {
+    flex: 0 0 30%;
+    max-width: 200px;
+    margin: 0 10px;
+  }
 }
