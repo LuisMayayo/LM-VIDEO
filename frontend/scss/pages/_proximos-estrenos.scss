@@ -23,7 +23,7 @@ body {
   &__content {
     position: relative;
     display: flex;
-    flex-direction: column; // Por defecto en móvil
+    flex-direction: column;
     gap: 1.5rem;
     align-items: center;
     justify-content: center;
@@ -48,7 +48,7 @@ body {
       border-radius: 0;
     }
 
-    > * {
+    >* {
       position: relative;
       z-index: 2;
     }
@@ -79,23 +79,20 @@ body {
       }
     }
 
-    /* Estilos específicos para Cars y Fast & Furious */
     &--cars,
     &--fastfurious {
-      @media (min-width: 768px) { // Para pantallas más grandes
-        flex-direction: row-reverse; // Imagen a la derecha
+      @media (min-width: 768px) {
+        flex-direction: row-reverse;
       }
     }
 
-    /* Estilos para Avatar y Jurassic (por defecto) */
     &--avatar,
     &--jurassic {
-      @media (min-width: 768px) { // Para pantallas más grandes
-        flex-direction: row; // Imagen a la izquierda
+      @media (min-width: 768px) {
+        flex-direction: row;
       }
     }
 
-    /* Imágenes de fondo */
     &--cars {
       background-image: url('../Fotos/fondo-cars.jpg');
     }
@@ -119,22 +116,24 @@ body {
       gap: 2rem;
 
       &-image {
-        max-width: 500px; // Tamaño más grande en desktop
+        max-width: 500px;
       }
 
       &-details {
-        max-width: 600px; // Ancho más grande para el texto
+        max-width: 600px;
+
         h2 {
-          font-size: 2.4rem; // Títulos más grandes
+          font-size: 2.4rem;
         }
+
         p {
-          font-size: 1.2rem; // Texto más grande
+          font-size: 1.2rem;
         }
       }
     }
 
     &__title {
-      font-size: 3rem; // Título más grande
+      font-size: 3rem;
       padding: 3rem 0;
     }
   }
