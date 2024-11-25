@@ -7,6 +7,10 @@ body {
   font-family: "Bebas Neue", sans-serif;
 }
 
+.h2 {
+  font-size: 30px;
+}
+
 .content {
   padding: 20px;
 }
@@ -26,6 +30,16 @@ body {
   height: auto;
 }
 
+/* Ajustes para escritorio */
+@media (min-width: 1024px) {
+  .hero__title {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  .hero__image {
+    max-width: 1000px;
+  }
+}
 .carousel-container {
   padding: 20px;
   text-align: center;
@@ -35,6 +49,7 @@ body {
   position: relative;
   display: flex;
   align-items: center;
+  /* Ajustes para escritorio */
 }
 .carousel__track-container {
   overflow: hidden;
@@ -55,16 +70,24 @@ body {
   object-fit: cover;
   border-radius: 5px;
 }
-@media (min-width: 1024px) {
-  .carousel__item {
-    flex: 0 0 20%;
-    max-width: 20%;
-  }
-}
 @media (max-width: 768px) {
   .carousel__item {
     flex: 0 0 50%;
     max-width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .carousel__item {
+    flex: 0 0 20%;
+    max-width: 20%;
+    padding: 15px;
+  }
+  .carousel__item img {
+    border-radius: 8px;
+  }
+  .carousel__button {
+    font-size: 2rem;
+    padding: 15px;
   }
 }
 .carousel__button {
@@ -124,6 +147,29 @@ body {
   line-height: 1.5;
 }
 
+/* Ajustes para escritorio */
+@media (min-width: 1024px) {
+  .promo {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 40px;
+  }
+  .promo__image {
+    max-width: 530px;
+  }
+  .promo__text {
+    text-align: left;
+    max-width: 600px;
+  }
+  .promo__text--title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  .promo__text--description {
+    font-size: 1.2rem;
+  }
+}
 .trailers {
   padding: 20px;
   text-align: center;
@@ -202,6 +248,26 @@ body {
   text-transform: uppercase;
 }
 
+/* Ajustes para escritorio */
+@media (min-width: 1024px) {
+  .trailers__item {
+    flex: 1 1 calc(20% - 20px);
+    max-width: 250px;
+  }
+  .trailers__title {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  .trailers__name {
+    font-size: 1.2rem;
+    margin-top: 15px;
+  }
+  .trailers__thumbnail .trailers__play-button {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+}
 @media (min-width: 768px) {
   .navbar {
     padding: 15px 40px;
@@ -216,10 +282,81 @@ body {
   .navbar__toggle {
     display: none;
   }
-  .carousel__item {
-    flex: 0 0 30%;
-    max-width: 200px;
-    margin: 0 10px;
+}
+/* Ajustes adicionales para escritorio */
+@media (min-width: 1024px) {
+  .navbar {
+    padding: 20px 60px;
+  }
+  .navbar__logo-image {
+    width: 150px;
+  }
+  .navbar__menu {
+    gap: 40px;
+  }
+  .navbar .navbar__item {
+    font-size: 1.1rem;
+  }
+}
+/* Estilos para el footer */
+.footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+.footer__top, .footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+.footer__link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.footer__link:hover {
+  text-decoration: underline;
+}
+.footer__logo-image {
+  width: 100px;
+  margin: 0 auto 15px;
+}
+.footer__social {
+  display: flex;
+  gap: 10px;
+}
+.footer__social-icon {
+  color: #fff;
+  font-size: 1.5rem;
+}
+.footer__social-icon:hover {
+  color: #00aaff;
+}
+.footer__copyright {
+  font-size: 0.8rem;
+}
+
+/* Ajustes para escritorio en el footer */
+@media (min-width: 1024px) {
+  .footer {
+    padding: 40px;
+  }
+  .footer__top, .footer__bottom {
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+  }
+  .footer__logo-image {
+    width: 150px;
+  }
+  .footer__link {
+    font-size: 1rem;
+  }
+  .footer__copyright {
+    font-size: 0.9rem;
   }
 }
 

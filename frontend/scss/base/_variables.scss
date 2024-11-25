@@ -12,18 +12,11 @@ $highlight-color: #00aaff;
 $background-color: #000;
 $primary-color: #00aaff; // Azul claro como color principal
 
-<<<<<<< Updated upstream
-$secondary-color: #000;
-$primary-color: #00aaff;
-$color-fondo-overlay: rgba(0, 0, 0, 0.82);
-=======
-
 // Colores interactivos
 $color-boton-reserva: $primary-color;
 $color-boton-reserva-disabled: #555555; // Nuevo
 $color-hover-boton: lighten($primary-color, 15%); // Nuevo
 $color-pantalla: #d6d6c2; // Nuevo
->>>>>>> Stashed changes
 
 // Fuentes
 $font-primary: 'Bebas Neue', sans-serif;
