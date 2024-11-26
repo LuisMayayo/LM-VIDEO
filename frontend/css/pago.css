@@ -1,0 +1,141 @@
+body {
+  font-family: "Bebas Neue", sans-serif;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+#pago-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+#pago-container h1,
+#pago-container h2 {
+  text-align: center;
+  color: #00aaff;
+  font-family: "Bebas Neue", sans-serif;
+  margin-bottom: 20px;
+}
+#pago-container #resumen-pedido {
+  background: #181818;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+#pago-container #resumen-pedido h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+#pago-container #resumen-pedido p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #b3b3b3;
+}
+#pago-container #resumen-pedido p strong {
+  font-weight: bold;
+  color: #00aaff;
+}
+#pago-container #formulario-pago form {
+  display: flex;
+  flex-direction: column;
+}
+#pago-container #formulario-pago form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+#pago-container #formulario-pago form input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #fff;
+}
+#pago-container #formulario-pago form input:focus {
+  border-color: #00aaff;
+  outline: none;
+}
+#pago-container #formulario-pago form button {
+  padding: 10px;
+  background-color: #00aaff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+#pago-container #formulario-pago form button:hover {
+  background-color: rgb(76.5, 195.5, 255);
+}
+#pago-container #formulario-pago form button:disabled {
+  background-color: #555555;
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  #pago-container {
+    padding: 30px;
+  }
+  #pago-container h1,
+  #pago-container h2 {
+    font-size: 2rem;
+  }
+  #pago-container #resumen-pedido {
+    padding: 20px;
+  }
+  #pago-container #resumen-pedido h2 {
+    font-size: 1.8rem;
+  }
+  #pago-container #resumen-pedido p {
+    font-size: 1.1rem;
+  }
+  #pago-container #formulario-pago form label {
+    font-size: 1.2rem;
+  }
+  #pago-container #formulario-pago form input {
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+  #pago-container #formulario-pago form button {
+    padding: 12px;
+    font-size: 1.2rem;
+  }
+}
+@media (min-width: 1024px) {
+  #pago-container {
+    max-width: 900px;
+  }
+  #pago-container h1,
+  #pago-container h2 {
+    font-size: 2.2rem;
+  }
+  #pago-container #resumen-pedido {
+    padding: 25px;
+  }
+  #pago-container #resumen-pedido h2 {
+    font-size: 2rem;
+  }
+  #pago-container #resumen-pedido p {
+    font-size: 1.2rem;
+  }
+  #pago-container #formulario-pago form label {
+    font-size: 1.3rem;
+  }
+  #pago-container #formulario-pago form input {
+    padding: 15px;
+    font-size: 1.2rem;
+  }
+  #pago-container #formulario-pago form button {
+    padding: 15px;
+    font-size: 1.3rem;
+  }
+}
+
+/*# sourceMappingURL=pago.css.map */

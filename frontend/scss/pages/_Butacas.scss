@@ -1,34 +1,50 @@
 @use '../base/variables' as vars;
 
-#asientos-container {
-  margin: 20px auto;
+// Estilos Globales
+html, body {
+  background-color: vars.$color-fondo; // Fondo global
+  color: vars.$color-texto; // Color de texto global
+  margin: 0;
+  padding: 0;
+  font-family: vars.$font-primary; // Fuente principal
+  overflow-x: hidden; // Evita scroll lateral inesperado
+}
+
+// Contenido Principal
+.content {
   padding: 20px;
-  max-width: 800px;
+}
+
+#asientos-container {
+  margin: 10px auto;
+  padding: 10px;
+  max-width: 100%; // Ocupa todo el ancho en móviles
   text-align: center;
 
   h1 {
     font-family: vars.$font-primary;
     color: vars.$color-texto;
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 1.5rem; // Reducido para móviles
+    margin-bottom: 15px;
   }
 
   .leyenda {
     display: flex;
+    flex-wrap: wrap; // Permitir que los elementos se ajusten en varias filas
     justify-content: center;
-    gap: 30px;
-    margin-bottom: 20px;
+    gap: 15px;
+    margin-bottom: 10px;
 
     .leyenda__item {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
 
       .icon {
-        width: 20px;
-        height: 20px;
+        width: 15px;
+        height: 15px;
         border-radius: 3px;
-        border: 2px solid vars.$color-borde;
+        border: 1px solid vars.$color-borde;
 
         &.disponible {
           background-color: vars.$color-asiento-disponible;
@@ -43,37 +59,44 @@
 
       span {
         font-family: vars.$font-secondary;
-        font-size: 0.9rem;
-        color: vars.$color-fondo;
+        font-size: 0.8rem; // Texto más pequeño
+        color: vars.$color-texto;
       }
     }
   }
 
   .pantalla {
     width: 100%;
-    height: 30px;
+    height: 20px; // Más delgada para móviles
     background-color: #d6d6c2;
-    margin: 20px 0;
+    margin: 15px 0;
     border-radius: 5px;
     font-family: vars.$font-secondary;
     font-weight: bold;
     text-align: center;
-    line-height: 30px;
+    line-height: 20px;
+    font-size: 0.8rem; // Tamaño reducido para móviles
     color: vars.$color-texto-secundario;
   }
 
   #asientos {
     display: grid;
-    grid-template-columns: repeat(8, 1fr); // 8 columnas por fila
-    gap: 10px;
+    grid-template-columns: repeat(8, 1fr); // 4 columnas por fila en móviles
+    gap: 8px; // Reducir espacio entre filas y columnas
     justify-content: center;
 
     .asiento {
-      width: 40px;
-      height: 40px;
-      background-image: url('../Fotos/butaca.png'); // Cambia esto a la ruta correcta de tu ícono
+      width: 30px; // Tamaño reducido para móviles
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url('../Fotos/butaca.png'); // Cambiar ruta si es necesario
       background-size: cover;
       border-radius: 5px;
+      font-size: 0.7rem; // Tamaño de texto reducido para los números
+      font-weight: bold;
+      color: vars.$color-texto;
       cursor: pointer;
 
       &.disponible {
@@ -92,9 +115,9 @@
   }
 
   #reservar {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
+    margin-top: 10%;
+    padding: 8px 15px;
+    font-size: 0.9rem; // Reducido para móviles
     font-weight: bold;
     color: vars.$color-texto;
     background-color: vars.$color-boton-reserva;
@@ -109,14 +132,93 @@
   }
 
   #seleccionados {
-    margin-top: 15px;
+    margin-top: 10px;
     font-family: vars.$font-secondary;
-    font-size: 1rem;
+    font-size: 0.9rem; // Texto reducido para móviles
     color: vars.$color-texto;
 
     .seleccionados__lista {
       margin-left: 5px;
       font-weight: bold;
+    }
+  }
+}
+
+// Media Queries para pantallas más grandes
+@media (min-width: 768px) {
+  #asientos-container {
+    max-width: 600px;
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    .leyenda {
+      gap: 20px;
+
+      .leyenda__item {
+        .icon {
+          width: 20px;
+          height: 20px;
+        }
+
+        span {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .pantalla {
+      height: 25px;
+      font-size: 1rem;
+    }
+
+    #asientos {
+      grid-template-columns: repeat(6, 1fr); // 6 columnas para pantallas medianas
+      gap: 10px;
+
+      .asiento {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    #reservar {
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+
+    #seleccionados {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  #asientos-container {
+    max-width: 800px;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .pantalla {
+      height: 30px;
+      font-size: 1.2rem;
+    }
+
+    #asientos {
+      grid-template-columns: repeat(8, 1fr); // 8 columnas para pantallas grandes
+      gap: 15px;
+
+      .asiento {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    #reservar {
+      font-size: 1.1rem;
     }
   }
 }
