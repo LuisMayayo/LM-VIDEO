@@ -20,29 +20,34 @@ document.addEventListener("DOMContentLoaded", function () {
   const track = document.querySelector('.carousel-track');
   const prevButton = document.querySelector('.carousel-control.prev');
   const nextButton = document.querySelector('.carousel-control.next');
-  const items = Array.from(track.children);
-  const itemWidth = items[0].getBoundingClientRect().width;
-  const trackStyle = window.getComputedStyle(track);
-  const gap = parseFloat(trackStyle.gap) || 0;
-  const itemsPerSlide = 3;
-  let currentIndex = 0;
-
-  const totalSlides = Math.ceil(items.length / itemsPerSlide);
-  const slideWidth = itemsPerSlide * itemWidth + gap * (itemsPerSlide - 1);
-
-  function updateCarousel() {
-    const amountToMove = -(currentIndex * slideWidth);
-    track.style.transform = `translateX(${amountToMove}px)`;
-  }
-
-  nextButton.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    updateCarousel();
-  });
-
+  
+  let currentSlide = 0;
+  const totalSlides = document.querySelectorAll('.carousel-item').length;
+  const slidesPerView = 3;
+  
+  const moveCarousel = () => {
+    const slideWidth = document.querySelector('.carousel-item').offsetWidth;
+    track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+  };
+  
+  // Evento para el botón "Anterior"
   prevButton.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-    updateCarousel();
+    currentSlide--;
+    if (currentSlide < 0) {
+      currentSlide = totalSlides - slidesPerView;
+    }
+    moveCarousel();
   });
-
+  
+  // Evento para el botón "Siguiente"
+  nextButton.addEventListener('click', () => {
+    currentSlide++;
+    if (currentSlide > totalSlides - slidesPerView) {
+      currentSlide = 0;
+    }
+    moveCarousel();
+  });
+  
+  // Ajustar el carrusel en caso de redimensionar la ventana
+  window.addEventListener('resize', moveCarousel);  
 });

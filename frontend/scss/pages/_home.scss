@@ -9,10 +9,6 @@ body {
   font-family: vars.$font-primary;
 }
 
-.h2 {
-  font-size: 30px;
-}
-
 .content {
   padding: 20px;
 }
@@ -48,31 +44,35 @@ body {
 
 h2 {
   text-align: center;
+  font-size: 30px;
 }
 
 .carousel {
   position: relative;
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
   overflow: hidden;
-  width: 100%;
 
-  .carousel-inner {
+  .carousel-wrapper {
     overflow: hidden;
   }
 
   .carousel-track {
     display: flex;
-    gap: 10px;
-    transition: transform 0.5s ease-in-out;
-    max-width: 1500px;
-  }
+    gap: 10px; // Espaciado entre fotos
+    transition: transform 0.3s ease-in-out;
 
-  .carousel-item {
-    flex: 0 0 calc((100% - 20px) / 3);
-    box-sizing: border-box;
+    .carousel-item {
+      flex: 0 0 calc(33.33%);
+      box-sizing: border-box;
 
-    img {
-      width: 100%;
-      display: block;
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 10px; // Bordes redondeados
+      }
     }
   }
 
@@ -80,19 +80,24 @@ h2 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: vars.$color-fondo;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
     border: none;
-    color: vars.$color-texto;
-    font-size: 2rem;
-    padding: 0 1rem;
+    border-radius: 50%;
+    padding: 10px 15px;
     cursor: pointer;
+    font-family: vars.$font-secondary;
 
     &.prev {
-      left: 0;
+      left: 10px;
     }
 
     &.next {
-      right: 0;
+      right: 10px;
+    }
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.7);
     }
   }
 }

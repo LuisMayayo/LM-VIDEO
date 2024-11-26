@@ -7,10 +7,6 @@ body {
   font-family: "Bebas Neue", sans-serif;
 }
 
-.h2 {
-  font-size: 30px;
-}
-
 .content {
   padding: 20px;
 }
@@ -42,46 +38,54 @@ body {
 }
 h2 {
   text-align: center;
+  font-size: 30px;
 }
 
 .carousel {
   position: relative;
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
   overflow: hidden;
-  width: 100%;
 }
-.carousel .carousel-inner {
+.carousel .carousel-wrapper {
   overflow: hidden;
 }
 .carousel .carousel-track {
   display: flex;
   gap: 10px;
-  transition: transform 0.5s ease-in-out;
-  max-width: 1500px;
+  transition: transform 0.3s ease-in-out;
 }
-.carousel .carousel-item {
-  flex: 0 0 calc((100% - 20px) / 3);
+.carousel .carousel-track .carousel-item {
+  flex: 0 0 33.33%;
   box-sizing: border-box;
 }
-.carousel .carousel-item img {
+.carousel .carousel-track .carousel-item img {
   width: 100%;
+  height: auto;
   display: block;
+  border-radius: 10px;
 }
 .carousel .carousel-control {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #000;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
   border: none;
-  color: #fff;
-  font-size: 2rem;
-  padding: 0 1rem;
+  border-radius: 50%;
+  padding: 10px 15px;
   cursor: pointer;
+  font-family: "Roboto", sans-serif;
 }
 .carousel .carousel-control.prev {
-  left: 0;
+  left: 10px;
 }
 .carousel .carousel-control.next {
-  right: 0;
+  right: 10px;
+}
+.carousel .carousel-control:hover {
+  background: rgba(0, 0, 0, 0.7);
 }
 
 /* Responsividad */
