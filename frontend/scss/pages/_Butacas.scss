@@ -16,7 +16,7 @@ html, body {
 }
 
 #asientos-container {
-  margin: 10px auto;
+  margin-left: 2%;
   padding: 10px;
   max-width: 100%; // Ocupa todo el ancho en móviles
   text-align: center;
@@ -66,7 +66,7 @@ html, body {
   }
 
   .pantalla {
-    width: 100%;
+    width: 97%;
     height: 20px; // Más delgada para móviles
     background-color: #d6d6c2;
     margin: 15px 0;
@@ -171,10 +171,11 @@ html, body {
     .pantalla {
       height: 25px;
       font-size: 1rem;
+      width: 95%;
     }
 
     #asientos {
-      grid-template-columns: repeat(6, 1fr); // 6 columnas para pantallas medianas
+      grid-template-columns: repeat(8, 1fr); // 6 columnas para pantallas medianas
       gap: 10px;
 
       .asiento {

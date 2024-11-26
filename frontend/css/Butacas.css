@@ -12,7 +12,7 @@ html, body {
 }
 
 #asientos-container {
-  margin: 10px auto;
+  margin-left: 2%;
   padding: 10px;
   max-width: 100%;
   text-align: center;
@@ -56,7 +56,7 @@ html, body {
   color: #fff;
 }
 #asientos-container .pantalla {
-  width: 100%;
+  width: 97%;
   height: 20px;
   background-color: #d6d6c2;
   margin: 15px 0;
@@ -144,9 +144,10 @@ html, body {
   #asientos-container .pantalla {
     height: 25px;
     font-size: 1rem;
+    width: 95%;
   }
   #asientos-container #asientos {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     gap: 10px;
   }
   #asientos-container #asientos .asiento {

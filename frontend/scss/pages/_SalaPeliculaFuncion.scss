@@ -1,5 +1,19 @@
 @use '../base/variables' as vars;
 
+html, body {
+  background-color: vars.$color-fondo; // Fondo global
+  color: vars.$color-texto; // Color de texto global
+  margin: 0;
+  padding: 0;
+  font-family: vars.$font-primary; // Fuente principal
+  overflow-x: hidden; // Evita scroll lateral inesperado
+}
+
+// Contenido Principal
+.content {
+  padding: 20px;
+}
+
 main {
   padding: 20px;
   background-color: vars.$color-fondo;
@@ -79,7 +93,6 @@ main {
     }
   }
 
-
   .funciones {
     margin-top: 30px;
     width: 100%;
@@ -127,5 +140,4 @@ main {
       }
     }
   }
-  
 }
