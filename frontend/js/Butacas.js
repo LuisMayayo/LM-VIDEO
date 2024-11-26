@@ -22,7 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const asientosContainer = document.getElementById("asientos");
     const reservarButton = document.getElementById("reservar");
     const seleccionadosLista = document.querySelector(".seleccionados__lista");
+    const totalPagarContainer = document.getElementById("total-pagar"); // Nuevo contenedor para el total
     let asientosSeleccionados = []; // Almacena los asientos seleccionados
+    let preciosSeleccionados = []; // Nuevo: Almacena los precios de los asientos seleccionados
     const funcionId = obtenerParametroUrl("funcionId"); // Obtener el ID de la función desde la URL
 
     // Deshabilitar botón de reservar inicialmente
@@ -74,7 +76,6 @@ document.addEventListener("DOMContentLoaded", function () {
         asientos.forEach((asiento) => {
             console.log("Procesando asiento completo:", asiento);
 
-            // Verificar que la propiedad 'numero' esté definida
             if (typeof asiento.numero === "undefined") {
                 console.error("El campo 'numero' está undefined en este asiento:", asiento);
                 return;
@@ -86,8 +87,14 @@ document.addEventListener("DOMContentLoaded", function () {
             div.id = `asiento-${asiento.numero}`;
 
             if (asiento.disponible) {
-                div.addEventListener("click", () => seleccionarAsiento(asiento.numero, div));
+                const precio = parseFloat(asiento.precio); // Asegúrate de convertir el precio a número
+                if (isNaN(precio)) {
+                    console.error(`El precio del asiento ${asiento.numero} no es válido:`, asiento.precio);
+                    return;
+                }
+                div.addEventListener("click", () => seleccionarAsiento(asiento.numero, precio, div));
             }
+            
 
             asientosContainer.appendChild(div);
         });
@@ -96,23 +103,27 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Función para manejar la selección/deselección de un asiento
-    function seleccionarAsiento(numero, div) {
-        console.log(`Asiento clickeado: Número = ${numero}, Elemento =`, div);
+    function seleccionarAsiento(numero, precio, div) {
+        console.log(`Asiento clickeado: Número = ${numero}, Precio = ${precio}, Elemento =`, div);
 
         if (asientosSeleccionados.includes(numero)) {
             // Deseleccionar asiento
             console.log(`Deseleccionando asiento: ${numero}`);
             asientosSeleccionados = asientosSeleccionados.filter((n) => n !== numero);
+            preciosSeleccionados = preciosSeleccionados.filter((p) => p !== precio); // Remover el precio
             div.classList.remove("seleccionado");
         } else {
             // Seleccionar asiento
             console.log(`Seleccionando asiento: ${numero}`);
             asientosSeleccionados.push(numero);
+            preciosSeleccionados.push(precio); // Agregar el precio
             div.classList.add("seleccionado");
         }
 
         console.log("Asientos seleccionados actualmente:", asientosSeleccionados);
+        console.log("Precios seleccionados actualmente:", preciosSeleccionados);
         actualizarAsientosSeleccionados();
+        actualizarTotal(); // Nuevo
 
         // Habilitar/deshabilitar el botón de reservar
         reservarButton.disabled = asientosSeleccionados.length === 0;
@@ -124,6 +135,23 @@ document.addEventListener("DOMContentLoaded", function () {
         seleccionadosLista.textContent = asientosSeleccionados.join(", ");
     }
 
+    // Nuevo: Función para actualizar el total a pagar
+    function actualizarTotal() {
+        const total = preciosSeleccionados.reduce((sum, precio) => {
+            // Asegúrate de que el precio sea un número
+            return sum + (typeof precio === "number" ? precio : 0);
+        }, 0);
+    
+        // Formatear el total como moneda en euros
+        const totalFormateado = new Intl.NumberFormat("es-ES", {
+            style: "currency",
+            currency: "EUR"
+        }).format(total);
+    
+        totalPagarContainer.textContent = `Total a pagar: ${totalFormateado}`;
+    }
+    
+    
     // Función para manejar el evento de compra
     reservarButton.addEventListener("click", async function () {
         console.log("Iniciando el proceso de reserva...");
@@ -152,7 +180,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Limpiar la selección y recargar los asientos
             asientosSeleccionados = [];
+            preciosSeleccionados = [];
             actualizarAsientosSeleccionados();
+            actualizarTotal(); // Actualizamos el total
             cargarAsientos();
         } catch (error) {
             alert("Ocurrió un error al procesar la reserva. Por favor, intenta nuevamente.");
