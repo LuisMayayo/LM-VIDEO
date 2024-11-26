@@ -63,6 +63,7 @@ h2 {
     display: flex;
     gap: 10px;
     transition: transform 0.5s ease-in-out;
+    max-width: 1500px;
   }
 
   .carousel-item {
