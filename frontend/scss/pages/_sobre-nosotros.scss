@@ -1,0 +1,74 @@
+@use '../base/variables' as vars;
+
+html,
+body {
+  background-color: vars.$color-fondo;
+  color: vars.$color-texto;
+  margin: 0;
+  padding: 0;
+  font-family: vars.$font-primary;
+  line-height: 1.6;
+}
+
+.content {
+  padding: 20px;
+}
+
+.hero__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.nosotros,
+.about-us {
+  margin: 40px 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.nosotros__title,
+.about-us__title {
+  font-size: 2rem;
+  font-family: vars.$font-family-primary;
+  color: vars.$color-destacado;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.nosotros__description,
+.about-us__description {
+  font-size: 1.1rem;
+  font-family: vars.$font-family-secondary;
+  color: vars.$color-texto;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.nosotros__description:last-child,
+.about-us__description:last-child {
+  margin-bottom: 0;
+}
+
+p {
+  line-height: 1.8;
+}
+
+@media (min-width: 768px) {
+  .nosotros,
+  .about-us {
+    max-width: 800px;
+    margin: 40px auto;
+  }
+
+  .nosotros__title,
+  .about-us__title {
+    font-size: 2.5rem;
+  }
+
+  .nosotros__description,
+  .about-us__description {
+    font-size: 1.2rem;
+  }
+}

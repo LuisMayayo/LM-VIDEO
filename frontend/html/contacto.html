@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <img src="../Fotos/logo.png" alt="Logo LM Video" class="navbar__logo-image">
+        </div>
+        <button class="navbar__toggle" aria-label="Abrir menú">
+            <span class="navbar__toggle-icon"></span>
+            <span class="navbar__toggle-icon"></span>
+            <span class="navbar__toggle-icon"></span>
+        </button>
+        <div class="navbar__menu">
+            <button class="navbar__close" aria-label="Cerrar menú">✕</button>
+            <a href="../html/index.html" class="navbar__item">HOME</a>
+            <a href="../html/cartelera.html" class="navbar__item">CARTELERA</a>
+            <a href="../html/proximos-estrenos.html" class="navbar__item">PRÓXIMOS ESTRENOS</a>
+            <a href="../html/sobre-nosotros.html" class="navbar__item">SOBRE NOSOTROS</a>
+            <a href="../html/contacto.html" class="navbar__item">CONTACTO</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <section class="hero">
+            <img src="../Fotos/cine-logo.png" alt="Imagen de cine" class="hero__image">
+        </section>
+    </div>
+    <section class="contact">
+        <h1 class="contact__title">CONTÁCTANOS</h1>
+        <p class="contact__description">
+            Nos encantaría escucharte. Si tienes alguna duda, pregunta, comentario o sugerencia, o si estás interesado
+            en formar parte de nuestro equipo, no dudes en comunicarte con nosotros. Estamos aquí para ayudarte y
+            atender cualquier inquietud que tengas. Por favor, completa el formulario que encontrarás a continuación, y
+            nos aseguraremos de responderte lo más pronto posible.
+        </p>
+        <p class="contact__description">
+            Ya sea para resolver una consulta, colaborar en algún proyecto o simplemente compartir tus ideas, tu mensaje
+            es importante para nosotros. ¡Gracias por confiar en nosotros!
+        </p>
+    </section>
+    <div class="contact-form">
+        <form action="#" method="post">
+            <div class="form-group">
+                <input type="text" name="nombre" placeholder="Nombre Completo" required />
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Correo Electrónico" required />
+            </div>
+            <div class="form-group">
+                <input type="tel" name="telefono" placeholder="Teléfono" required />
+            </div>
+            <div class="form-group">
+                <input type="text" name="asunto" placeholder="Asunto" required />
+            </div>
+            <div class="form-group">
+                <textarea name="mensaje" placeholder="Mensaje" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">ENVIAR</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__top">
+            <a href="../html/aviso-legal.html" class="footer__link">Aviso Legal</a>
+            <a href="../html/politica-privacidad.html" class="footer__link">Política de privacidad</a>
+            <a href="../html/politica-cookies.html" class="footer__link">Política de Cookies</a>
+        </div>
+        <div class="footer__logo">
+            <img src="../Fotos/logo.png" alt="Logo LM Video" class="footer__logo-image">
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__copyright">© Copyright 2024 LM VIDEO</p>
+            <div class="footer__social">
+                <a href="#" class="footer__social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="footer__social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="footer__social-icon" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../frontend/js/home.js"></script>
+    <script src="../js/home.js"></script>
+</body>
+
+</html>
