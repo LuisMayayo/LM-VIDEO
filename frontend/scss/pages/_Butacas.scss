@@ -4,41 +4,34 @@
 html, body {
   background-color: vars.$color-fondo; // Fondo global
   color: vars.$color-texto; // Color de texto global
+  font-family: vars.$font-primary; // Fuente principal
   margin: 0;
   padding: 0;
-  font-family: vars.$font-primary; // Fuente principal
-  overflow-x: hidden; // Evita scroll lateral inesperado
-}
-
-// Contenido Principal
-.content {
-  padding: 20px;
 }
 
 #asientos-container {
-  margin-left: 2%;
-  padding: 10px;
-  max-width: 100%; // Ocupa todo el ancho en móviles
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 90%; // Para pantallas pequeñas, usar todo el ancho
   text-align: center;
 
   h1 {
-    font-family: vars.$font-primary;
     color: vars.$color-texto;
-    font-size: 1.5rem; // Reducido para móviles
-    margin-bottom: 15px;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
   }
 
   .leyenda {
     display: flex;
-    flex-wrap: wrap; // Permitir que los elementos se ajusten en varias filas
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 10px;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
 
     .leyenda__item {
       display: flex;
       align-items: center;
       gap: 8px;
+      margin: 5px;
 
       .icon {
         width: 15px;
@@ -58,50 +51,41 @@ html, body {
       }
 
       span {
-        font-family: vars.$font-secondary;
-        font-size: 0.8rem; // Texto más pequeño
+        font-size: 0.9rem;
         color: vars.$color-texto;
       }
     }
   }
 
   .pantalla {
-    width: 97%;
-    height: 20px; // Más delgada para móviles
+    width: 90%;
+    height: 20px;
     background-color: #d6d6c2;
-    margin: 15px 0;
     border-radius: 5px;
-    font-family: vars.$font-secondary;
-    font-weight: bold;
+    margin: 20px auto;
     text-align: center;
     line-height: 20px;
-    font-size: 0.8rem; // Tamaño reducido para móviles
-    color: vars.$color-texto-secundario;
+    font-size: 0.9rem;
+    color: vars.$color-fondo;
+    font-family: vars.$font-secondary;
   }
 
   #asientos {
     display: grid;
-    grid-template-columns: repeat(8, 1fr); // 4 columnas por fila en móviles
-    gap: 8px; // Reducir espacio entre filas y columnas
-    justify-content: center;
+    grid-template-columns: repeat(8, 1fr); // Diseño inicial para pantallas pequeñas
+    gap: 10px;
 
     .asiento {
-      width: 30px; // Tamaño reducido para móviles
-      height: 30px;
+      height: 40px;
+      background-color: vars.$color-asiento-disponible;
+      border-radius: 5px;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-image: url('../Fotos/butaca.png'); // Cambiar ruta si es necesario
-      background-size: cover;
-      border-radius: 5px;
-      font-size: 0.7rem; // Tamaño de texto reducido para los números
+      font-size: 0.9rem;
       font-weight: bold;
       color: vars.$color-texto;
-      cursor: pointer;
-
-      &.disponible {
-        background-color: vars.$color-asiento-disponible;
-      }
 
       &.ocupado {
         background-color: vars.$color-asiento-ocupado;
@@ -115,14 +99,14 @@ html, body {
   }
 
   #reservar {
-    margin-top: 10%;
-    padding: 8px 15px;
-    font-size: 0.9rem; // Reducido para móviles
-    font-weight: bold;
-    color: vars.$color-texto;
+    margin-top: 20px;
+    padding: 10px 20px;
     background-color: vars.$color-boton-reserva;
+    color: vars.$color-texto;
     border: none;
     border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
 
     &:disabled {
@@ -133,8 +117,8 @@ html, body {
 
   #seleccionados {
     margin-top: 10px;
+    font-size: 1rem;
     font-family: vars.$font-secondary;
-    font-size: 0.9rem; // Texto reducido para móviles
     color: vars.$color-texto;
 
     .seleccionados__lista {
@@ -142,19 +126,26 @@ html, body {
       font-weight: bold;
     }
   }
+
+  #total-pagar {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-family: vars.$font-secondary;
+    color: vars.$color-texto;
+  }
 }
 
-// Media Queries para pantallas más grandes
+// Media Queries para Pantallas Medianas
 @media (min-width: 768px) {
   #asientos-container {
     max-width: 600px;
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 2rem;
     }
 
     .leyenda {
-      gap: 20px;
+      justify-content: space-around;
 
       .leyenda__item {
         .icon {
@@ -163,7 +154,7 @@ html, body {
         }
 
         span {
-          font-size: 0.9rem;
+          font-size: 1rem;
         }
       }
     }
@@ -171,22 +162,22 @@ html, body {
     .pantalla {
       height: 25px;
       font-size: 1rem;
-      width: 95%;
     }
 
     #asientos {
-      grid-template-columns: repeat(8, 1fr); // 6 columnas para pantallas medianas
-      gap: 10px;
+      grid-template-columns: repeat(8, 1fr); // Ajustar a 6 columnas
+      gap: 15px;
 
       .asiento {
-        width: 35px;
-        height: 35px;
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
       }
     }
 
     #reservar {
-      padding: 10px 20px;
-      font-size: 1rem;
+      padding: 15px 25px;
+      font-size: 1.2rem;
     }
 
     #seleccionados {
@@ -195,12 +186,13 @@ html, body {
   }
 }
 
+// Media Queries para Pantallas Grandes
 @media (min-width: 1024px) {
   #asientos-container {
     max-width: 800px;
 
     h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
 
     .pantalla {
@@ -209,17 +201,18 @@ html, body {
     }
 
     #asientos {
-      grid-template-columns: repeat(8, 1fr); // 8 columnas para pantallas grandes
-      gap: 15px;
+      grid-template-columns: repeat(8, 1fr); // Ajustar a 8 columnas
+      gap: 20px;
 
       .asiento {
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
+        font-size: 1.1rem;
       }
     }
 
     #reservar {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
     }
   }
 }

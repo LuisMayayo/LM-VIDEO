@@ -4,16 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cartelera</title>
+  <title>Seleccionar Asientos</title>
 
-  <!-- CSS Local -->
+  <!-- CSS -->
   <link rel="stylesheet" href="../css/Butacas.css">
   <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="../css/header.css">
 
   <!-- Fuentes y Estilos Externos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -28,7 +28,6 @@
       <span class="navbar__toggle-icon"></span>
     </button>
     <div class="navbar__menu">
-      <button class="navbar__close" aria-label="Cerrar menú">✕</button>
       <a href="#home" class="navbar__item">HOME</a>
       <a href="#cartelera" class="navbar__item">CARTELERA</a>
       <a href="#estrenos" class="navbar__item">PRÓXIMOS ESTRENOS</a>
@@ -39,47 +38,41 @@
 
   <!-- Contenedor de asientos -->
   <main>
-    <main>
-      <div id="asientos-container">
-        <h1>Seleccione sus Asientos</h1>
+    <div id="asientos-container">
+      <h1>Seleccione sus Asientos</h1>
 
-        <!-- Leyenda -->
-        <div class="leyenda">
-          <div class="leyenda__item">
-            <div class="icon disponible"></div>
-            <span>DISPONIBLE</span>
-          </div>
-          <div class="leyenda__item">
-            <div class="icon seleccionado"></div>
-            <span>SELECCIONADO</span>
-          </div>
-          <div class="leyenda__item">
-            <div class="icon ocupado"></div>
-            <span>OCUPADO</span>
-          </div>
+      <!-- Leyenda -->
+      <div class="leyenda">
+        <div class="leyenda__item">
+          <div class="icon disponible"></div>
+          <span>DISPONIBLE</span>
         </div>
-
-        <!-- Pantalla del cine -->
-        <div class="pantalla"></div>
-
-        <!-- Contenedor de asientos -->
-        <div id="asientos" class="asientos-grid"></div>
-
-        <!-- Botón para comprar -->
-        <button id="reservar" disabled>COMPRAR</button>
-
-        <!-- Mostrar asientos seleccionados -->
-        <div id="seleccionados">
-          <span>ASIENTOS SELECCIONADOS:</span>
-          <span class="seleccionados__lista"></span>
+        <div class="leyenda__item">
+          <div class="icon seleccionado"></div>
+          <span>SELECCIONADO</span>
+        </div>
+        <div class="leyenda__item">
+          <div class="icon ocupado"></div>
+          <span>OCUPADO</span>
+        </div>
       </div>
-      <p id="total-pagar">Total a pagar: 0.00€</p> <!-- Contenedor para el total -->
-      
-        
+
+      <!-- Pantalla del cine -->
+      <div class="pantalla">Pantalla</div>
+
+      <!-- Contenedor de asientos -->
+      <div id="asientos"></div>
+
+      <!-- Botón para comprar -->
+      <button id="reservar" disabled>COMPRAR</button>
+
+      <!-- Mostrar asientos seleccionados -->
+      <div id="seleccionados">
+        <span>ASIENTOS SELECCIONADOS:</span>
+        <span class="seleccionados__lista"></span>
       </div>
-    </main>
-
-
+      <p id="total-pagar">Total a pagar: 0.00€</p>
+    </div>
   </main>
 
   <!-- Footer -->

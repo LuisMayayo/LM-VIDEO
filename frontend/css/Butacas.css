@@ -1,39 +1,33 @@
 html, body {
   background-color: #000;
   color: #fff;
+  font-family: "Bebas Neue", sans-serif;
   margin: 0;
   padding: 0;
-  font-family: "Bebas Neue", sans-serif;
-  overflow-x: hidden;
-}
-
-.content {
-  padding: 20px;
 }
 
 #asientos-container {
-  margin-left: 2%;
-  padding: 10px;
-  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 90%;
   text-align: center;
 }
 #asientos-container h1 {
-  font-family: "Bebas Neue", sans-serif;
   color: #fff;
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
 }
 #asientos-container .leyenda {
   display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 10px;
 }
 #asientos-container .leyenda .leyenda__item {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin: 5px;
 }
 #asientos-container .leyenda .leyenda__item .icon {
   width: 15px;
@@ -42,71 +36,63 @@ html, body {
   border: 1px solid #333;
 }
 #asientos-container .leyenda .leyenda__item .icon.disponible {
-  background-color: #00ff00;
+  background-color: #4ead4e;
 }
 #asientos-container .leyenda .leyenda__item .icon.seleccionado {
-  background-color: #0000ff;
+  background-color: #00aaff;
 }
 #asientos-container .leyenda .leyenda__item .icon.ocupado {
   background-color: #ff0000;
 }
 #asientos-container .leyenda .leyenda__item span {
-  font-family: "Roboto", sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: #fff;
 }
 #asientos-container .pantalla {
-  width: 97%;
+  width: 90%;
   height: 20px;
   background-color: #d6d6c2;
-  margin: 15px 0;
   border-radius: 5px;
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
+  margin: 20px auto;
   text-align: center;
   line-height: 20px;
-  font-size: 0.8rem;
-  color: #b3b3b3;
+  font-size: 0.9rem;
+  color: #000;
+  font-family: "Roboto", sans-serif;
 }
 #asientos-container #asientos {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  gap: 8px;
-  justify-content: center;
+  gap: 10px;
 }
 #asientos-container #asientos .asiento {
-  width: 30px;
-  height: 30px;
+  height: 40px;
+  background-color: #4ead4e;
+  border-radius: 5px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("../Fotos/butaca.png");
-  background-size: cover;
-  border-radius: 5px;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   font-weight: bold;
   color: #fff;
-  cursor: pointer;
-}
-#asientos-container #asientos .asiento.disponible {
-  background-color: #00ff00;
 }
 #asientos-container #asientos .asiento.ocupado {
   background-color: #ff0000;
   cursor: not-allowed;
 }
 #asientos-container #asientos .asiento.seleccionado {
-  background-color: #0000ff;
+  background-color: #00aaff;
 }
 #asientos-container #reservar {
-  margin-top: 10%;
-  padding: 8px 15px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: #fff;
+  margin-top: 20px;
+  padding: 10px 20px;
   background-color: #00aaff;
+  color: #fff;
   border: none;
   border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
 }
 #asientos-container #reservar:disabled {
@@ -115,13 +101,19 @@ html, body {
 }
 #asientos-container #seleccionados {
   margin-top: 10px;
+  font-size: 1rem;
   font-family: "Roboto", sans-serif;
-  font-size: 0.9rem;
   color: #fff;
 }
 #asientos-container #seleccionados .seleccionados__lista {
   margin-left: 5px;
   font-weight: bold;
+}
+#asientos-container #total-pagar {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
 }
 
 @media (min-width: 768px) {
@@ -129,34 +121,34 @@ html, body {
     max-width: 600px;
   }
   #asientos-container h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   #asientos-container .leyenda {
-    gap: 20px;
+    justify-content: space-around;
   }
   #asientos-container .leyenda .leyenda__item .icon {
     width: 20px;
     height: 20px;
   }
   #asientos-container .leyenda .leyenda__item span {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   #asientos-container .pantalla {
     height: 25px;
     font-size: 1rem;
-    width: 95%;
   }
   #asientos-container #asientos {
     grid-template-columns: repeat(8, 1fr);
-    gap: 10px;
+    gap: 15px;
   }
   #asientos-container #asientos .asiento {
-    width: 35px;
-    height: 35px;
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
   }
   #asientos-container #reservar {
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 15px 25px;
+    font-size: 1.2rem;
   }
   #asientos-container #seleccionados {
     font-size: 1rem;
@@ -167,7 +159,7 @@ html, body {
     max-width: 800px;
   }
   #asientos-container h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   #asientos-container .pantalla {
     height: 30px;
@@ -175,14 +167,15 @@ html, body {
   }
   #asientos-container #asientos {
     grid-template-columns: repeat(8, 1fr);
-    gap: 15px;
+    gap: 20px;
   }
   #asientos-container #asientos .asiento {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
+    font-size: 1.1rem;
   }
   #asientos-container #reservar {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 }
 
