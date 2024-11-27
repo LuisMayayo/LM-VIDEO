@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   background-color: #000;
   color: #fff;
   margin: 0;
@@ -26,8 +27,7 @@ main .pelicula {
   align-items: center;
 }
 main .pelicula__image {
-  max-width: 300px;
-  width: 100%;
+  max-width: 230px;
   height: auto;
   object-fit: cover;
   border-radius: 20px;
@@ -54,8 +54,7 @@ main .pelicula__info .pelicula__description {
 main .pelicula__info .pelicula__duration {
   font-size: 1rem;
   font-family: "Bebas Neue", sans-serif;
-  font-weight: bold;
-  color: #00aaff;
+  color: #fff;
   margin-top: 10px;
 }
 @media (max-width: 768px) {
@@ -81,32 +80,45 @@ main .pelicula__info .pelicula__duration {
   }
 }
 main .funciones {
-  margin-top: 30px;
   width: 100%;
   max-width: 800px;
-  padding: 20px;
+  padding-bottom: 2%;
   border-radius: 10px;
 }
-main .funciones__title {
+main .funciones__titulo {
+  font-size: 1.8rem;
+  font-family: "Bebas Neue", sans-serif;
+  color: #00aaff;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+main .funciones__dia {
   font-size: 1.5rem;
   font-family: "Bebas Neue", sans-serif;
-  margin-bottom: 15px;
   color: #fff;
   text-align: center;
+  margin-bottom: 25px;
+}
+main .funciones__sesiones {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  justify-items: center;
 }
 main .funciones__list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  gap: 6px;
+  flex-direction: column;
+  align-items: center;
 }
 main .funciones .funcion {
-  background-color: #007bff;
+  background-color: #00aaff;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 8px 16px;
   border-radius: 15px 0 15px 0;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -120,7 +132,6 @@ main .funciones .funcion span {
 main .funciones .funcion:hover {
   background-color: #0056b3;
   transform: scale(1.05);
-  transition: all 0.3s ease;
 }
 
 /*# sourceMappingURL=SalaPeliculaFuncion.css.map */

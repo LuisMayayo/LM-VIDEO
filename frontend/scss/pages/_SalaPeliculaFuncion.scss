@@ -1,6 +1,7 @@
 @use '../base/variables' as vars;
 
-html, body {
+html,
+body {
   background-color: vars.$color-fondo; // Fondo global
   color: vars.$color-texto; // Color de texto global
   margin: 0;
@@ -29,8 +30,7 @@ main {
     align-items: center;
 
     &__image {
-      max-width: 300px;
-      width: 100%;
+      max-width: 230px;
       height: auto;
       object-fit: cover;
       border-radius: 20px;
@@ -60,8 +60,7 @@ main {
       .pelicula__duration {
         font-size: 1rem;
         font-family: vars.$font-primary;
-        font-weight: bold;
-        color: vars.$color-destacado;
+        color: vars.$color-texto;
         margin-top: 10px;
       }
     }
@@ -80,12 +79,15 @@ main {
 
       &__info {
         text-align: center; // Centra el texto
+
         .pelicula__title {
           font-size: 1.8rem; // Reduce el tamaño del título
         }
+
         .pelicula__description {
           font-size: 1rem; // Ajusta el tamaño de la descripción
         }
+
         .pelicula__duration {
           font-size: 1rem; // Ajusta el tamaño de la duración
         }
@@ -94,50 +96,64 @@ main {
   }
 
   .funciones {
-    margin-top: 30px;
     width: 100%;
     max-width: 800px;
-    padding: 20px;
+    padding-bottom: 2%;
     border-radius: 10px;
-
-    &__title {
+  
+    &__titulo {
+      font-size: 1.8rem;
+      font-family: vars.$font-primary;
+      color: vars.$color-destacado; // Usa el color destacado de tus variables
+      text-align: center;
+      margin-bottom: 20px; // Separación con las funciones
+      text-transform: uppercase; // Para que esté en mayúsculas
+    }
+  
+    &__dia {
       font-size: 1.5rem;
       font-family: vars.$font-primary;
-      margin-bottom: 15px;
       color: vars.$color-texto;
       text-align: center;
+      margin-bottom: 25px;
     }
-
+  
+    &__sesiones {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      justify-items: center;
+    }
+  
     &__list {
       display: flex;
-      flex-wrap: wrap; // Permite que las tarjetas se ajusten en varias filas
-      justify-content: center; // Centra las tarjetas
-      gap: 20px; // Espaciado entre tarjetas
+      gap: 6px;
+      flex-direction: column;
+      align-items: center;
     }
-
+  
     .funcion {
-      background-color: #007bff; // Fondo azul
-      color: #ffffff; // Texto blanco
-      padding: 10px 20px;
+      background-color: vars.$primary-color;
+      color: #ffffff;
+      padding: 8px 16px;
       border-radius: 15px 0 15px 0;
       font-family: vars.$font-primary;
-      font-size: 25px;
+      font-size: 20px;
       text-align: center;
       display: flex;
-      flex-direction: column; // Apila elementos verticalmente
+      flex-direction: column;
       align-items: center;
       text-decoration: none;
-      min-width: 55px; // Tamaño mínimo para uniformidad
-
+      min-width: 55px;
+  
       span {
         display: block;
       }
-
+  
       &:hover {
         background-color: #0056b3; // Cambia el color al pasar el cursor
-        transform: scale(1.05); // Efecto de agrandamiento
-        transition: all 0.3s ease;
+        transform: scale(1.05); // Efecto de agrandami
       }
-    }
+    }  
   }
 }

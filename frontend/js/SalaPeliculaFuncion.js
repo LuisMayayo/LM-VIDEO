@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM completamente cargado.");
 
+    // Función para obtener parámetros de la URL
     function obtenerParametroUrl(nombre) {
         const params = new URLSearchParams(window.location.search);
         const valor = params.get(nombre);
@@ -8,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return valor;
     }
 
+    // Obtener el ID de la película desde la URL
     const peliculaId = obtenerParametroUrl("id");
 
     if (peliculaId) {
@@ -17,16 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("No se recibió ningún ID en la URL.");
     }
 
+    // Obtener información de la película
     async function obtenerPeliculaPorId(id) {
         const apiUrl = `http://localhost:5028/api/pelicula/${id}`;
 
         try {
             const response = await fetch(apiUrl);
-
-            if (!response.ok) {
-                throw new Error(`Error al obtener la película: ${response.statusText}`);
-            }
-
+            if (!response.ok) throw new Error(`Error al obtener la película: ${response.statusText}`);
             const pelicula = await response.json();
             mostrarPelicula(pelicula);
         } catch (error) {
@@ -34,16 +33,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Obtener funciones por ID de película
     async function obtenerFuncionesPorPeliculaId(peliculaId) {
         const apiUrl = `http://localhost:5028/api/funcion/pelicula/${peliculaId}`;
 
         try {
             const response = await fetch(apiUrl);
-
-            if (!response.ok) {
-                throw new Error(`Error al obtener las funciones: ${response.statusText}`);
-            }
-
+            if (!response.ok) throw new Error(`Error al obtener las funciones: ${response.statusText}`);
             const funciones = await response.json();
             mostrarFunciones(funciones);
         } catch (error) {
@@ -51,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Mostrar la información de la película
     function mostrarPelicula(pelicula) {
         const peliculaContainer = document.querySelector(".pelicula");
         peliculaContainer.innerHTML = `
@@ -58,27 +55,58 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="pelicula__info">
                 <h1 class="pelicula__title">${pelicula.titulo}</h1>
                 <p class="pelicula__description">${pelicula.descripcion}</p>
-                <p class="pelicula__duration"><strong>Duración:</strong> ${pelicula.duracion}</p>
+                <p class="pelicula__duration">Duración: ${pelicula.duracion}</p>
             </div>
         `;
     }
 
+    // Mostrar funciones
     function mostrarFunciones(funciones) {
         const funcionesList = document.querySelector(".funciones__list");
         funcionesList.innerHTML = "";
 
-        funciones.forEach((funcion) => {
-            const funcionCard = document.createElement("a");
-            funcionCard.className = "funcion";
-            funcionCard.href = `../html/Butacas.html?funcionId=${funcion.id}&peliculaId=${peliculaId}`;
-            funcionCard.innerHTML = `
+        // Agrupar funciones por fecha
+        const funcionesPorDia = funciones.reduce((acc, funcion) => {
+            const fecha = new Date(funcion.fecha).toLocaleDateString();
+            if (!acc[fecha]) {
+                acc[fecha] = [];
+            }
+            acc[fecha].push(funcion);
+            return acc;
+        }, {});
+
+        // Renderizar funciones por cada día
+        Object.keys(funcionesPorDia).forEach((fecha) => {
+            // Crear elemento del día
+            const diaTitulo = document.createElement("h3");
+            diaTitulo.className = "funciones__dia";
+            diaTitulo.textContent = fecha;
+
+            funcionesList.appendChild(diaTitulo);
+
+            // Crear contenedor para las funciones del día
+            const sesionesContainer = document.createElement("div");
+            sesionesContainer.className = "funciones__sesiones";
+
+            funcionesPorDia[fecha].forEach((funcion) => {
+                const hora = funcion.hora.slice(0, 5); // Extraer solo "HH:mm"
+
+                const funcionCard = document.createElement("a");
+                funcionCard.className = "funcion";
+                funcionCard.href = `../html/Butacas.html?funcionId=${funcion.id}&peliculaId=${peliculaId}`;
+                funcionCard.innerHTML = `
                 <div>
-                    <span><strong>${new Date(funcion.horario).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</strong></span>
+                    <span>${hora}</span> <!-- Hora de la función -->
                     <span>Sala ${funcion.salaId}</span>
                 </div>
             `;
 
-            funcionesList.appendChild(funcionCard);
+                sesionesContainer.appendChild(funcionCard);
+            });
+
+            funcionesList.appendChild(sesionesContainer);
         });
     }
+
+
 });
