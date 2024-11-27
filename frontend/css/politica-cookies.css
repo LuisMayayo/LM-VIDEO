@@ -5,49 +5,82 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Bebas Neue", sans-serif;
+  line-height: 1.6;
 }
 
-.section {
+.content {
   padding: 20px;
 }
 
-.hero {
-  text-align: center;
-}
-.hero__title {
-  font-size: 23px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  font-family: "Bebas Neue", sans-serif;
-}
 .hero__image {
   width: 100%;
-  max-width: 400px;
   height: auto;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .privacy-policy {
+  margin: 40px 20px;
   padding: 20px;
-  margin: 0 auto;
-  max-width: 800px;
-}
-.privacy-policy h1,
-.privacy-policy h2,
-.privacy-policy p,
-.privacy-policy ul {
-  margin-bottom: 15px;
-  text-align: center;
-}
-.privacy-policy ul {
-  padding-left: 20px;
-  list-style-position: inside;
+  border-radius: 10px;
 }
 
-.footer {
+.privacy-policy__title {
+  font-size: 2.5rem;
   font-family: "Bebas Neue", sans-serif;
+  color: #00aaff;
+  text-align: center;
+  margin-bottom: 20px;
 }
-.footer__link, .footer__copyright {
+
+.privacy-policy h2 {
+  font-family: "Bebas Neue", sans-serif;
+  color: #00aaff;
+  font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.privacy-policy p,
+.privacy-policy ul {
+  font-size: 1.1rem;
   font-family: "Roboto", sans-serif;
+  color: #fff;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.privacy-policy ul {
+  padding-left: 20px;
+}
+
+.privacy-policy ul li {
+  list-style-type: disc;
+  margin-bottom: 10px;
+}
+
+.privacy-policy ul li strong {
+  color: #00aaff;
+}
+
+@media (min-width: 768px) {
+  .navbar__menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
+  }
+  .privacy-policy {
+    max-width: 800px;
+    margin: 40px auto;
+  }
+  .privacy-policy__title {
+    font-size: 3rem;
+  }
+  .privacy-policy p,
+  .privacy-policy ul {
+    font-size: 1.2rem;
+  }
 }
 
 /*# sourceMappingURL=politica-cookies.css.map */

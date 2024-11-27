@@ -2,40 +2,81 @@
 
 html,
 body {
-    background-color: vars.$color-fondo;
-    color: vars.$color-texto;
-    margin: 0;
-    padding: 0;
-    font-family: vars.$font-primary;
+  background-color: vars.$color-fondo;
+  color: vars.$color-texto;
+  margin: 0;
+  padding: 0;
+  font-family: vars.$font-primary;
+  line-height: 1.6;
 }
 
-.section {
-    padding: 20px;
+.content {
+  padding: 20px;
 }
 
-.hero {
-    text-align: center;
-    margin-bottom: 50px;
-
-    &__title {
-        font-size: 23px;
-        font-weight: bold;
-        margin-bottom: 15px;
-        font-family: vars.$font-primary;
-    }
-
-    &__image {
-        width: 100%;
-        max-width: 400px;
-        height: auto;
-    }
+.hero__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-.footer {
-    font-family: vars.$font-primary;
+.legal-notice {
+  margin: 40px 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
 
-    &__link,
-    &__copyright {
-        font-family: vars.$font-secondary;
-    }
+.legal-notice h1,
+.legal-notice h2 {
+  font-family: vars.$font-family-primary;
+  color: vars.$color-destacado;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.legal-notice h1 {
+  font-size: 2.5rem;
+}
+
+.legal-notice h2 {
+  font-size: 2rem;
+}
+
+.legal-notice p {
+  font-size: 1.1rem;
+  font-family: vars.$font-family-secondary;
+  color: vars.$color-texto;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.legal-notice p:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .navbar__menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
+  }
+
+  .legal-notice {
+    max-width: 800px;
+    margin: 40px auto;
+  }
+
+  .legal-notice h1 {
+    font-size: 3rem;
+  }
+
+  .legal-notice h2 {
+    font-size: 2.5rem;
+  }
+
+  .legal-notice p {
+    font-size: 1.2rem;
+  }
 }
