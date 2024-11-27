@@ -7,53 +7,112 @@ body {
     margin: 0;
     padding: 0;
     font-family: vars.$font-primary;
+    line-height: 1.6;
 }
 
-.section {
+.content {
     padding: 20px;
 }
 
-.hero {
-    text-align: center;
-
-    &__title {
-        font-size: 23px;
-        font-weight: bold;
-        margin-bottom: 15px;
-        font-family: vars.$font-primary;
-    }
-
-    &__image {
-        width: 100%;
-        max-width: 400px;
-        height: auto;
-    }
+.hero__image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .privacy-policy {
+    margin: 40px 20px;
     padding: 20px;
-    margin: 0 auto;
-    max-width: 800px;
+    border-radius: 10px;
+}
 
-    h1,
-    h2,
-    p,
-    ul {
-        margin-bottom: 15px;
-        text-align: center;
-    }
+.privacy-policy__title {
+    font-size: 2rem;
+    font-family: vars.$font-family-primary;
+    color: vars.$color-destacado;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-    ul {
-        padding-left: 20px;
-        list-style-position: inside;
-    }
+.privacy-policy h2 {
+    color: vars.$color-destacado;
+    font-family: vars.$font-family-primary;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.privacy-policy p,
+.privacy-policy ul {
+    font-size: 1.1rem;
+    font-family: vars.$font-family-secondary;
+    color: vars.$color-texto;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.privacy-policy ul {
+    padding-left: 20px;
+}
+
+.privacy-policy ul li {
+    list-style-type: disc;
+    margin-bottom: 10px;
 }
 
 .footer {
-    font-family: vars.$font-primary;
+    background-color: vars.$color-fondo-menu;
+    padding: 20px;
+    text-align: center;
+    color: vars.$color-texto;
+}
 
-    &__link,
-    &__copyright {
-        font-family: vars.$font-secondary;
+.footer__link {
+    text-decoration: none;
+    color: vars.$color-texto;
+    margin: 0 10px;
+}
+
+.footer__logo-image {
+    height: 60px;
+    margin: 20px 0;
+}
+
+.footer__social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.footer__social-icon {
+    color: vars.$color-texto;
+    font-size: 1.5rem;
+}
+
+.footer__social-icon:hover {
+    color: vars.$color-destacado;
+}
+
+@media (min-width: 768px) {
+    .navbar__menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+
+    .privacy-policy {
+        max-width: 800px;
+        margin: 40px auto;
+    }
+
+    .privacy-policy__title {
+        font-size: 2.5rem;
+    }
+
+    .privacy-policy p,
+    .privacy-policy ul {
+        font-size: 1.2rem;
     }
 }
