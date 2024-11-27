@@ -1,6 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM completamente cargado.");
 
+     // Navbar Toggle
+     const toggleButton = document.querySelector(".navbar__toggle");
+     const closeButton = document.querySelector(".navbar__close");
+     const menu = document.querySelector(".navbar__menu");
+ 
+     if (toggleButton) {
+         toggleButton.addEventListener("click", () => {
+             menu.classList.add("is-active");
+         });
+     }
+ 
+     if (closeButton) {
+         closeButton.addEventListener("click", () => {
+             menu.classList.remove("is-active");
+         });
+     }
+
     // Elementos del DOM
     const asientosContainer = document.getElementById("asientos");
     const reservarButton = document.getElementById("reservar");
@@ -109,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function actualizarTotal() {
         const total = preciosSeleccionados.reduce((sum, precio) => sum + precio, 0);
-        totalPagarContainer.textContent = `Total: ${total.toFixed(2)}€`;
+        totalPagarContainer.textContent = `Total a pagar: ${total.toFixed(2)}€`;
         console.log(`Total actualizado: ${total.toFixed(2)}€`); // Log del total actualizado
     }
 
@@ -139,11 +156,12 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Asientos reservados con éxito.");
             console.log("Asientos reservados correctamente.");
     
-            // Redirigir a la página de pago o confirmación
+            // Redirigir a la página de pago o confirmación con los precios incluidos
             const queryParams = new URLSearchParams({
                 funcionId,
                 peliculaId,
                 asientosSeleccionados: asientosSeleccionados.join(","),
+                preciosSeleccionados: preciosSeleccionados.join(",")  // Pasamos los precios a la URL
             }).toString();
     
             console.log("Redirigiendo a la página de pago con parámetros:", queryParams);
@@ -154,5 +172,6 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Ocurrió un error al procesar la reserva. Intenta nuevamente.");
         }
     });
+    
     
 });

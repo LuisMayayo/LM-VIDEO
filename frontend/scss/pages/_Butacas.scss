@@ -1,7 +1,8 @@
 @use '../base/variables' as vars;
 
 // Estilos Globales
-html, body {
+html,
+body {
   background-color: vars.$color-fondo; // Fondo global
   color: vars.$color-texto; // Color de texto global
   font-family: vars.$font-primary; // Fuente principal
@@ -42,9 +43,11 @@ html, body {
         &.disponible {
           background-color: vars.$color-asiento-disponible;
         }
+
         &.seleccionado {
           background-color: vars.$color-asiento-seleccionado;
         }
+
         &.ocupado {
           background-color: vars.$color-asiento-ocupado;
         }
@@ -196,8 +199,9 @@ html, body {
     }
 
     .pantalla {
-      height: 30px;
+      height: 50px;
       font-size: 1.2rem;
+      align-content: center;
     }
 
     #asientos {

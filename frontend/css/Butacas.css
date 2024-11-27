@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   background-color: #000;
   color: #fff;
   font-family: "Bebas Neue", sans-serif;
@@ -162,8 +163,9 @@ html, body {
     font-size: 2.5rem;
   }
   #asientos-container .pantalla {
-    height: 30px;
+    height: 50px;
     font-size: 1.2rem;
+    align-content: center;
   }
   #asientos-container #asientos {
     grid-template-columns: repeat(8, 1fr);

@@ -1,46 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Pago</title>
-    <link rel="stylesheet" href="../css/Pago.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Pago</title>
+
+  <!-- CSS Local -->
+  <link rel="stylesheet" href="../css/pago.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <!-- Fuentes y Estilos Externos -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <main>
-        <h1>Completar Pago</h1>
-        <form id="form-pago">
-            <div>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-            </div>
-            <div>
-                <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" required>
-            </div>
-            <div>
-                <label for="direccion">Dirección:</label>
-                <input type="text" id="direccion" name="direccion" required>
-            </div>
-            <div>
-                <label for="codigo-postal">Código Postal:</label>
-                <input type="text" id="codigo-postal" name="codigo-postal" required>
-            </div>
-            <div>
-                <label for="ciudad">Ciudad:</label>
-                <input type="text" id="ciudad" name="ciudad" required>
-            </div>
-            <div>
-                <label for="correo-electronico">Correo Electrónico:</label>
-                <input type="email" id="correo-electronico" name="correo-electronico" required>
-            </div>
-            <div>
-                <label for="telefono">Teléfono:</label>
-                <input type="tel" id="telefono" name="telefono" required>
-            </div>
-            <button type="submit">Pagar</button>
-        </form>
-    </main>
-    <script src="../js/Pago.js"></script>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar__logo">
+      <img src="../Fotos/logo.png" alt="Logo LM Video" class="navbar__logo-image">
+    </div>
+    <button class="navbar__toggle" aria-label="Abrir menú">
+      <span class="navbar__toggle-icon"></span>
+      <span class="navbar__toggle-icon"></span>
+      <span class="navbar__toggle-icon"></span>
+    </button>
+    <div class="navbar__menu">
+      <button class="navbar__close" aria-label="Cerrar menú">✕</button>
+      <a href="../html/index.html" class="navbar__item">HOME</a>
+      <a href="../html/cartelera.html" class="navbar__item">CARTELERA</a>
+      <a href="../html/proximos-estrenos.html" class="navbar__item">PRÓXIMOS ESTRENOS</a>
+      <a href="../html/sobre-nosotros.html" class="navbar__item">SOBRE NOSOTROS</a>
+      <a href="../html/contacto.html" class="navbar__item">CONTACTO</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Información de la película -->
+    <div class="pelicula">
+        <img src="" alt="Imagen de la película" class="pelicula__image">
+        <div class="pelicula__info">
+            <h1 class="pelicula__title"></h1>
+            <p class="pelicula__description"></p>
+            <p class="pelicula__duration"></p>
+        </div>
+    </div>
+
+    <!-- Información de la función -->
+    <div class="funcion-info">
+        <h3 id="funcionHorario" class="funcion-info__horario">Horario: Cargando...</h3>
+        <h3 id="funcionSala" class="funcion-info__sala">Sala: Cargando...</h3>
+        <h3 class="precio__titulo" id="precioTotal">Total: Cargando...</h3>
+      </div>
+      
+
+    <!-- Información de los asientos -->
+    <h3 class="asientos__titulo">ASIENTOS SELECCIONADOS: <span id="asientosSeleccionados">Cargando...</span></h3>
+
+    <!-- Formulario de pago -->
+    <form class="formulario-pago">
+      <div class="formulario-pago__row">
+        <input type="text" placeholder="Nombre" required>
+        <input type="text" placeholder="Apellido" required>
+      </div>
+      <div class="formulario-pago__row">
+        <input type="text" placeholder="Dirección" required>
+        <input type="text" placeholder="Código postal" required>
+      </div>
+      <div class="formulario-pago__row">
+        <input type="text" placeholder="Ciudad" required>
+        <input type="email" placeholder="Correo Electrónico" required>
+      </div>
+      <div class="formulario-pago__row">
+        <input type="tel" placeholder="Teléfono" required>
+      </div>
+      <button type="submit" class="boton-pago">PAGAR AHORA</button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__top">
+      <a href="../html/aviso-legal.html" class="footer__link">Aviso Legal</a>
+      <a href="../html/politica-privacidad.html" class="footer__link">Política de privacidad</a>
+      <a href="../html/politica-cookies.html" class="footer__link">Política de Cookies</a>      
+    </div>
+    <div class="footer__logo">
+      <img src="../Fotos/logo.png" alt="Logo LM Video" class="footer__logo-image">
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">© Copyright 2024 LM VIDEO</p>
+      <div class="footer__social">
+        <a href="#" class="footer__social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="footer__social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="footer__social-icon" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="../js/pago.js"></script>
 </body>
+
 </html>

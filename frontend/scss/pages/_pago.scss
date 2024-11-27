@@ -1,178 +1,147 @@
 @use '../base/variables' as vars;
 
-html,
 body {
-  font-family: vars.$font-primary;
-  font-weight: 400; // Peso normal global
   background-color: vars.$color-fondo;
   color: vars.$color-texto;
+  font-family: vars.$font-primary;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
 main {
+  padding: 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding: 20px;
-  min-height: calc(100vh - 100px);
-}
-
-#resumen-container {
-  position: relative;
-  width: 100%;
-  max-width: 600px; // Máximo ancho para desktop
+  max-width: 100%;
   margin: 0 auto;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-#resumen-background {
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  filter: brightness(0.7); // Oscurece la imagen
+.pelicula {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 100%;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
-#resumen {
-  position: relative;
-  z-index: 2; // Trae el contenido al frente
-  background-color: rgba(0, 0, 0, 0.8); // Fondo oscuro semitransparente
-  color: vars.$color-texto;
-  padding: 20px;
+.pelicula__image {
+  max-width: 56%;
+  height: auto;
   border-radius: 10px;
-  text-align: left;
-
-  p {
-    margin: 10px 0;
-    display: flex;
-    justify-content: space-between; // Alineación texto-valor
-    font-size: 1rem;
-
-    span:first-of-type {
-      color: vars.$primary-color; // Color principal para etiquetas
-    }
-
-    span:last-of-type {
-      color: #fff; // Blanco para los valores
-    }
-  }
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#pago-container {
-  max-width: 100%; // Diseño móvil
-  width: 100%;
-  padding: 15px;
-  background-color: vars.$color-fondo-card;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+.pelicula__info {
+  max-width: 100%;
   text-align: center;
 
-  h1,
-  h2 {
-    font-family: vars.$font-secondary;
-    font-size: 1.2rem; // Tamaño ajustado para móviles
+  .pelicula__title {
+    font-size: 2rem;
+    color: vars.$color-destacado;
     margin-bottom: 15px;
-    font-weight: 400; // Sin negrita
   }
 
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  .pelicula__description {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: lighten(vars.$color-texto, 10%);
+  }
 
-    input,
-    button {
-      font-family: vars.$font-primary;
-      font-size: 1rem;
-      height: 45px; // Altura uniforme para todos los campos
-      border: 1px solid vars.$color-borde;
-      border-radius: 5px;
-      padding: 10px;
-      background-color: #fff;
-      color: vars.$color-texto;
-      box-sizing: border-box; // Incluye padding y border en el tamaño total
-
-      &:focus {
-        outline: none;
-        border-color: vars.$color-destacado;
-      }
-    }
-
-    .form-row {
-      display: flex;
-      gap: 10px;
-
-      input {
-        flex: 1; // Divide el ancho en partes iguales en filas
-      }
-    }
-
-    button {
-      background-color: vars.$color-boton-reserva;
-      border: none;
-      font-weight: 400; // Sin negrita
-      cursor: pointer;
-
-      &:hover {
-        background-color: vars.$color-hover-boton;
-      }
-
-      &:disabled {
-        background-color: vars.$color-boton-reserva-disabled;
-        cursor: not-allowed;
-      }
-    }
+  .pelicula__duration {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: vars.$primary-color;
   }
 }
 
-// Media Queries para pantallas más pequeñas
-@media (max-width: 768px) {
-  #pago-container {
-    padding: 15px;
+.funcion-info {
+  font-size: 1rem;
+  font-family: vars.$font-primary;
+  color: vars.$color-texto;
+  text-align: center;
+}
 
-    form {
-      .form-row {
-        flex-direction: column;
-        gap: 10px;
+.funcion-info__horario,
+.funcion-info__sala, .precio__titulo {
+  font-size: 1.2rem;
+  font-weight: 400 !important;
+}
 
-        input {
-          width: 100%;
-        }
-      }
+.asientos__titulo {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: vars.$color-texto;
+  text-align: center;
+  font-weight: 400 !important;
+}
 
-      button {
-        padding: 12px;
-        font-size: 1rem;
-      }
-    }
+.formulario-pago {
+  margin-top: 20px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.formulario-pago__row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+
+  input {
+    padding: 10px;
+    border: 1px solid vars.$color-borde;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: vars.$color-fondo;
+    color: vars.$color-texto;
+    box-sizing: border-box;
   }
 }
 
-// Media Queries para pantallas grandes
-@media (min-width: 1024px) {
-  #pago-container {
+.boton-pago {
+  background-color: vars.$primary-color;
+  color: #ffffff;
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darken(vars.$primary-color, 10%);
+  }
+}
+
+@media (min-width: 768px) {
+  .pelicula {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .pelicula__image {
+    max-width: 350px;
+  }
+
+  .pelicula__info {
+    text-align: left;
     max-width: 600px;
+  }
 
-    h1,
-    h2 {
-      font-size: 1.8rem;
-    }
+  .formulario-pago__row {
+    flex-direction: row;
+  }
 
-    form {
-      .form-row input {
-        font-size: 1rem;
-        height: 45px; // Mantén altura uniforme en pantallas grandes
-      }
+  .formulario-pago__row input {
+    flex: 1;
+  }
 
-      button {
-        padding: 15px;
-        font-size: 1.2rem;
-      }
-    }
+  .asientos__titulo {
+    font-size: 1.3rem;
   }
 }
+
