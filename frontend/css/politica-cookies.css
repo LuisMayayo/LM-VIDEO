@@ -1,14 +1,16 @@
-html,
-body {
-  background-color: #000;
-  color: #fff;
+@charset "UTF-8";
+/* _reset.scss */
+* {
   margin: 0;
   padding: 0;
-  font-family: "Bebas Neue", sans-serif;
-  line-height: 1.6;
+  box-sizing: border-box;
 }
 
-.content {
+body {
+  font-family: "Roboto", sans-serif; /* Puedes usar una fuente predeterminada aquí si lo necesitas */
+  background-color: #000; /* Esto depende de las variables, pero aún no han sido importadas aquí */
+  color: #fff; /* También depende de las variables */
+  margin: 0;
   padding: 20px;
 }
 
@@ -64,12 +66,6 @@ body {
 }
 
 @media (min-width: 768px) {
-  .navbar__menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 20px;
-  }
   .privacy-policy {
     max-width: 800px;
     margin: 40px auto;

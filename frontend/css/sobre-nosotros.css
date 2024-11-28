@@ -1,11 +1,17 @@
-html,
-body {
-  background-color: #000;
-  color: #fff;
+@charset "UTF-8";
+/* _reset.scss */
+* {
   margin: 0;
   padding: 0;
-  font-family: "Bebas Neue", sans-serif;
-  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif; /* Puedes usar una fuente predeterminada aquí si lo necesitas */
+  background-color: #000; /* Esto depende de las variables, pero aún no han sido importadas aquí */
+  color: #fff; /* También depende de las variables */
+  margin: 0;
+  padding: 20px;
 }
 
 .content {

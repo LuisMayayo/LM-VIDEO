@@ -1,6 +1,9 @@
-// scss/main.scss
-@use 'base/variables';
-@use 'base/reset';
+
+// Primero importamos las variables
+@use '../base/variables' as vars;
+
+// Luego importamos el reset
+@use '../base/reset' as *;
 
 @use 'layout/header';
 @use 'layout/footer';

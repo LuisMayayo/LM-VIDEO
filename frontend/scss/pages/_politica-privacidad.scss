@@ -1,18 +1,6 @@
 @use '../base/variables' as vars;
 
-html,
-body {
-    background-color: vars.$color-fondo;
-    color: vars.$color-texto;
-    margin: 0;
-    padding: 0;
-    font-family: vars.$font-primary;
-    line-height: 1.6;
-}
-
-.content {
-    padding: 20px;
-}
+@use '../base/reset' as *;
 
 .hero__image {
     width: 100%;
@@ -60,48 +48,8 @@ body {
     margin-bottom: 10px;
 }
 
-.footer {
-    background-color: vars.$color-fondo-menu;
-    padding: 20px;
-    text-align: center;
-    color: vars.$color-texto;
-}
-
-.footer__link {
-    text-decoration: none;
-    color: vars.$color-texto;
-    margin: 0 10px;
-}
-
-.footer__logo-image {
-    height: 60px;
-    margin: 20px 0;
-}
-
-.footer__social {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.footer__social-icon {
-    color: vars.$color-texto;
-    font-size: 1.5rem;
-}
-
-.footer__social-icon:hover {
-    color: vars.$color-destacado;
-}
 
 @media (min-width: 768px) {
-    .navbar__menu {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        gap: 20px;
-    }
-
     .privacy-policy {
         max-width: 800px;
         margin: 40px auto;

@@ -1,11 +1,6 @@
 @use '../base/variables' as vars;
 
-body {
-  font-family: vars.$font-primary;
-  background-color: vars.$secondary-color;
-  margin: 0;
-  padding: 0;
-}
+@use '../base/reset' as *;
 
 .promo {
   text-align: center;

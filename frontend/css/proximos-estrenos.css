@@ -1,118 +1,17 @@
-body {
-  font-family: "Bebas Neue", sans-serif;
-  background-color: #000;
-  margin: 0;
-  padding: 0;
-}
+/* Error: Undefined variable.
+ *    ,
+ * 41 |       background-color: vars.$color-fondo-overlay;
+ *    |                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   scss\pages\_proximos-estrenos.scss 41:25  root stylesheet */
 
-.promo {
-  text-align: center;
-  color: #00aaff;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 41 \2502        background-color: vars.$color-fondo-overlay;\d\a    \2502                          ^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   scss\\pages\\_proximos-estrenos.scss 41:25  root stylesheet";
 }
-.promo__title {
-  font-size: 2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin: 0;
-  padding: 2rem 0;
-  color: #fff;
-}
-.promo__content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 2rem;
-  border-radius: 0;
-  background-size: cover;
-  background-position: center;
-  color: #00aaff;
-  min-height: 300px;
-  overflow: hidden;
-}
-.promo__content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.82);
-  z-index: 1;
-  border-radius: 0;
-}
-.promo__content > * {
-  position: relative;
-  z-index: 2;
-}
-.promo__content-image {
-  max-width: 300px;
-  width: 100%;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-.promo__content-details {
-  max-width: 400px;
-  padding: 1rem;
-  text-align: left;
-}
-.promo__content-details h2 {
-  font-size: 1.8rem;
-  color: #00aaff;
-  margin-bottom: 0.5rem;
-}
-.promo__content-details p {
-  font-size: 1rem;
-  line-height: 1.6;
-  font-family: "Roboto", sans-serif;
-  color: #fff;
-}
-@media (min-width: 768px) {
-  .promo__content--cars, .promo__content--fastfurious {
-    flex-direction: row-reverse;
-  }
-}
-@media (min-width: 768px) {
-  .promo__content--avatar, .promo__content--jurassic {
-    flex-direction: row;
-  }
-}
-.promo__content--cars {
-  background-image: url("../Fotos/fondo-cars.jpg");
-}
-.promo__content--avatar {
-  background-image: url("../Fotos/fondo-avatar.jpg");
-}
-.promo__content--fastfurious {
-  background-image: url("../Fotos/fondo-FastFurius11.jpg");
-}
-.promo__content--jurassic {
-  background-image: url("../Fotos/fondo-jurassicworld.jpg");
-}
-@media (min-width: 768px) {
-  .promo__content {
-    align-items: center;
-    gap: 2rem;
-  }
-  .promo__content-image {
-    max-width: 500px;
-  }
-  .promo__content-details {
-    max-width: 600px;
-  }
-  .promo__content-details h2 {
-    font-size: 2.4rem;
-  }
-  .promo__content-details p {
-    font-size: 1.2rem;
-  }
-  .promo__title {
-    font-size: 3rem;
-    padding: 3rem 0;
-  }
-}
-
-/*# sourceMappingURL=proximos-estrenos.css.map */

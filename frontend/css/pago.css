@@ -1,41 +1,42 @@
-body {
-  background-color: #000;
-  color: #fff;
-  font-family: "Bebas Neue", sans-serif;
+@charset "UTF-8";
+/* _reset.scss */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-main {
+body {
+  font-family: "Roboto", sans-serif; /* Puedes usar una fuente predeterminada aquí si lo necesitas */
+  background-color: #000; /* Esto depende de las variables, pero aún no han sido importadas aquí */
+  color: #fff; /* También depende de las variables */
+  margin: 0;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 100%;
-  margin: 0 auto;
 }
 
 .pelicula {
   display: flex;
-  gap: 30px;
+  flex-direction: column; /* Asegura que en móviles esté en columna */
+  gap: 20px;
   max-width: 1200px;
   width: 100%;
   align-items: center;
+  margin-bottom: 30px;
 }
 .pelicula__image {
-  max-width: 230px;
+  max-width: 100%; /* La imagen ocupa el 100% del ancho disponible */
   height: auto;
   object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .pelicula__info {
-  flex: 1;
-  text-align: left;
+  text-align: center; /* Centra el texto en móviles */
   color: #fff;
+  max-width: 100%;
 }
 .pelicula__info .pelicula__title {
-  font-size: 2rem;
+  font-size: 1.5rem; /* Tamaño más pequeño en móviles */
   font-family: "Bebas Neue", sans-serif;
   margin-bottom: 15px;
   color: #fff;
@@ -55,30 +56,29 @@ main {
 }
 
 .funcion-info {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-family: "Bebas Neue", sans-serif;
-  color: #fff;
+  color: #00aaff;
   text-align: center;
+  margin: 9px;
 }
 
 .funcion-info__horario,
-.funcion-info__sala, .precio__titulo {
+.funcion-info__sala,
+.precio__titulo {
   font-size: 1.2rem;
   font-weight: 400 !important;
+  margin: 5px;
+  color: #00aaff;
 }
 
 .asientos__titulo {
   margin-top: 20px;
-  font-size: 1.1rem;
-  color: #fff;
+  font-size: 1.2rem;
+  color: #00aaff;
   text-align: center;
   font-weight: 400 !important;
-}
-
-.formulario-pago {
-  margin-top: 20px;
-  max-width: 600px;
-  width: 100%;
+  margin: 5px;
 }
 
 .formulario-pago__row {
@@ -114,11 +114,11 @@ main {
 
 @media (min-width: 768px) {
   .pelicula {
-    flex-direction: row;
+    flex-direction: row; /* En pantallas grandes, los elementos estarán en fila */
     justify-content: space-between;
   }
   .pelicula__image {
-    max-width: 350px;
+    max-width: 350px; /* Limitar el tamaño de la imagen en pantallas grandes */
   }
   .pelicula__info {
     text-align: left;
@@ -129,9 +129,6 @@ main {
   }
   .formulario-pago__row input {
     flex: 1;
-  }
-  .asientos__titulo {
-    font-size: 1.3rem;
   }
 }
 

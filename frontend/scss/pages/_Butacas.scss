@@ -1,14 +1,6 @@
 @use '../base/variables' as vars;
 
-// Estilos Globales
-html,
-body {
-  background-color: vars.$color-fondo; // Fondo global
-  color: vars.$color-texto; // Color de texto global
-  font-family: vars.$font-primary; // Fuente principal
-  margin: 0;
-  padding: 0;
-}
+@use '../base/reset' as *;
 
 #asientos-container {
   margin: 0 auto;

@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             // Mostrar los datos de la película
             document.querySelector(".pelicula__title").textContent = pelicula.titulo;
             document.querySelector(".pelicula__description").textContent = pelicula.descripcion;
-            document.querySelector(".pelicula__duration").textContent = `Duración: ${pelicula.duracion} min`;
+            document.querySelector(".pelicula__duration").textContent = `Duración: ${pelicula.duracion} `;
             document.querySelector(".pelicula__image").src = pelicula.fotoUrl;
         } catch (error) {
             console.error("Error al cargar los datos de la película:", error.message);
@@ -80,7 +80,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             document.querySelector("#funcionHorario").textContent = `Horario: ${horario}`;
             document.querySelector("#funcionSala").textContent = `Sala: ${funcion.salaId}`;
-            document.querySelector("#funcionFecha").textContent = `Fecha: ${new Date(funcion.fecha).toLocaleDateString()}`;
         } catch (error) {
             console.error("Error al cargar los datos de la función:", error.message);
         }
@@ -156,14 +155,12 @@ document.addEventListener("DOMContentLoaded", async function () {
             esValido = false;
         }
 
-        // Validar teléfono
         // Validar teléfono (9 dígitos o más)
         const telefonoRegex = /^[0-9]{9,}$/;
         if (!telefonoRegex.test(telefono.value.trim())) {
             alert("Por favor, ingresa un número de teléfono válido (9 dígitos o más).");
             esValido = false;
         }
-
 
         return esValido;
     }
@@ -211,5 +208,4 @@ document.addEventListener("DOMContentLoaded", async function () {
             alert("Hubo un problema al procesar el pago. Inténtalo de nuevo.");
         }
     });
-
 });
