@@ -1,73 +1,105 @@
+html,
 body {
-  font-family: "Bebas Neue", sans-serif;
   background-color: #000;
   color: #fff;
-  text-align: center;
+  font-family: "Bebas Neue", sans-serif;
   margin: 0;
   padding: 0;
 }
 
-main#ticket {
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 600px;
-  background: #181818;
-  border: 1px solid #333;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.ticket__info {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  text-align: left;
-}
-.ticket__info p {
-  margin: 10px 0;
-  font-size: 1.1rem;
+.ticket__container {
+  background-color: #181818;
   color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  margin: 50px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-.ticket__info strong {
-  color: #00aaff;
-}
-.ticket__info .ticket__movie {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #00aaff;
+.ticket__container .ticket__title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 15px;
+  color: #00aaff;
+  margin-bottom: 20px;
 }
-.ticket__info .ticket__price {
+.ticket__container .ticket__movie,
+.ticket__container .ticket__details {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+.ticket__container .ticket__movie {
+  font-weight: bold;
+}
+.ticket__container .ticket__details {
+  color: #b3b3b3;
+}
+.ticket__container h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.8rem;
+  color: #00aaff;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.ticket__container .ticket__client-info p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #b3b3b3;
+}
+.ticket__container .ticket__total {
   font-size: 1.4rem;
   font-weight: bold;
-  color: #33bbff;
-  text-align: center;
-  margin-top: 10px;
+  color: #00aaff;
+  margin-top: 15px;
 }
-
-h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+.ticket__container .ticket__asientos {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #b3b3b3;
+}
+.ticket__container .ticket__asientos span {
+  font-weight: bold;
   color: #00aaff;
 }
-
-@media (min-width: 768px) {
-  main#ticket {
-    padding: 30px;
-  }
-  .ticket__info p {
-    font-size: 1.2rem;
-  }
-  .ticket__info .ticket__movie {
-    font-size: 1.8rem;
-  }
-  .ticket__info .ticket__price {
-    font-size: 1.6rem;
-  }
-  h1 {
-    font-size: 2.5rem;
-  }
+.ticket__container .ticket__asientos .asiento {
+  display: inline-block;
+  background-color: #4ead4e;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 0.9rem;
+}
+.ticket__container .ticket__asientos .asiento-ocupado {
+  background-color: #ff0000;
+}
+.ticket__container .ticket__asientos .asiento-seleccionado {
+  background-color: #00aaff;
+}
+.ticket__container .ticket__actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.ticket__container .ticket__actions .btn {
+  padding: 10px 20px;
+  background-color: #00aaff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.ticket__container .ticket__actions .btn:hover {
+  background-color: #4dc4ff;
+}
+.ticket__container .ticket__actions .btn.disabled {
+  background-color: #555555;
+  cursor: not-allowed;
 }
 
 /*# sourceMappingURL=ticket.css.map */

@@ -1,23 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM completamente cargado.");
 
-     // Navbar Toggle
-     const toggleButton = document.querySelector(".navbar__toggle");
-     const closeButton = document.querySelector(".navbar__close");
-     const menu = document.querySelector(".navbar__menu");
- 
-     if (toggleButton) {
-         toggleButton.addEventListener("click", () => {
-             menu.classList.add("is-active");
-         });
-     }
- 
-     if (closeButton) {
-         closeButton.addEventListener("click", () => {
-             menu.classList.remove("is-active");
-         });
-     }
-
     // Elementos del DOM
     const asientosContainer = document.getElementById("asientos");
     const reservarButton = document.getElementById("reservar");
@@ -130,48 +113,24 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(`Total actualizado: ${total.toFixed(2)}€`); // Log del total actualizado
     }
 
+    // Aquí modificamos el evento del botón de "Pagar ahora"
     reservarButton.addEventListener("click", async () => {
         if (asientosSeleccionados.length === 0) {
             alert("Selecciona al menos un asiento.");
             return;
         }
-    
-        const apiUrl = `http://localhost:5028/api/asiento/Elegir/${funcionId}`;
-        console.log("Enviando asientos seleccionados para reservar:", asientosSeleccionados);
-    
-        try {
-            const response = await fetch(apiUrl, {
-                method: "PUT",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(asientosSeleccionados),
-            });
-    
-            if (!response.ok) {
-                const error = await response.json();
-                alert(`Error al reservar asientos: ${error.message || "Error desconocido"}`);
-                console.log("Error al reservar asientos:", error);
-                return;
-            }
-    
-            alert("Asientos reservados con éxito.");
-            console.log("Asientos reservados correctamente.");
-    
-            // Redirigir a la página de pago o confirmación con los precios incluidos
-            const queryParams = new URLSearchParams({
-                funcionId,
-                peliculaId,
-                asientosSeleccionados: asientosSeleccionados.join(","),
-                preciosSeleccionados: preciosSeleccionados.join(",")  // Pasamos los precios a la URL
-            }).toString();
-    
-            console.log("Redirigiendo a la página de pago con parámetros:", queryParams);
-    
-            window.location.href = `../html/pago.html?${queryParams}`; // Cambia la ruta según la estructura de tu proyecto
-        } catch (error) {
-            console.error("Error al realizar la reserva:", error.message);
-            alert("Ocurrió un error al procesar la reserva. Intenta nuevamente.");
-        }
+
+        // Redirigir a la página de pago con los parámetros de la selección
+        const queryParams = new URLSearchParams({
+            funcionId,
+            peliculaId,
+            asientosSeleccionados: asientosSeleccionados.join(","),
+            preciosSeleccionados: preciosSeleccionados.join(",")  // Pasamos los precios a la URL
+        }).toString();
+
+        console.log("Redirigiendo a la página de pago con parámetros:", queryParams);
+
+        // Aquí redirigimos a la página de pago con los parámetros necesarios
+        window.location.href = `../html/pago.html?${queryParams}`; // Cambia la ruta según la estructura de tu proyecto
     });
-    
-    
 });

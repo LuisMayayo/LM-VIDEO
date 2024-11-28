@@ -1,83 +1,123 @@
 @use '../base/variables' as vars;
 
+html,
 body {
-  font-family: vars.$font-primary;
-  background-color: vars.$color-fondo;
-  color: vars.$color-texto;
-  text-align: center;
+  background-color: vars.$color-fondo; // Fondo global
+  color: vars.$color-texto; // Color de texto global
+  font-family: vars.$font-primary; // Fuente principal
   margin: 0;
   padding: 0;
 }
 
-main#ticket {
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 600px;
-  background: vars.$color-fondo-card;
-  border: 1px solid vars.$color-borde;
+.ticket__container {
+  background-color: vars.$color-fondo-card;
+  color: vars.$color-texto;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  margin: 50px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 
-.ticket__info {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  text-align: left;
-
-  p {
-    margin: 10px 0;
-    font-size: 1.1rem;
-    color: vars.$color-texto;
+  .ticket__title {
+    font-family: vars.$font-primary;
+    font-size: 2.5rem;
+    text-align: center;
+    color: vars.$primary-color;
+    margin-bottom: 20px;
   }
 
-  strong {
-    color: vars.$color-destacado;
+  .ticket__movie,
+  .ticket__details {
+    font-family: vars.$font-secondary;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
   }
 
   .ticket__movie {
-    font-size: 1.5rem;
     font-weight: bold;
-    color: vars.$primary-color;
-    text-align: center;
-    margin-bottom: 15px;
   }
 
-  .ticket__price {
+  .ticket__details {
+    color: vars.$color-texto-secundario;
+  }
+
+  h2 {
+    font-family: vars.$font-primary;
+    font-size: 1.8rem;
+    color: vars.$primary-color;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  .ticket__client-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: vars.$color-texto-secundario;
+  }
+
+  .ticket__total {
     font-size: 1.4rem;
     font-weight: bold;
-    color: lighten(vars.$primary-color, 10%);
-    text-align: center;
-    margin-top: 10px;
-  }
-}
-
-h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: vars.$primary-color;
-}
-
-@media (min-width: 768px) {
-  main#ticket {
-    padding: 30px;
+    color: vars.$primary-color;
+    margin-top: 15px;
   }
 
-  .ticket__info {
-    p {
-      font-size: 1.2rem;
+  // Estilo para el bloque de asientos
+  .ticket__asientos {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: vars.$color-texto-secundario;
+
+    span {
+      font-weight: bold;
+      color: vars.$color-destacado;
     }
 
-    .ticket__movie {
-      font-size: 1.8rem;
+    .asiento {
+      display: inline-block;
+      background-color: vars.$color-asiento-disponible;
+      padding: 5px 10px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      color: vars.$color-texto;
+      font-size: 0.9rem;
     }
 
-    .ticket__price {
-      font-size: 1.6rem;
+    .asiento-ocupado {
+      background-color: vars.$color-asiento-ocupado;
+    }
+
+    .asiento-seleccionado {
+      background-color: vars.$color-asiento-seleccionado;
     }
   }
 
-  h1 {
-    font-size: 2.5rem;
+  // Botón para imprimir o realizar acciones
+  .ticket__actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    .btn {
+      padding: 10px 20px;
+      background-color: vars.$primary-color;
+      color: vars.$color-texto;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: lighten(vars.$primary-color, 15%);
+      }
+
+      &.disabled {
+        background-color: vars.$color-boton-reserva-disabled;
+        cursor: not-allowed;
+      }
+    }
   }
 }

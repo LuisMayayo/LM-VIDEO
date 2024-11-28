@@ -19,41 +19,45 @@ main {
 
 .pelicula {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 100%;
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
   align-items: center;
-  margin-bottom: 40px;
-}
 
-.pelicula__image {
-  max-width: 56%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.pelicula__info {
-  max-width: 100%;
-  text-align: center;
-
-  .pelicula__title {
-    font-size: 2rem;
-    color: vars.$color-destacado;
-    margin-bottom: 15px;
+  &__image {
+    max-width: 230px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
-  .pelicula__description {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 15px;
-    color: lighten(vars.$color-texto, 10%);
-  }
+  &__info {
+    flex: 1;
+    text-align: left;
+    color: vars.$color-texto;
 
-  .pelicula__duration {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    color: vars.$primary-color;
+    .pelicula__title {
+      font-size: 2rem;
+      font-family: vars.$font-primary;
+      margin-bottom: 15px;
+      color: vars.$color-texto;
+    }
+
+    .pelicula__description {
+      font-size: 1rem;
+      font-family: vars.$font-secondary;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: lighten(vars.$color-texto, 10%);
+    }
+
+    .pelicula__duration {
+      font-size: 1rem;
+      font-family: vars.$font-primary;
+      color: vars.$color-texto;
+      margin-top: 10px;
+    }
   }
 }
 

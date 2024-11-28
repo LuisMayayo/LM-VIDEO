@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -39,27 +39,28 @@
   <main>
     <!-- Información de la película -->
     <div class="pelicula">
-        <img src="" alt="Imagen de la película" class="pelicula__image">
-        <div class="pelicula__info">
-            <h1 class="pelicula__title"></h1>
-            <p class="pelicula__description"></p>
-            <p class="pelicula__duration"></p>
-        </div>
+      <img id="peliculaImagen" src="" alt="Imagen de la película" class="pelicula__image">
+      <div class="pelicula__info">
+        <h1 id="peliculaTitulo" class="pelicula__title">Cargando...</h1>
+        <p id="peliculaDescripcion" class="pelicula__description">Cargando...</p>
+        <p id="peliculaDuracion" class="pelicula__duration">Cargando...</p>
+      </div>
     </div>
 
     <!-- Información de la función -->
     <div class="funcion-info">
-        <h3 id="funcionHorario" class="funcion-info__horario">Horario: Cargando...</h3>
-        <h3 id="funcionSala" class="funcion-info__sala">Sala: Cargando...</h3>
-        <h3 class="precio__titulo" id="precioTotal">Total: Cargando...</h3>
-      </div>
-      
+      <h3 id="funcionHorario" class="funcion-info__horario">Horario: Cargando...</h3>
+      <h3 id="funcionSala" class="funcion-info__sala">Sala: Cargando...</h3>
+    </div>
 
-    <!-- Información de los asientos -->
+    <!-- Información de los asientos seleccionados -->
     <h3 class="asientos__titulo">ASIENTOS SELECCIONADOS: <span id="asientosSeleccionados">Cargando...</span></h3>
 
+    <!-- Información del precio total -->
+    <h3 class="precio__titulo" id="precioTotal">Total: Cargando...</h3>
+
     <!-- Formulario de pago -->
-    <form class="formulario-pago" id="formularioPago">
+    <form class="formulario-pago" id="formularioPago" novalidate>
       <div class="formulario-pago__row">
         <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
         <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
@@ -77,6 +78,7 @@
       </div>
       <button type="button" class="boton-pago" id="botonPago">PAGAR AHORA</button>
     </form>
+    
     
   </main>
 

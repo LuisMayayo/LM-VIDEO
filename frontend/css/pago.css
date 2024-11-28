@@ -17,39 +17,41 @@ main {
 
 .pelicula {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 100%;
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
   align-items: center;
-  margin-bottom: 40px;
 }
-
 .pelicula__image {
-  max-width: 56%;
+  max-width: 230px;
   height: auto;
-  border-radius: 10px;
+  object-fit: cover;
+  border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 .pelicula__info {
-  max-width: 100%;
-  text-align: center;
+  flex: 1;
+  text-align: left;
+  color: #fff;
 }
 .pelicula__info .pelicula__title {
   font-size: 2rem;
-  color: #00aaff;
+  font-family: "Bebas Neue", sans-serif;
   margin-bottom: 15px;
+  color: #fff;
 }
 .pelicula__info .pelicula__description {
   font-size: 1rem;
-  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
   margin-bottom: 15px;
   color: white;
 }
 .pelicula__info .pelicula__duration {
-  font-size: 1.2rem;
+  font-size: 1rem;
+  font-family: "Bebas Neue", sans-serif;
+  color: #fff;
   margin-top: 10px;
-  color: #00aaff;
 }
 
 .funcion-info {
