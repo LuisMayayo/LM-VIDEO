@@ -106,4 +106,39 @@ document.addEventListener("DOMContentLoaded", async function () {
     await obtenerPelicula(peliculaId);
     await obtenerFuncion(funcionId);
     mostrarAsientos(asientosSeleccionados);
+
+    document.getElementById("botonPago").addEventListener("click", async function () {
+        const formData = {
+          funcionId: obtenerParametroUrl("funcionId"),
+          peliculaId: obtenerParametroUrl("peliculaId"),
+          asientosSeleccionados: obtenerParametroUrl("asientosSeleccionados").split(",").map(Number),
+          nombre: document.getElementById("nombre").value,
+          apellido: document.getElementById("apellido").value,
+          direccion: document.getElementById("direccion").value,
+          codigoPostal: document.getElementById("codigoPostal").value,
+          ciudad: document.getElementById("ciudad").value,
+          correoElectronico: document.getElementById("correoElectronico").value,
+          telefono: document.getElementById("telefono").value,
+        };
+      
+        try {
+          const response = await fetch("http://localhost:5028/api/pagos", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          });
+      
+          if (!response.ok) throw new Error("Error al procesar el pago");
+      
+          const pago = await response.json();
+          console.log("Pago registrado:", pago);
+      
+          // Redirigir a la página de ticket con el ID del pago
+          window.location.href = `../html/ticket.html?pagoId=${pago.id}`;
+        } catch (error) {
+          console.error("Error en el pago:", error.message);
+          alert("Hubo un problema al procesar el pago. Inténtalo de nuevo.");
+        }
+      });
+      
 });

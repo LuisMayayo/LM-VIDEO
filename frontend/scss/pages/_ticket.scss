@@ -1,0 +1,83 @@
+@use '../base/variables' as vars;
+
+body {
+  font-family: vars.$font-primary;
+  background-color: vars.$color-fondo;
+  color: vars.$color-texto;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+main#ticket {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  background: vars.$color-fondo-card;
+  border: 1px solid vars.$color-borde;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ticket__info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+
+  p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: vars.$color-texto;
+  }
+
+  strong {
+    color: vars.$color-destacado;
+  }
+
+  .ticket__movie {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: vars.$primary-color;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .ticket__price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: lighten(vars.$primary-color, 10%);
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: vars.$primary-color;
+}
+
+@media (min-width: 768px) {
+  main#ticket {
+    padding: 30px;
+  }
+
+  .ticket__info {
+    p {
+      font-size: 1.2rem;
+    }
+
+    .ticket__movie {
+      font-size: 1.8rem;
+    }
+
+    .ticket__price {
+      font-size: 1.6rem;
+    }
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+}
