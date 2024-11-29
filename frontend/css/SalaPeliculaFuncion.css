@@ -1,124 +1,143 @@
-@charset "UTF-8";
-/* _reset.scss */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Roboto", sans-serif; /* Puedes usar una fuente predeterminada aquí si lo necesitas */
-  background-color: #000; /* Esto depende de las variables, pero aún no han sido importadas aquí */
-  color: #fff; /* También depende de las variables */
+main {
+  font-family: "Roboto", sans-serif;
+  background-color: #000;
+  color: #fff;
   margin: 0;
   padding: 20px;
 }
 
-.content {
-  padding: 20px;
+h1, h2 {
+  font-size: 2rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
+  color: #00aaff;
+  margin: 20px 0;
+  text-align: center;
 }
 
-main {
-  padding: 20px;
-  background-color: #000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+@media (min-width: 1024px) {
+  h1, h2 {
+    font-size: 2.5rem;
+  }
 }
-main .pelicula {
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 1.25rem;
+  }
+}
+.main-background {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.main-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(27, 27, 27, 0.85);
+  z-index: 1;
+}
+.main-background * {
+  position: relative;
+  z-index: 2;
+}
+
+.pelicula {
   display: flex;
   gap: 30px;
   max-width: 1200px;
   width: 100%;
   align-items: center;
 }
-main .pelicula__image {
+.pelicula__image {
   max-width: 230px;
   height: auto;
   object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-main .pelicula__info {
+.pelicula__info {
   flex: 1;
   text-align: left;
   color: #fff;
 }
-main .pelicula__info .pelicula__title {
+.pelicula__info .pelicula__title {
   font-size: 2rem;
   font-family: "Bebas Neue", sans-serif;
   margin-bottom: 15px;
   color: #fff;
 }
-main .pelicula__info .pelicula__description {
-  font-size: 1rem;
-  font-family: "Roboto", sans-serif;
-  line-height: 1.6;
-  margin-bottom: 15px;
-  color: white;
-}
-main .pelicula__info .pelicula__duration {
-  font-size: 1rem;
-  font-family: "Bebas Neue", sans-serif;
-  color: #fff;
-  margin-top: 10px;
-}
+
 @media (max-width: 768px) {
-  main .pelicula {
+  .pelicula {
     flex-direction: column;
     text-align: center;
   }
-  main .pelicula__image {
+  .pelicula__image {
     width: 80%;
     margin-bottom: 20px;
   }
-  main .pelicula__info {
+  .pelicula__info {
     text-align: center;
   }
-  main .pelicula__info .pelicula__title {
+  .pelicula__info .pelicula__title {
     font-size: 1.8rem;
   }
-  main .pelicula__info .pelicula__description {
+  .pelicula__info .pelicula__description {
     font-size: 1rem;
   }
-  main .pelicula__info .pelicula__duration {
+  .pelicula__info .pelicula__duration {
     font-size: 1rem;
   }
 }
-main .funciones {
+.funciones {
   width: 100%;
   max-width: 800px;
   padding-bottom: 2%;
   border-radius: 10px;
+  margin: 0 auto;
 }
-main .funciones__titulo {
-  font-size: 1.8rem;
-  font-family: "Bebas Neue", sans-serif;
-  color: #00aaff;
-  text-align: center;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-main .funciones__dia {
+.funciones__dia {
   font-size: 1.5rem;
   font-family: "Bebas Neue", sans-serif;
   color: #fff;
   text-align: center;
   margin-bottom: 25px;
 }
-main .funciones__sesiones {
+.funciones__sesiones {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   justify-items: center;
+  margin: 0 auto;
 }
-main .funciones__list {
+.funciones__list {
   display: flex;
-  gap: 6px;
   flex-direction: column;
   align-items: center;
+  gap: 6px;
+  margin: 0 auto;
 }
-main .funciones .funcion {
+.funciones .funcion {
   background-color: #00aaff;
   color: #ffffff;
   padding: 8px 16px;
@@ -132,10 +151,10 @@ main .funciones .funcion {
   text-decoration: none;
   min-width: 55px;
 }
-main .funciones .funcion span {
+.funciones .funcion span {
   display: block;
 }
-main .funciones .funcion:hover {
+.funciones .funcion:hover {
   background-color: #0056b3;
   transform: scale(1.05);
 }

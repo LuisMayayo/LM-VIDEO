@@ -25,7 +25,7 @@
         </button>
         <div class="navbar__menu">
             <button class="navbar__close" aria-label="Cerrar menú">✕</button>
-            <a href="../html/index.html" class="navbar__item">HOME</a>
+            <a href="../html/home.html" class="navbar__item">HOME</a>
             <a href="../html/cartelera.html" class="navbar__item">CARTELERA</a>
             <a href="../html/proximos-estrenos.html" class="navbar__item">PRÓXIMOS ESTRENOS</a>
             <a href="../html/sobre-nosotros.html" class="navbar__item">SOBRE NOSOTROS</a>
@@ -33,53 +33,70 @@
         </div>
     </nav>
 
-    <div class="content">
-        <section class="hero">
-            <img src="../Fotos/cine-logo.png" alt="Imagen de cine" class="hero__image">
-        </section>
-    </div>
-    <main>
+    <main class="main-content">
+        <div class="main-content__hero">
+            <section class="hero">
+                <img src="../Fotos/cine-logo.png" alt="Imagen de cine" class="hero__image">
+            </section>
+        </div>
+    
         <section class="privacy-policy">
             <h1 class="privacy-policy__title">Política de Privacidad</h1>
-            <p>En LM VIDEOS, nos comprometemos a proteger la privacidad y seguridad de los datos personales de nuestros usuarios. Esta política de privacidad explica cómo recopilamos, usamos, protegemos y compartimos la información que obtenemos a través de nuestros servicios.</p>
+            <p class="privacy-policy__description">En LM VIDEOS, nos comprometemos a proteger la privacidad y seguridad de los datos personales de nuestros usuarios. Esta política de privacidad explica cómo recopilamos, usamos, protegemos y compartimos la información que obtenemos a través de nuestros servicios.</p>
             
-            <h2>1. Información que Recopilamos</h2>
-            <p>Recopilamos información personal que nos proporcionas directamente cuando interactúas con nuestro sitio web o servicios, tales como:</p>
-            <ul>
-                <li>Nombre, dirección de correo electrónico, y otros datos de contacto.</li>
-                <li>Información de pago si realizas compras en nuestro sitio.</li>
-                <li>Datos de navegación a través de cookies o tecnologías similares.</li>
-            </ul>
-
-            <h2>2. Uso de la Información</h2>
-            <p>Utilizamos la información recopilada para los siguientes fines:</p>
-            <ul>
-                <li>Proporcionar y personalizar nuestros servicios.</li>
-                <li>Procesar y gestionar tus compras, reservas o consultas.</li>
-                <li>Enviar actualizaciones, promociones, y contenido relacionado con LM VIDEOS (si has optado por recibirlos).</li>
-                <li>Mejorar nuestra página web y experiencia de usuario.</li>
-            </ul>
-
-            <h2>3. Protección de la Información</h2>
-            <p>Implementamos medidas de seguridad físicas, electrónicas y procedimentales para proteger tu información personal. Sin embargo, no podemos garantizar una seguridad absoluta debido a la naturaleza de la tecnología de Internet.</p>
-
-            <h2>4. Compartición de la Información</h2>
-            <p>No compartimos ni vendemos tus datos personales a terceros. Sin embargo, podemos compartir tu información con proveedores de servicios que nos ayuden a operar nuestro sitio web y brindar servicios, siempre y cuando estos terceros respeten acuerdos de confidencialidad.</p>
-
-            <h2>5. Cookies y Tecnologías Similares</h2>
-            <p>Utilizamos cookies y tecnologías similares para mejorar tu experiencia de navegación, analizar el tráfico del sitio y personalizar contenido y anuncios. Puedes configurar tu navegador para rechazar cookies o recibir una notificación cuando se envíen, pero esto puede afectar la funcionalidad de algunos servicios.</p>
-
-            <h2>6. Derechos del Usuario</h2>
-            <p>Tienes derecho a acceder, corregir o eliminar tus datos personales en cualquier momento. Si deseas ejercer estos derechos, por favor contáctanos a través de los canales de soporte que proporcionamos en nuestro sitio web.</p>
-
-            <h2>7. Cambios en la Política de Privacidad</h2>
-            <p>Nos reservamos el derecho de actualizar o modificar esta política de privacidad en cualquier momento. Cualquier cambio será comunicado a través de nuestro sitio web y será efectivo desde su publicación.</p>
-
-            <h2>8. Contacto</h2>
-            <p>Si tienes alguna pregunta o inquietud sobre nuestra política de privacidad, no dudes en ponerte en contacto con nosotros a través del correo electrónico proporcionado en nuestra página de contacto.</p>
+            <article class="privacy-policy__section">
+                <h3 class="privacy-policy__heading">1. Información que Recopilamos</h3>
+                <p class="privacy-policy__text">Recopilamos información personal que nos proporcionas directamente cuando interactúas con nuestro sitio web o servicios, tales como:</p>
+                <ul class="privacy-policy__list">
+                    <li class="privacy-policy__list-item">Nombre, dirección de correo electrónico, y otros datos de contacto.</li>
+                    <li class="privacy-policy__list-item">Información de pago si realizas compras en nuestro sitio.</li>
+                    <li class="privacy-policy__list-item">Datos de navegación a través de cookies o tecnologías similares.</li>
+                </ul>
+            </article>
+    
+            <article class="privacy-policy__section">
+                <h3 class="privacy-policy__heading">2. Uso de la Información</h3>
+                <p class="privacy-policy__text">Utilizamos la información recopilada para los siguientes fines:</p>
+                <ul class="privacy-policy__list">
+                    <li class="privacy-policy__list-item">Proporcionar y personalizar nuestros servicios.</li>
+                    <li class="privacy-policy__list-item">Procesar y gestionar tus compras, reservas o consultas.</li>
+                    <li class="privacy-policy__list-item">Enviar actualizaciones, promociones, y contenido relacionado con LM VIDEOS (si has optado por recibirlos).</li>
+                    <li class="privacy-policy__list-item">Mejorar nuestra página web y experiencia de usuario.</li>
+                </ul>
+            </article>
+    
+            <article class="privacy-policy__section">
+                <h3 class="privacy-policy__heading">3. Protección de la Información</h3>
+                <p class="privacy-policy__text">Implementamos medidas de seguridad físicas, electrónicas y procedimentales para proteger tu información personal. Sin embargo, no podemos garantizar una seguridad absoluta debido a la naturaleza de la tecnología de Internet.</p>
+            </article>
+    
+            <article class="privacy-policy__section">
+                <h3 class="privacy-policy__heading">4. Compartición de la Información</h3>
+                <p class="privacy-policy__text">No compartimos ni vendemos tus datos personales a terceros. Sin embargo, podemos compartir tu información con proveedores de servicios que nos ayuden a operar nuestro sitio web y brindar servicios, siempre y cuando estos terceros respeten acuerdos de confidencialidad.</p>
+            </article>
+    
+            <article class="privacy-policy__section">
+                <h3 class="privacy-policy__heading">5. Cookies y Tecnologías Similares</h3>
+                <p class="privacy-policy__text">Utilizamos cookies y tecnologías similares para mejorar tu experiencia de navegación, analizar el tráfico del sitio y personalizar contenido y anuncios. Puedes configurar tu navegador para rechazar cookies o recibir una notificación cuando se envíen, pero esto puede afectar la funcionalidad de algunos servicios.</p>
+            </article>
+    
+            <article class="privacy-policy__section">
+                <h3 class="privacy-policy__heading">6. Derechos del Usuario</h3>
+                <p class="privacy-policy__text">Tienes derecho a acceder, corregir o eliminar tus datos personales en cualquier momento. Si deseas ejercer estos derechos, por favor contáctanos a través de los canales de soporte que proporcionamos en nuestro sitio web.</p>
+            </article>
+    
+            <article class="privacy-policy__section">
+                <h3 class="privacy-policy__heading">7. Cambios en la Política de Privacidad</h3>
+                <p class="privacy-policy__text">Nos reservamos el derecho de actualizar o modificar esta política de privacidad en cualquier momento. Cualquier cambio será comunicado a través de nuestro sitio web y será efectivo desde su publicación.</p>
+            </article>
+    
+            <article class="privacy-policy__section">
+                <h3 class="privacy-policy__heading">8. Contacto</h3>
+                <p class="privacy-policy__text">Si tienes alguna pregunta o inquietud sobre nuestra política de privacidad, no dudes en ponerte en contacto con nosotros a través del correo electrónico proporcionado en nuestra página de contacto.</p>
+            </article>
         </section>
     </main>
-
+    
     <!-- Footer -->
     <footer class="footer">
         <div class="footer__top">

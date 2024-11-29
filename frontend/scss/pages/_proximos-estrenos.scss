@@ -1,21 +1,12 @@
 @use '../base/variables' as vars;
-
 @use '../base/reset' as *;
 
-.promo {
+.upcoming-releases {
   text-align: center;
   color: vars.$primary-color;
 
-  &__title {
-    font-size: 2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin: 0;
-    padding: 2rem 0;
-    color: vars.$color-texto;
-  }
 
-  &__content {
+  &__item {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -38,7 +29,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: vars.$color-fondo-overlay;
+      background-color: vars.$color-fondo-menu;
       z-index: 1;
       border-radius: 0;
     }
@@ -60,18 +51,7 @@
       padding: 1rem;
       text-align: left;
 
-      h2 {
-        font-size: 1.8rem;
-        color: vars.$highlight-color;
-        margin-bottom: 0.5rem;
-      }
 
-      p {
-        font-size: 1rem;
-        line-height: 1.6;
-        font-family: vars.$font-secondary;
-        color: vars.$color-texto;
-      }
     }
 
     &--cars,
@@ -102,34 +82,6 @@
 
     &--jurassic {
       background-image: url('../Fotos/fondo-jurassicworld.jpg');
-    }
-  }
-
-  @media (min-width: 768px) {
-    &__content {
-      align-items: center;
-      gap: 2rem;
-
-      &-image {
-        max-width: 500px;
-      }
-
-      &-details {
-        max-width: 600px;
-
-        h2 {
-          font-size: 2.4rem;
-        }
-
-        p {
-          font-size: 1.2rem;
-        }
-      }
-    }
-
-    &__title {
-      font-size: 3rem;
-      padding: 3rem 0;
     }
   }
 }

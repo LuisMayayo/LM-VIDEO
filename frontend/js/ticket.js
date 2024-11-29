@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             <p><strong>Correo Electrónico:</strong> ${pago.cliente.correoElectronico}</p>
             <p><strong>Teléfono:</strong> ${pago.cliente.telefono}</p>
             <div class="ticket__actions">
-              <button class="btn" onclick="window.location.href='index.html'">Volver al Inicio</button>
+              <button class="btn" onclick="window.location.href='home.html'">Volver al Inicio</button>
             </div>
         `;
     } catch (error) {

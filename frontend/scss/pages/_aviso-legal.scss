@@ -1,7 +1,12 @@
 @use '../base/variables' as vars;
-
 @use '../base/reset' as *;
 
+.main-content {
+  &__hero {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
 
 .hero__image {
   width: 100%;
@@ -14,58 +19,29 @@
   margin: 40px 20px;
   padding: 20px;
   border-radius: 10px;
-}
 
-.legal-notice h1,
-.legal-notice h2 {
-  font-family: vars.$font-family-primary;
-  color: vars.$color-destacado;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.legal-notice h1 {
-  font-size: 2.5rem;
-}
-
-.legal-notice h2 {
-  font-size: 2rem;
-}
-
-.legal-notice p {
-  font-size: 1.1rem;
-  font-family: vars.$font-family-secondary;
-  color: vars.$color-texto;
-  text-align: justify;
-  margin-bottom: 20px;
-}
-
-.legal-notice p:last-child {
-  margin-bottom: 0;
-}
-
-@media (min-width: 768px) {
-  .navbar__menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 20px;
+  &__heading {
+    font-family: vars.$font-family-primary;
+    color: vars.$color-destacado;
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-align: center;
   }
 
-  .legal-notice {
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+
+  &__section {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: 768px) {
     max-width: 800px;
     margin: 40px auto;
-  }
 
-  .legal-notice h1 {
-    font-size: 3rem;
-  }
-
-  .legal-notice h2 {
-    font-size: 2.5rem;
-  }
-
-  .legal-notice p {
-    font-size: 1.2rem;
   }
 }

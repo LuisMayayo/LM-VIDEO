@@ -65,15 +65,24 @@ document.addEventListener("DOMContentLoaded", function () {
     // Mostrar la información de la película
     function mostrarPelicula(pelicula) {
         const peliculaContainer = document.querySelector(".pelicula");
+        const mainElement = document.querySelector("main"); // Selecciona el <main>
+
+        // Configura el contenido de la película
         peliculaContainer.innerHTML = `
-            <img src="${pelicula.fotoUrl}" alt="${pelicula.titulo}" class="pelicula__image">
-            <div class="pelicula__info">
-                <h1 class="pelicula__title">${pelicula.titulo}</h1>
-                <p class="pelicula__description">${pelicula.descripcion}</p>
-                <p class="pelicula__duration">Duración: ${pelicula.duracion}</p>
-            </div>
-        `;
+        <img src="${pelicula.fotoUrl}" alt="${pelicula.titulo}" class="pelicula__image">
+        <div class="pelicula__info">
+            <h1 class="pelicula__title">${pelicula.titulo}</h1>
+            <p class="pelicula__description">${pelicula.descripcion}</p>
+            <p class="pelicula__duration">Duración: ${pelicula.duracion}</p>
+        </div>
+    `;
+
+        // Establece la imagen de fondo en el <main>
+        if (mainElement) {
+            mainElement.style.backgroundImage = `url(${pelicula.fotoUrl})`;
+        }
     }
+
 
     // Mostrar funciones
     function mostrarFunciones(funciones) {

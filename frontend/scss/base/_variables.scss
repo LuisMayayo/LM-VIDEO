@@ -6,7 +6,7 @@ $color-texto-secundario: #b3b3b3; // Nuevo
 $color-destacado: #00aaff;
 $color-borde: #333;
 $color-borde-icono: #666666; // Nuevo
-$color-fondo-menu: rgba(27, 27, 27, 0.59);
+$color-fondo-menu:rgb(27 27 27 / 79%);
 $color-fondo-asientos: #101010; // Nuevo
 $highlight-color: #00aaff;
 $background-color: #000;
@@ -23,6 +23,10 @@ $font-primary: 'Bebas Neue', sans-serif;
 $font-secondary: 'Roboto', sans-serif;
 $font-family-primary: 'Bebas Neue', sans-serif;
 $font-family-secondary: 'Roboto', sans-serif;
+$font-size-base: 1rem;     
+$font-size-large: 1.25rem;  
+$font-size-h1: 2rem;        
+$font-size-h1-large: 2.5rem;
 
 // Variables para los asientos
 $color-asiento-disponible: #4ead4e; // Verde (disponible)

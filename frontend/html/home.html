@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - LM Video</title>
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar__logo">
+      <img src="../Fotos/logo.png" alt="Logo LM Video" class="navbar__logo-image">
+    </div>
+    <button class="navbar__toggle" aria-label="Abrir menú">
+      <span class="navbar__toggle-icon"></span>
+      <span class="navbar__toggle-icon"></span>
+      <span class="navbar__toggle-icon"></span>
+    </button>
+    <div class="navbar__menu">
+      <button class="navbar__close" aria-label="Cerrar menú">✕</button>
+      <a href="../html/index.html" class="navbar__item">HOME</a>
+      <a href="../html/cartelera.html" class="navbar__item">CARTELERA</a>
+      <a href="../html/proximos-estrenos.html" class="navbar__item">PRÓXIMOS ESTRENOS</a>
+      <a href="../html/sobre-nosotros.html" class="navbar__item">SOBRE NOSOTROS</a>
+      <a href="../html/contacto.html" class="navbar__item">CONTACTO</a>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <section class="hero">
+        <h1 class="hero__title">Bienvenidos a LM Video, los mejores cines europeos</h1>
+        <img src="../Fotos/cine2.jpg" alt="Imagen de cine" class="hero__image">
+    </section>
+
+    <!-- Carrusel -->
+    <section class="carousel">
+        <h2 class="carousel__title">Películas Actuales</h2>
+        <div class="carousel__wrapper">
+            <div class="carousel__track">
+                <div class="carousel__item"><img src="../Fotos/Avatar.jpg" alt="Avatar"></div>
+                <div class="carousel__item"><img src="../Fotos/wild robot.jpg" alt="Wild Robot"></div>
+                <div class="carousel__item"><img src="../Fotos/green-lantern.jpg" alt="Green Lantern"></div>
+                <div class="carousel__item"><img src="../Fotos/el-correo.jpg" alt="El Correo"></div>
+                <div class="carousel__item"><img src="../Fotos/smile2.jpg" alt="Smile 2"></div>
+                <div class="carousel__item"><img src="../Fotos/venom.jpg" alt="Venom"></div>
+                <div class="carousel__item"><img src="../Fotos/gladiator.jpg" alt="Gladiator"></div>
+                <div class="carousel__item"><img src="../Fotos/terrifier3.jpg" alt="Terrifier 3"></div>
+                <div class="carousel__item"><img src="../Fotos/redone.jpg" alt="Red One"></div>
+            </div>
+        </div>
+        <button class="carousel__control carousel__control--prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel__control carousel__control--next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+    </section>
+
+    <!-- Promoción -->
+    <section class="promo">
+        <img src="../Fotos/Moana2.avif" alt="Promoción Moana 2" class="promo__image">
+        <div class="promo__content">
+            <h3 class="promo__title">Enfréntese a las mareas y obtenga un regalo</h3>
+            <p class="promo__description">
+                Comienza tu viaje de MOANA 2 en RealD 3D® el 27 de noviembre y llévate a
+                casa un mini póster coleccionable de Disney para conmemorar la experiencia.
+                No te pierdas a Moana, Maui y sus amigos cuando lleguen a la pantalla
+                grande.
+            </p>
+        </div>
+    </section>
+
+    <!-- Trailers -->
+    <section class="trailers">
+        <h3 class="trailers__title">Trailers</h3>
+        <div class="trailers__list">
+            <!-- Gladiator II -->
+            <article class="trailers__item">
+                <div class="trailers__thumbnail">
+                    <img src="../Fotos/gladiator.jpg" alt="Trailer Gladiator II" loading="lazy">
+                    <a href="https://youtu.be/HCjuv9STNps" class="trailers__play-button" target="_blank"
+                        rel="noopener noreferrer" aria-label="Ver tráiler de Gladiator II">
+                        <i class="fas fa-play"></i>
+                    </a>
+                </div>
+                <h3 class="trailers__name">Gladiator II</h3>
+            </article>
+
+            <!-- Smile 2 -->
+            <article class="trailers__item">
+                <div class="trailers__thumbnail">
+                    <img src="../Fotos/smile2.jpg" alt="Trailer Smile 2" loading="lazy">
+                    <a href="https://youtu.be/69GcScd6sGk" class="trailers__play-button" target="_blank"
+                        rel="noopener noreferrer" aria-label="Ver tráiler de Smile 2">
+                        <i class="fas fa-play"></i>
+                    </a>
+                </div>
+                <h3 class="trailers__name">Smile 2</h3>
+            </article>
+
+            <!-- Venom -->
+            <article class="trailers__item">
+                <div class="trailers__thumbnail">
+                    <img src="../Fotos/venom.jpg" alt="Trailer Venom" loading="lazy">
+                    <a href="https://youtu.be/HyIyd9joTTc" class="trailers__play-button" target="_blank"
+                        rel="noopener noreferrer" aria-label="Ver tráiler de Venom">
+                        <i class="fas fa-play"></i>
+                    </a>
+                </div>
+                <h3 class="trailers__name">Venom</h3>
+            </article>
+
+            <!-- Red One -->
+            <article class="trailers__item">
+                <div class="trailers__thumbnail">
+                    <img src="../Fotos/redone.jpg" alt="Trailer Red One" loading="lazy">
+                    <a href="https://youtu.be/HMFK7mzUEKI" class="trailers__play-button" target="_blank"
+                        rel="noopener noreferrer" aria-label="Ver tráiler de Red One">
+                        <i class="fas fa-play"></i>
+                    </a>
+                </div>
+                <h3 class="trailers__name">Red One</h3>
+            </article>
+        </div>
+    </section>
+</main>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__top">
+      <a href="../html/aviso-legal.html" class="footer__link">Aviso Legal</a>
+      <a href="../html/politica-privacidad.html" class="footer__link">Política de privacidad</a>
+      <a href="../html/politica-cookies.html" class="footer__link">Política de Cookies</a>      
+    </div>
+    <div class="footer__logo">
+      <img src="../Fotos/logo.png" alt="Logo LM Video" class="footer__logo-image">
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">© Copyright 2024 LM VIDEO</p>
+      <div class="footer__social">
+        <a href="#" class="footer__social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="footer__social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="footer__social-icon" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/home.js"></script>
+</body>
+
+</html>

@@ -1,17 +1,112 @@
-/* Error: Undefined variable.
- *    ,
- * 41 |       background-color: vars.$color-fondo-overlay;
- *    |                         ^^^^^^^^^^^^^^^^^^^^^^^^^
- *    '
- *   scss\pages\_proximos-estrenos.scss 41:25  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 41 \2502        background-color: vars.$color-fondo-overlay;\d\a    \2502                          ^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   scss\\pages\\_proximos-estrenos.scss 41:25  root stylesheet";
+@charset "UTF-8";
+/* _reset.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+main {
+  font-family: "Roboto", sans-serif;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+}
+
+h1, h2 {
+  font-size: 2rem; /* Tamaño unificado */
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
+  color: #00aaff;
+  margin: 20px 0;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  h1, h2 {
+    font-size: 2.5rem; /* Tamaño más grande en pantallas grandes */
+  }
+}
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 1.2rem;
+  }
+}
+.upcoming-releases {
+  text-align: center;
+  color: #00aaff;
+}
+.upcoming-releases__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 2rem;
+  border-radius: 0;
+  background-size: cover;
+  background-position: center;
+  color: #00aaff;
+  min-height: 300px;
+  overflow: hidden;
+}
+.upcoming-releases__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(27, 27, 27, 0.79);
+  z-index: 1;
+  border-radius: 0;
+}
+.upcoming-releases__item > * {
+  position: relative;
+  z-index: 2;
+}
+.upcoming-releases__item-image {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.upcoming-releases__item-details {
+  max-width: 400px;
+  padding: 1rem;
+  text-align: left;
+}
+@media (min-width: 768px) {
+  .upcoming-releases__item--cars, .upcoming-releases__item--fastfurious {
+    flex-direction: row-reverse;
+  }
+}
+@media (min-width: 768px) {
+  .upcoming-releases__item--avatar, .upcoming-releases__item--jurassic {
+    flex-direction: row;
+  }
+}
+.upcoming-releases__item--cars {
+  background-image: url("../Fotos/fondo-cars.jpg");
+}
+.upcoming-releases__item--avatar {
+  background-image: url("../Fotos/fondo-avatar.jpg");
+}
+.upcoming-releases__item--fastfurious {
+  background-image: url("../Fotos/fondo-FastFurius11.jpg");
+}
+.upcoming-releases__item--jurassic {
+  background-image: url("../Fotos/fondo-jurassicworld.jpg");
+}
+
+/*# sourceMappingURL=proximos-estrenos.css.map */

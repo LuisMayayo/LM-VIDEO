@@ -1,6 +1,12 @@
 @use '../base/variables' as vars;
-
 @use '../base/reset' as *;
+
+.main-content {
+  &__hero {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
 
 .hero__image {
   width: 100%;
@@ -9,62 +15,51 @@
   border-radius: 10px;
 }
 
-.privacy-policy {
+.cookie-policy {
   margin: 40px 20px;
   padding: 20px;
   border-radius: 10px;
-}
 
-.privacy-policy__title {
-  font-size: 2.5rem;
-  font-family: vars.$font-family-primary;
-  color: vars.$color-destacado;
-  text-align: center;
-  margin-bottom: 20px;
-}
 
-.privacy-policy h2 {
-  font-family: vars.$font-family-primary;
-  color: vars.$color-destacado;
-  font-size: 25px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
+  &__heading {
+    font-family: vars.$font-family-primary;
+    color: vars.$color-destacado;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
 
-.privacy-policy p,
-.privacy-policy ul {
-  font-size: 1.1rem;
-  font-family: vars.$font-family-secondary;
-  color: vars.$color-texto;
-  text-align: justify;
-  margin-bottom: 20px;
-}
+  &__list {
+    font-size: 1.1rem;
+    font-family: vars.$font-family-secondary;
+    color: vars.$color-texto;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
 
-.privacy-policy ul {
-  padding-left: 20px;
-}
+  &__list {
+    padding-left: 20px;
 
-.privacy-policy ul li {
-  list-style-type: disc;
-  margin-bottom: 10px;
-}
+    &-item {
+      list-style-type: disc;
+      margin-bottom: 10px;
 
-.privacy-policy ul li strong {
-  color: vars.$color-destacado;
-}
+      strong {
+        color: vars.$color-destacado;
+      }
+    }
+  }
 
-@media (min-width: 768px) {
-  .privacy-policy {
+  &__section {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: 768px) {
     max-width: 800px;
     margin: 40px auto;
-  }
 
-  .privacy-policy__title {
-    font-size: 3rem;
-  }
-
-  .privacy-policy p,
-  .privacy-policy ul {
-    font-size: 1.2rem;
+    &__list {
+      font-size: 1.2rem;
+    }
   }
 }

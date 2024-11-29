@@ -6,12 +6,43 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Roboto", sans-serif; /* Puedes usar una fuente predeterminada aquí si lo necesitas */
-  background-color: #000; /* Esto depende de las variables, pero aún no han sido importadas aquí */
-  color: #fff; /* También depende de las variables */
+main {
+  font-family: "Roboto", sans-serif;
+  background-color: #000;
+  color: #fff;
   margin: 0;
   padding: 20px;
+}
+
+h1, h2 {
+  font-size: 2rem; /* Tamaño unificado */
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
+  color: #00aaff;
+  margin: 20px 0;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  h1, h2 {
+    font-size: 2.5rem; /* Tamaño más grande en pantallas grandes */
+  }
+}
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 1.2rem;
+  }
+}
+.main-content__hero {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .hero__image {
@@ -26,40 +57,24 @@ body {
   padding: 20px;
   border-radius: 10px;
 }
-
-.privacy-policy__title {
-  font-size: 2rem;
-  font-family: "Bebas Neue", sans-serif;
-  color: #00aaff;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.privacy-policy h2 {
+.privacy-policy__heading {
   color: #00aaff;
   font-family: "Bebas Neue", sans-serif;
+  font-size: 1.5rem;
   margin-top: 20px;
   margin-bottom: 10px;
 }
-
-.privacy-policy p,
-.privacy-policy ul {
-  font-size: 1.1rem;
-  font-family: "Roboto", sans-serif;
-  color: #fff;
-  text-align: justify;
-  margin-bottom: 20px;
-}
-
-.privacy-policy ul {
+.privacy-policy__list {
   padding-left: 20px;
+  margin-top: 10px;
 }
-
-.privacy-policy ul li {
+.privacy-policy__list-item {
   list-style-type: disc;
   margin-bottom: 10px;
 }
-
+.privacy-policy__section {
+  margin-bottom: 30px;
+}
 @media (min-width: 768px) {
   .privacy-policy {
     max-width: 800px;
@@ -67,10 +82,6 @@ body {
   }
   .privacy-policy__title {
     font-size: 2.5rem;
-  }
-  .privacy-policy p,
-  .privacy-policy ul {
-    font-size: 1.2rem;
   }
 }
 

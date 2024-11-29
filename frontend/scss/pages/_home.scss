@@ -1,37 +1,25 @@
 @use '../base/variables' as vars;
-
 @use '../base/reset' as *;
+
 .hero {
   text-align: center;
 
   &__title {
-    font-size: 23px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    font-family: vars.$font-primary;
+    margin-bottom: 15px; /* Solo margen si es necesario */
   }
 
   &__image {
     width: 100%;
     max-width: 400px;
     height: auto;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero__title {
-    font-size: 36px;
-    margin-bottom: 20px;
+    border-radius: 10px;
   }
 
-  .hero__image {
-    max-width: 990px;
+  @media (min-width: 1024px) {
+    &__image {
+      max-width: 990px;
+    }
   }
-}
-
-h2 {
-  text-align: center;
-  font-size: 30px;
 }
 
 .carousel {
@@ -42,29 +30,29 @@ h2 {
   margin: 0 auto;
   overflow: hidden;
 
-  .carousel-wrapper {
+  &__wrapper {
     overflow: hidden;
   }
-
-  .carousel-track {
+  
+  &__track {
     display: flex;
     gap: 10px;
     transition: transform 0.3s ease-in-out;
+  }
 
-    .carousel-item {
-      flex: 0 0 calc(33.33%);
-      box-sizing: border-box;
+  &__item {
+    flex: 0 0 calc(33.33%);
+    box-sizing: border-box;
 
-      img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 10px;
-      }
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
     }
   }
 
-  .carousel-control {
+  &__control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -74,15 +62,14 @@ h2 {
     border-radius: 50%;
     padding: 15px;
     cursor: pointer;
-    font-family: vars.$font-secondary;
     z-index: 10;
     font-size: 20px;
 
-    &.prev {
+    &--prev {
       left: 4px;
     }
 
-    &.next {
+    &--next {
       right: 4px;
     }
 
@@ -96,23 +83,22 @@ h2 {
   }
 
   @media (max-width: 768px) {
-    .carousel-control {
+    &__control {
       padding: 10px;
       font-size: 16px;
-      top: 50%;
     }
   }
-}
 
-@media (min-width: 768px) {
-  .carousel__item {
-    width: calc(100% / 2);
+  @media (min-width: 768px) {
+    &__item {
+      width: calc(50%);
+    }
   }
-}
 
-@media (min-width: 1024px) {
-  .carousel__item {
-    width: calc(100% / 4);
+  @media (min-width: 1024px) {
+    &__item {
+      width: calc(25%);
+    }
   }
 }
 
@@ -128,8 +114,15 @@ h2 {
   background-image: url("../Fotos/fondomoana.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   overflow: hidden;
+
+  &__title {
+    font-family: vars.$font-primary;
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
 
   &__image {
     z-index: 1;
@@ -138,25 +131,14 @@ h2 {
     border-radius: 8px;
   }
 
-  &__text {
+  &__content {
     z-index: 1;
     text-align: center;
+    max-width: 600px;
 
-    &--title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    &--description {
-      font-size: 1rem;
-      line-height: 1.5;
-    }
   }
-}
 
-@media (min-width: 1024px) {
-  .promo {
+  @media (min-width: 1024px) {
     flex-direction: row;
     align-items: flex-start;
     padding: 40px;
@@ -166,18 +148,9 @@ h2 {
       max-width: 530px;
     }
 
-    &__text {
+    &__content {
       text-align: left;
-      max-width: 600px;
 
-      &--title {
-        font-size: 2rem;
-        margin-bottom: 20px;
-      }
-
-      &--description {
-        font-size: 1.2rem;
-      }
     }
   }
 }
@@ -186,13 +159,6 @@ h2 {
   padding: 20px;
   text-align: center;
   color: vars.$color-texto;
-
-  &__title {
-    font-size: 23px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    font-family: vars.$font-primary;
-  }
 
   &__list {
     display: flex;
@@ -203,12 +169,12 @@ h2 {
   }
 
   &__item {
-    flex: 1 1 calc(25% - 20px);
+    flex: 1 1 calc(25%);
     max-width: 200px;
     text-align: center;
 
     @media (max-width: 768px) {
-      flex: 1 1 calc(50% - 20px);
+      flex: 1 1 calc(50%);
     }
 
     @media (max-width: 480px) {
@@ -250,7 +216,6 @@ h2 {
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      text-decoration: none;
 
       &:hover {
         background: vars.$color-destacado;
@@ -264,27 +229,22 @@ h2 {
     margin-top: 10px;
     text-transform: uppercase;
   }
-}
 
-@media (min-width: 1024px) {
-  .trailers__item {
-    flex: 1 1 calc(20% - 20px);
-    max-width: 250px;
-  }
+  @media (min-width: 1024px) {
+    &__item {
+      flex: 1 1 calc(20%);
+      max-width: 250px;
+    }
 
-  .trailers__title {
-    font-size: 36px;
-    margin-bottom: 30px;
-  }
+    &__name {
+      font-size: 1.2rem;
+      margin-top: 15px;
+    }
 
-  .trailers__name {
-    font-size: 1.2rem;
-    margin-top: 15px;
-  }
-
-  .trailers__thumbnail .trailers__play-button {
-    width: 60px;
-    height: 60px;
-    font-size: 2rem;
+    .trailers__thumbnail .trailers__play-button {
+      width: 60px;
+      height: 60px;
+      font-size: 2rem;
+    }
   }
 }

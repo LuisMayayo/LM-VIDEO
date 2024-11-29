@@ -2,16 +2,37 @@
 
 @use '../base/reset' as *;
 // Contenido Principal
-.content {
-  padding: 20px;
+
+
+.main-background {
+  position: relative;
+  background-size: cover; // La imagen cubre todo el fondo
+  background-position: center; // Centrar la imagen
+  background-repeat: no-repeat;
+  min-height: 100vh; // Asegura que ocupe toda la altura de la ventana
+  overflow: hidden;
+
+  // Capa semitransparente
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(27, 27, 27, 0.85); // Color semitransparente oscuro
+    z-index: 1;
+  }
+
+  // Asegurar que todo el contenido sea legible encima del fondo
+  * {
+    position: relative;
+    z-index: 2;
+  }
 }
 
-main {
-  padding: 20px;
-  background-color: vars.$color-fondo;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+
 
   .pelicula {
     display: flex;
@@ -38,21 +59,6 @@ main {
         font-family: vars.$font-primary;
         margin-bottom: 15px;
         color: vars.$color-texto;
-      }
-
-      .pelicula__description {
-        font-size: 1rem;
-        font-family: vars.$font-secondary;
-        line-height: 1.6;
-        margin-bottom: 15px;
-        color: lighten(vars.$color-texto, 10%);
-      }
-
-      .pelicula__duration {
-        font-size: 1rem;
-        font-family: vars.$font-primary;
-        color: vars.$color-texto;
-        margin-top: 10px;
       }
     }
   }
@@ -91,15 +97,8 @@ main {
     max-width: 800px;
     padding-bottom: 2%;
     border-radius: 10px;
+    margin: 0 auto; // Asegura que el contenedor funciones esté centrado en su contexto
   
-    &__titulo {
-      font-size: 1.8rem;
-      font-family: vars.$font-primary;
-      color: vars.$color-destacado; // Usa el color destacado de tus variables
-      text-align: center;
-      margin-bottom: 20px; // Separación con las funciones
-      text-transform: uppercase; // Para que esté en mayúsculas
-    }
   
     &__dia {
       font-size: 1.5rem;
@@ -113,14 +112,16 @@ main {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
-      justify-items: center;
+      justify-items: center; // Centra los elementos dentro de las columnas
+      margin: 0 auto; // Asegura que el grid esté centrado
     }
   
     &__list {
       display: flex;
-      gap: 6px;
       flex-direction: column;
-      align-items: center;
+      align-items: center; // Centra los elementos en el eje horizontal
+      gap: 6px;
+      margin: 0 auto; // Asegura que la lista esté centrada en su contenedor
     }
   
     .funcion {
@@ -142,9 +143,9 @@ main {
       }
   
       &:hover {
-        background-color: #0056b3; // Cambia el color al pasar el cursor
-        transform: scale(1.05); // Efecto de agrandami
+        background-color: #0056b3;
+        transform: scale(1.05);
       }
-    }  
+    }
   }
-}
+  

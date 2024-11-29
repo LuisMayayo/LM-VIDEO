@@ -6,12 +6,43 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Roboto", sans-serif; /* Puedes usar una fuente predeterminada aquí si lo necesitas */
-  background-color: #000; /* Esto depende de las variables, pero aún no han sido importadas aquí */
-  color: #fff; /* También depende de las variables */
+main {
+  font-family: "Roboto", sans-serif;
+  background-color: #000;
+  color: #fff;
   margin: 0;
   padding: 20px;
+}
+
+h1, h2 {
+  font-size: 2rem; /* Tamaño unificado */
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
+  color: #00aaff;
+  margin: 20px 0;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  h1, h2 {
+    font-size: 2.5rem; /* Tamaño más grande en pantallas grandes */
+  }
+}
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 1.2rem;
+  }
+}
+.main-content__hero {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .hero__image {
@@ -21,60 +52,44 @@ body {
   border-radius: 10px;
 }
 
-.privacy-policy {
+.cookie-policy {
   margin: 40px 20px;
   padding: 20px;
   border-radius: 10px;
 }
-
-.privacy-policy__title {
-  font-size: 2.5rem;
-  font-family: "Bebas Neue", sans-serif;
-  color: #00aaff;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.privacy-policy h2 {
+.cookie-policy__heading {
   font-family: "Bebas Neue", sans-serif;
   color: #00aaff;
   font-size: 25px;
   margin-top: 20px;
   margin-bottom: 10px;
 }
-
-.privacy-policy p,
-.privacy-policy ul {
+.cookie-policy__list {
   font-size: 1.1rem;
   font-family: "Roboto", sans-serif;
   color: #fff;
   text-align: justify;
   margin-bottom: 20px;
 }
-
-.privacy-policy ul {
+.cookie-policy__list {
   padding-left: 20px;
 }
-
-.privacy-policy ul li {
+.cookie-policy__list-item {
   list-style-type: disc;
   margin-bottom: 10px;
 }
-
-.privacy-policy ul li strong {
+.cookie-policy__list-item strong {
   color: #00aaff;
 }
-
+.cookie-policy__section {
+  margin-bottom: 30px;
+}
 @media (min-width: 768px) {
-  .privacy-policy {
+  .cookie-policy {
     max-width: 800px;
     margin: 40px auto;
   }
-  .privacy-policy__title {
-    font-size: 3rem;
-  }
-  .privacy-policy p,
-  .privacy-policy ul {
+  .cookie-policy__list {
     font-size: 1.2rem;
   }
 }

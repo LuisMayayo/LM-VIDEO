@@ -1,3 +1,4 @@
+
 @charset "UTF-8";
 p{
   margin: 0;
@@ -174,18 +175,6 @@ p{
   color: #fff;
 }
 
-html, body {
-  background-color: #000;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  font-family: "Bebas Neue", sans-serif;
-  overflow-x: hidden;
-}
-
-.content {
-  padding: 20px;
-}
 
 .peliculas {
   display: flex;
@@ -267,17 +256,6 @@ html, body {
   }
 }
 
-html, body {
-  background-color: #000;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  font-family: "Bebas Neue", sans-serif;
-}
-
-.content {
-  padding: 20px;
-}
 
 .hero {
   text-align: center;
@@ -482,6 +460,7 @@ html, body {
 body {
   font-family: "Bebas Neue", sans-serif;
   background-color: #000000;
+  color: #fff;
   margin: 0;
   padding: 0;
 }
@@ -563,14 +542,6 @@ body {
   font-family: "Bebas Neue", sans-serif;
 }
 
-html,
-body {
-  background-color: #000;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  font-family: "Bebas Neue", sans-serif;
-}
 
 .content {
   padding: 20px;

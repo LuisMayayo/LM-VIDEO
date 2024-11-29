@@ -1,33 +1,59 @@
 @charset "UTF-8";
-/* _reset.scss */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Roboto", sans-serif; /* Puedes usar una fuente predeterminada aquí si lo necesitas */
-  background-color: #000; /* Esto depende de las variables, pero aún no han sido importadas aquí */
-  color: #fff; /* También depende de las variables */
+main {
+  font-family: "Roboto", sans-serif;
+  background-color: #000;
+  color: #fff;
   margin: 0;
   padding: 20px;
 }
 
-.peliculas {
+h1, h2 {
+  font-size: 2rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
+  color: #00aaff;
+  margin: 20px 0;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  h1, h2 {
+    font-size: 2.5rem;
+  }
+}
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 1.25rem;
+  }
+}
+.movies {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px;
+  padding: 35px;
 }
-.peliculas__container {
+.movies__container {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.peliculas__card {
+.movies__card {
   display: flex;
-  align-items: center;
+  flex-direction: column; /* Organización vertical para mobile */
+  align-items: center; /* Centrar contenido horizontalmente */
   background-color: #181818;
   border: 1px solid #333;
   border-radius: 10px;
@@ -36,60 +62,56 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.peliculas__card:hover {
+.movies__card:hover {
   transform: scale(1.03);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
-.peliculas__image {
-  width: 150px;
-  height: 220px;
+.movies__image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
   object-fit: cover;
-  border-right: 3px solid #00aaff;
+  border-bottom: 3px solid #00aaff;
 }
-.peliculas__info {
-  padding: 20px;
+.movies__info {
+  text-align: center;
+  padding: 15px;
   flex: 1;
 }
-.peliculas__info h2 {
-  margin: 0 0 10px;
-  font-size: 1.8rem;
-  font-family: "Bebas Neue", sans-serif;
-}
-.peliculas__info p {
-  margin: 5px 0;
-  font-family: "Roboto", sans-serif;
-  line-height: 1.5;
-  white-space: normal;
-  overflow-wrap: break-word;
-}
-.peliculas__info .peliculas__button {
-  display: inline-block;
-  margin-top: 10px;
+.movies__info-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
   background-color: #00aaff;
   color: #fff;
-  padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  text-align: center;
-  text-decoration: none;
   font-family: "Bebas Neue", sans-serif;
   font-size: 1rem;
   cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
 }
-.peliculas__info .peliculas__button:hover {
+.movies__info-button:hover {
   background-color: #0088cc;
 }
-@media (max-width: 768px) {
-  .peliculas__card {
-    flex-direction: column;
-    text-align: center;
+@media (min-width: 768px) {
+  .movies__card {
+    flex-direction: row;
+    align-items: flex-start;
   }
-  .peliculas__card .peliculas__image {
-    margin: 0 auto;
-    width: 100%;
-    height: auto;
-    border-right: none;
-    border-bottom: 3px solid #00aaff;
+  .movies__image {
+    width: 150px;
+    height: 220px;
+    border-bottom: none;
+    border-right: 3px solid #00aaff;
+  }
+  .movies__info {
+    text-align: left;
+  }
+  .movies-button {
+    width: auto;
   }
 }
 

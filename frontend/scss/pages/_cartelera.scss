@@ -1,13 +1,12 @@
 @use '../base/variables' as vars;
 @use '../base/reset' as *;
 
-
 // Sección de películas
-.peliculas {
+.movies {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px;
+  padding: 35px;
 
   &__container {
     display: flex;
@@ -17,12 +16,13 @@
 
   &__card {
     display: flex;
-    align-items: center;
-    background-color: vars.$color-fondo-card; // Fondo de las tarjetas
-    border: 1px solid vars.$color-borde; // Borde de las tarjetas
+    flex-direction: column; /* Organización vertical para mobile */
+    align-items: center; /* Centrar contenido horizontalmente */
+    background-color: vars.$color-fondo-card;
+    border: 1px solid vars.$color-borde;
     border-radius: 10px;
     overflow: hidden;
-    color: vars.$color-texto; // Color del texto dentro de las tarjetas
+    color: vars.$color-texto;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s, box-shadow 0.3s;
 
@@ -33,43 +33,33 @@
   }
 
   &__image {
-    width: 150px;
-    height: 220px;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
     object-fit: cover;
-    border-right: 3px solid vars.$color-destacado; // Borde derecho destacado
+    border-bottom: 3px solid vars.$color-destacado; 
   }
 
   &__info {
-    padding: 20px;
+    text-align: center;
+    padding: 15px;
     flex: 1;
 
-    h2 {
-      margin: 0 0 10px;
-      font-size: 1.8rem;
-      font-family: vars.$font-primary; // Fuente principal para títulos
-    }
 
-    p {
-      margin: 5px 0;
-      font-family: vars.$font-secondary; // Fuente secundaria para descripciones
-      line-height: 1.5;
-      white-space: normal; // Permite texto multilineal
-      overflow-wrap: break-word; // Maneja palabras largas
-    }
-
-    .peliculas__button {
-      display: inline-block;
-      margin-top: 10px;
-      background-color: vars.$color-destacado; // Fondo del botón
-      color: vars.$color-texto; // Color del texto del botón
-      padding: 10px 20px;
+    &-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      background-color: vars.$color-destacado;
+      color: vars.$color-texto;
       border: none;
       border-radius: 5px;
-      text-align: center;
-      text-decoration: none;
-      font-family: vars.$font-primary; // Fuente principal para el botón
+      font-family: vars.$font-primary;
       font-size: 1rem;
       cursor: pointer;
+      text-align: center;
+      text-transform: uppercase;
 
       &:hover {
         background-color: darken(vars.$color-destacado, 10%);
@@ -77,19 +67,25 @@
     }
   }
 
-  // Responsividad para pantallas pequeñas
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     &__card {
-      flex-direction: column;
-      text-align: center;
+      flex-direction: row; 
+      align-items: flex-start;
+    }
 
-      .peliculas__image {
-        margin: 0 auto;
-        width: 100%; // Imagen ocupa todo el ancho
-        height: auto;
-        border-right: none;
-        border-bottom: 3px solid vars.$color-destacado; // Borde inferior destacado
-      }
+    &__image {
+      width: 150px;
+      height: 220px;
+      border-bottom: none;
+      border-right: 3px solid vars.$color-destacado; 
+    }
+
+    &__info {
+      text-align: left;
+    }
+
+    &-button {
+      width: auto;
     }
   }
 }

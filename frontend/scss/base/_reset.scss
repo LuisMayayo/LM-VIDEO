@@ -1,16 +1,43 @@
-/* _reset.scss */
 @use '../base/variables' as vars;
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  font-family: vars.$font-secondary;
+  background-color: vars.$color-fondo;
+  color: vars.$color-texto;
+  margin: 0;
+  padding: 20px;
+}
+
+h1, h2 {
+  font-size: vars.$font-size-h1;
+  font-family: vars.$font-primary;
+  font-weight: bold;
+  color: vars.$color-destacado;
+  margin: 20px 0;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  h1, h2 {
+    font-size: vars.$font-size-h1-large;
   }
-  
-  body {
-    font-family: 'Roboto', sans-serif; /* Puedes usar una fuente predeterminada aquí si lo necesitas */
-    background-color: vars.$color-fondo; /* Esto depende de las variables, pero aún no han sido importadas aquí */
-    color: vars.$color-texto; /* También depende de las variables */
-    margin: 0;
-    padding: 20px;
+}
+
+p {
+  font-size: vars.$font-size-base; 
+  line-height: 1.6;
+  font-family: vars.$font-secondary;
+  color: vars.$color-texto;
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: vars.$font-size-large; 
   }
-  
+}

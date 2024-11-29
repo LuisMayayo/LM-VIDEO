@@ -26,7 +26,7 @@
         </button>
         <div class="navbar__menu">
             <button class="navbar__close" aria-label="Cerrar menú">✕</button>
-            <a href="../html/index.html" class="navbar__item">HOME</a>
+            <a href="../html/home.html" class="navbar__item">HOME</a>
             <a href="../html/cartelera.html" class="navbar__item">CARTELERA</a>
             <a href="../html/proximos-estrenos.html" class="navbar__item">PRÓXIMOS ESTRENOS</a>
             <a href="../html/sobre-nosotros.html" class="navbar__item">SOBRE NOSOTROS</a>
@@ -34,44 +34,49 @@
         </div>
     </nav>
 
-    <div class="content">
-        <section class="hero">
-            <img src="../Fotos/cine-logo.png" alt="Imagen de cine" class="hero__image">
+    <main class="main-content">
+        <div class="main-content__hero">
+            <section class="hero">
+                <img src="../Fotos/cine-logo.png" alt="Imagen de cine" class="hero__image">
+            </section>
+        </div>
+    
+        <section class="contact">
+            <h1 class="contact__title">Contáctanos</h1>
+            <p class="contact__description">
+                Nos encantaría escucharte. Si tienes alguna duda, pregunta, comentario o sugerencia, o si estás interesado
+                en formar parte de nuestro equipo, no dudes en comunicarte con nosotros. Estamos aquí para ayudarte y
+                atender cualquier inquietud que tengas. Por favor, completa el formulario que encontrarás a continuación, y
+                nos aseguraremos de responderte lo más pronto posible.
+            </p>
+            <p class="contact__description">
+                Ya sea para resolver una consulta, colaborar en algún proyecto o simplemente compartir tus ideas, tu mensaje
+                es importante para nosotros. ¡Gracias por confiar en nosotros!
+            </p>
         </section>
-    </div>
-    <section class="contact">
-        <h1 class="contact__title">CONTÁCTANOS</h1>
-        <p class="contact__description">
-            Nos encantaría escucharte. Si tienes alguna duda, pregunta, comentario o sugerencia, o si estás interesado
-            en formar parte de nuestro equipo, no dudes en comunicarte con nosotros. Estamos aquí para ayudarte y
-            atender cualquier inquietud que tengas. Por favor, completa el formulario que encontrarás a continuación, y
-            nos aseguraremos de responderte lo más pronto posible.
-        </p>
-        <p class="contact__description">
-            Ya sea para resolver una consulta, colaborar en algún proyecto o simplemente compartir tus ideas, tu mensaje
-            es importante para nosotros. ¡Gracias por confiar en nosotros!
-        </p>
-    </section>
-    <div class="contact-form">
-        <form action="#" method="post">
-            <div class="form-group">
-                <input type="text" name="nombre" placeholder="Nombre Completo" required />
-            </div>
-            <div class="form-group">
-                <input type="email" name="email" placeholder="Correo Electrónico" required />
-            </div>
-            <div class="form-group">
-                <input type="tel" name="telefono" placeholder="Teléfono" required />
-            </div>
-            <div class="form-group">
-                <input type="text" name="asunto" placeholder="Asunto" required />
-            </div>
-            <div class="form-group">
-                <textarea name="mensaje" placeholder="Mensaje" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">ENVIAR</button>
-        </form>
-    </div>
+    
+        <section class="contact-form">
+            <form action="#" method="post" class="contact-form__form">
+                <div class="contact-form__group">
+                    <input type="text" name="nombre" placeholder="Nombre Completo" class="contact-form__input" required />
+                </div>
+                <div class="contact-form__group">
+                    <input type="email" name="email" placeholder="Correo Electrónico" class="contact-form__input" required />
+                </div>
+                <div class="contact-form__group">
+                    <input type="tel" name="telefono" placeholder="Teléfono" class="contact-form__input" required />
+                </div>
+                <div class="contact-form__group">
+                    <input type="text" name="asunto" placeholder="Asunto" class="contact-form__input" required />
+                </div>
+                <div class="contact-form__group">
+                    <textarea name="mensaje" placeholder="Mensaje" rows="5" class="contact-form__textarea" required></textarea>
+                </div>
+                <button type="submit" class="contact-form__submit-btn">Enviar</button>
+            </form>
+        </section>
+    </main>
+    
 
     <!-- Footer -->
     <footer class="footer">
@@ -93,8 +98,6 @@
         </div>
     </footer>
 
-    <script src="../frontend/js/home.js"></script>
-    <script src="../js/home.js"></script>
 </body>
 
 </html>
