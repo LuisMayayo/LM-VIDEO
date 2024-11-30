@@ -73,6 +73,13 @@ p {
   font-size: 0.9rem;
   color: #fff;
 }
+.asientos__leyenda-precio {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+}
 .asientos__pantalla {
   width: 90%;
   height: 20px;
@@ -125,10 +132,14 @@ p {
   cursor: not-allowed;
 }
 .asientos__seleccionados {
-  margin-top: 10px;
-  font-size: 1rem;
+  margin-top: 30px;
+  font-size: 12px;
   font-family: "Roboto", sans-serif;
   color: #fff;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 .asientos__seleccionados-lista {
   margin-left: 5px;
