@@ -1,5 +1,3 @@
-@charset "UTF-8";
-/* _reset.scss */
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +13,7 @@ main {
 }
 
 h1, h2 {
-  font-size: 2rem; /* Tamaño unificado */
+  font-size: 2rem;
   font-family: "Bebas Neue", sans-serif;
   font-weight: bold;
   color: #00aaff;
@@ -25,7 +23,7 @@ h1, h2 {
 
 @media (min-width: 1024px) {
   h1, h2 {
-    font-size: 2.5rem; /* Tamaño más grande en pantallas grandes */
+    font-size: 2.5rem;
   }
 }
 p {
@@ -37,7 +35,7 @@ p {
 
 @media (min-width: 768px) {
   p {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
 }
 .main-content__hero {
@@ -119,9 +117,6 @@ p {
   border-radius: 5px;
   cursor: pointer;
   text-transform: uppercase;
-}
-.contact-form__submit-btn:hover {
-  background-color: rgb(76.5, 195.5, 255);
 }
 
 @media (min-width: 768px) {

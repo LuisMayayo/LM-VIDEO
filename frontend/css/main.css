@@ -1,0 +1,1141 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  font-family: "Roboto", sans-serif;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+}
+
+h1, h2 {
+  font-size: 2rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
+  color: #00aaff;
+  margin: 20px 0;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  h1, h2 {
+    font-size: 2.5rem;
+  }
+}
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 1.25rem;
+  }
+}
+.navbar {
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3%;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .navbar {
+    justify-content: center;
+    padding: 1rem 5%;
+  }
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .navbar__logo {
+    margin-right: 3rem;
+  }
+}
+
+.navbar__logo-image {
+  height: 60px;
+}
+@media (min-width: 768px) {
+  .navbar__logo-image {
+    height: 80px;
+  }
+}
+
+.navbar__menu {
+  display: none;
+  flex-direction: column;
+  gap: 7%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(27, 27, 27, 0.95);
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+.navbar__menu.is-active {
+  display: flex;
+}
+@media (min-width: 768px) {
+  .navbar__menu {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    gap: 3rem;
+    align-items: center;
+  }
+}
+
+.navbar__item {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  font-family: "Bebas Neue", sans-serif;
+}
+.navbar__item:hover {
+  color: #00aaff;
+}
+@media (min-width: 768px) {
+  .navbar__item {
+    font-size: 20px;
+  }
+}
+
+.navbar__close {
+  position: absolute;
+  top: 20px;
+  left: 375px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .navbar__close {
+    display: none;
+  }
+}
+
+.navbar__toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+@media (min-width: 768px) {
+  .navbar__toggle {
+    display: none;
+  }
+}
+
+.navbar__toggle-icon {
+  width: 25px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+.footer {
+  background-color: #00aaff;
+  color: #000;
+  padding: 20px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+.footer__top {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+.footer__top .footer__link {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.65rem;
+}
+.footer__top .footer__link:hover {
+  text-decoration: underline;
+}
+.footer__logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.footer__logo .footer__logo-image {
+  height: 50px;
+}
+.footer__bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer__bottom .footer__copyright {
+  font-size: 0.75rem;
+}
+.footer__bottom .footer__social {
+  display: flex;
+  gap: 15px;
+}
+.footer__bottom .footer__social .footer__social-icon {
+  font-size: 1.2rem;
+  color: #000;
+  transition: color 0.3s ease;
+}
+.footer__bottom .footer__social .footer__social-icon:hover {
+  color: #fff;
+}
+
+.movies {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 35px;
+}
+.movies__container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.movies__card {
+  display: flex;
+  flex-direction: column; /* Organización vertical para mobile */
+  align-items: center; /* Centrar contenido horizontalmente */
+  background-color: #181818;
+  border: 1px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.movies__card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.movies__image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: cover;
+  border-bottom: 3px solid #00aaff;
+}
+.movies__info {
+  text-align: center;
+  padding: 15px;
+  flex: 1;
+}
+.movies__info-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  background-color: #00aaff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .movies__card {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .movies__image {
+    width: 150px;
+    height: 220px;
+    border-bottom: none;
+    border-right: 3px solid #00aaff;
+  }
+  .movies__info {
+    text-align: left;
+  }
+  .movies-button {
+    width: auto;
+  }
+}
+
+.hero {
+  text-align: center;
+}
+.hero__title {
+  margin-bottom: 15px; /* Solo margen si es necesario */
+}
+.hero__image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+}
+@media (min-width: 1024px) {
+  .hero__image {
+    max-width: 990px;
+  }
+}
+
+.carousel {
+  z-index: 1;
+  position: relative;
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.carousel__wrapper {
+  overflow: hidden;
+}
+.carousel__track {
+  display: flex;
+  gap: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+.carousel__item {
+  flex: 0 0 33.33%;
+  box-sizing: border-box;
+}
+.carousel__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+.carousel__control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: 1px solid #666666;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 20px;
+}
+.carousel__control--prev {
+  left: 4px;
+}
+.carousel__control--next {
+  right: 4px;
+}
+.carousel__control:hover {
+  background: #00aaff;
+}
+.carousel__control i {
+  pointer-events: none;
+}
+@media (max-width: 768px) {
+  .carousel__control {
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+@media (min-width: 768px) {
+  .carousel__item {
+    width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .carousel__item {
+    width: 25%;
+  }
+}
+
+.promo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+  color: #fff;
+  background-image: url("../Fotos/fondomoana.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.promo__title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.promo__image {
+  z-index: 1;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+}
+.promo__content {
+  z-index: 1;
+  text-align: center;
+  max-width: 600px;
+}
+@media (min-width: 1024px) {
+  .promo {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 40px;
+  }
+  .promo__image {
+    max-width: 530px;
+  }
+  .promo__content {
+    text-align: left;
+  }
+}
+
+.trailers {
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+.trailers__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.trailers__item {
+  flex: 1 1 25%;
+  max-width: 200px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .trailers__item {
+    flex: 1 1 50%;
+  }
+}
+@media (max-width: 480px) {
+  .trailers__item {
+    flex: 1 1 100%;
+  }
+}
+.trailers__thumbnail {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #181818;
+}
+.trailers__thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.trailers__thumbnail .trailers__play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.trailers__thumbnail .trailers__play-button:hover {
+  background: #00aaff;
+}
+.trailers__name {
+  font-size: 1rem;
+  font-family: "Bebas Neue", sans-serif;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+@media (min-width: 1024px) {
+  .trailers__item {
+    flex: 1 1 20%;
+    max-width: 250px;
+  }
+  .trailers__name {
+    font-size: 1.2rem;
+    margin-top: 15px;
+  }
+  .trailers .trailers__thumbnail .trailers__play-button {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+}
+
+.upcoming-releases {
+  text-align: center;
+  color: #00aaff;
+}
+.upcoming-releases__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 2rem;
+  border-radius: 0;
+  background-size: cover;
+  background-position: center;
+  color: #00aaff;
+  min-height: 300px;
+  overflow: hidden;
+}
+.upcoming-releases__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(27, 27, 27, 0.79);
+  z-index: 1;
+  border-radius: 0;
+}
+.upcoming-releases__item > * {
+  position: relative;
+  z-index: 2;
+}
+.upcoming-releases__item-image {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.upcoming-releases__item-details {
+  max-width: 400px;
+  padding: 1rem;
+  text-align: left;
+}
+@media (min-width: 768px) {
+  .upcoming-releases__item--cars, .upcoming-releases__item--fastfurious {
+    flex-direction: row-reverse;
+  }
+}
+@media (min-width: 768px) {
+  .upcoming-releases__item--avatar, .upcoming-releases__item--jurassic {
+    flex-direction: row;
+  }
+}
+.upcoming-releases__item--cars {
+  background-image: url("../Fotos/fondo-cars.jpg");
+}
+.upcoming-releases__item--avatar {
+  background-image: url("../Fotos/fondo-avatar.jpg");
+}
+.upcoming-releases__item--fastfurious {
+  background-image: url("../Fotos/fondo-FastFurius11.jpg");
+}
+.upcoming-releases__item--jurassic {
+  background-image: url("../Fotos/fondo-jurassicworld.jpg");
+}
+
+.main-content__hero {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hero__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.legal-notice {
+  margin: 40px 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+.legal-notice__heading {
+  font-family: "Bebas Neue", sans-serif;
+  color: #00aaff;
+  font-size: 2rem;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.legal-notice:last-child {
+  margin-bottom: 0;
+}
+.legal-notice__section {
+  margin-bottom: 30px;
+}
+@media (min-width: 768px) {
+  .legal-notice {
+    max-width: 800px;
+    margin: 40px auto;
+  }
+}
+
+.main-content__hero {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hero__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cookie-policy {
+  margin: 40px 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+.cookie-policy__heading {
+  font-family: "Bebas Neue", sans-serif;
+  color: #00aaff;
+  font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.cookie-policy__list {
+  font-size: 1.1rem;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+.cookie-policy__list {
+  padding-left: 20px;
+}
+.cookie-policy__list-item {
+  list-style-type: disc;
+  margin-bottom: 10px;
+}
+.cookie-policy__list-item strong {
+  color: #00aaff;
+}
+.cookie-policy__section {
+  margin-bottom: 30px;
+}
+@media (min-width: 768px) {
+  .cookie-policy {
+    max-width: 800px;
+    margin: 40px auto;
+  }
+  .cookie-policy__list {
+    font-size: 1.2rem;
+  }
+}
+
+.main-content__hero {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hero__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.privacy-policy {
+  margin: 40px 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+.privacy-policy__heading {
+  color: #00aaff;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.privacy-policy__list {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+.privacy-policy__list-item {
+  list-style-type: disc;
+  margin-bottom: 10px;
+}
+.privacy-policy__section {
+  margin-bottom: 30px;
+}
+@media (min-width: 768px) {
+  .privacy-policy {
+    max-width: 800px;
+    margin: 40px auto;
+  }
+  .privacy-policy__title {
+    font-size: 2.5rem;
+  }
+}
+
+.main-background {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.main-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(27, 27, 27, 0.85);
+  z-index: 1;
+}
+.main-background * {
+  position: relative;
+  z-index: 2;
+}
+
+.pelicula {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 30px;
+  /* Llamada al mixin para aplicar estilos generales */
+}
+.pelicula .pelicula__image {
+  max-width: 25%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.pelicula .pelicula__info {
+  text-align: center;
+  color: #fff;
+}
+.pelicula .pelicula__info .pelicula__title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  color: #00aaff;
+  margin-bottom: 10px;
+}
+.pelicula .pelicula__info .pelicula__description {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #b3b3b3;
+  margin-bottom: 10px;
+}
+.pelicula .pelicula__info .pelicula__duration {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #fff;
+}
+.pelicula__image {
+  max-width: 230px; /* Específico para este diseño */
+  height: auto;
+}
+.pelicula__info {
+  flex: 1; /* Asegura que el contenido de información ocupe el espacio disponible */
+  text-align: left; /* Ajusta la alineación específica para este diseño */
+}
+
+@media (max-width: 768px) {
+  .pelicula {
+    flex-direction: column;
+    text-align: center;
+  }
+  .pelicula__image {
+    width: 80%; /* Imagen más pequeña en pantallas pequeñas */
+    margin-bottom: 20px;
+  }
+  .pelicula__info {
+    text-align: center;
+  }
+  .pelicula__info .pelicula__title {
+    font-size: 1.8rem;
+  }
+  .pelicula__info .pelicula__description {
+    font-size: 1rem;
+  }
+  .pelicula__info .pelicula__duration {
+    font-size: 1rem;
+  }
+}
+.funciones {
+  width: 100%;
+  max-width: 800px;
+  padding-bottom: 2%;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+.funciones__dia {
+  font-size: 1.5rem;
+  font-family: "Bebas Neue", sans-serif;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.funciones__sesiones {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  justify-items: center;
+  margin: 0 auto;
+}
+.funciones__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin: 0 auto;
+}
+.funciones .funcion {
+  background-color: #00aaff;
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 15px 0 15px 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  min-width: 55px;
+}
+.funciones .funcion span {
+  display: block;
+}
+.funciones .funcion:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.asientos {
+  margin: 0 auto;
+  text-align: center;
+}
+.asientos__leyenda {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.asientos__leyenda-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 5px;
+}
+.asientos__leyenda-item .asientos__icon {
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  border: 1px solid #333;
+}
+.asientos__leyenda-item .asientos__icon--disponible {
+  background-color: #4ead4e;
+}
+.asientos__leyenda-item .asientos__icon--seleccionado {
+  background-color: #00aaff;
+}
+.asientos__leyenda-item .asientos__icon--ocupado {
+  background-color: #ff0000;
+}
+.asientos__leyenda-item span {
+  font-size: 0.9rem;
+  color: #fff;
+}
+.asientos__leyenda-precio {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+}
+.asientos__pantalla {
+  width: 90%;
+  height: 20px;
+  background-color: #d6d6c2;
+  border-radius: 5px;
+  margin: 20px auto;
+  text-align: center;
+  line-height: 20px;
+  font-size: 0.9rem;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+}
+.asientos__grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+}
+.asientos__grid__asiento {
+  height: 40px;
+  background-color: #4ead4e;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #fff;
+}
+.asientos__grid__asiento--ocupado {
+  background-color: #ff0000;
+  cursor: not-allowed;
+}
+.asientos__grid__asiento--seleccionado {
+  background-color: #00aaff;
+}
+.asientos__boton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #00aaff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.asientos__boton:disabled {
+  background-color: #555555;
+  cursor: not-allowed;
+}
+.asientos__seleccionados {
+  margin-top: 30px;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.asientos__seleccionados-lista {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.pagina-detalle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+  padding: 20px; /* Espaciado interno */
+  background-color: #000; /* Fondo del main */
+  box-sizing: border-box;
+}
+.pagina-detalle .pelicula {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 30px;
+  /* Llamada al mixin */
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.pagina-detalle .pelicula .pelicula__image {
+  max-width: 25%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.pagina-detalle .pelicula .pelicula__info {
+  text-align: center;
+  color: #fff;
+}
+.pagina-detalle .pelicula .pelicula__info .pelicula__title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  color: #00aaff;
+  margin-bottom: 10px;
+}
+.pagina-detalle .pelicula .pelicula__info .pelicula__description {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #b3b3b3;
+  margin-bottom: 10px;
+}
+.pagina-detalle .pelicula .pelicula__info .pelicula__duration {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #fff;
+}
+.pagina-detalle .pelicula__image {
+  max-width: 25%; /* Ajusta el tamaño máximo de la imagen */
+}
+.pagina-detalle .funcion-info {
+  text-align: center; /* Centrar texto */
+  margin-bottom: 30px;
+  font-size: 1rem;
+  color: #fff;
+}
+.pagina-detalle .formulario-pago {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #181818;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  width: 100%;
+}
+.pagina-detalle .formulario-pago__row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pagina-detalle .formulario-pago__row input {
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #000;
+  color: #fff;
+  box-sizing: border-box;
+}
+.pagina-detalle .boton-pago {
+  background-color: #00aaff;
+  color: #ffffff;
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: "Bebas Neue", sans-serif;
+  margin-top: 20px;
+}
+
+/* Estilo responsivo */
+@media (min-width: 768px) {
+  .pelicula {
+    flex-direction: row; /* Fila en pantallas grandes */
+    justify-content: space-between;
+  }
+  .pelicula__image {
+    max-width: 30%; /* Ajusta el tamaño máximo de la imagen en pantallas grandes */
+  }
+  .formulario-pago__row {
+    flex-direction: row;
+  }
+  .formulario-pago__row input {
+    flex: 1; /* Ajusta inputs al mismo tamaño */
+  }
+}
+.ticket__container {
+  background-color: #181818;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  margin: 50px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.ticket__title {
+  font-size: 2rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
+  color: #00aaff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.ticket__details {
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.ticket__details strong {
+  font-weight: bold;
+  color: #00aaff;
+}
+.ticket__client-info {
+  margin-top: 30px;
+}
+.ticket__client-info p {
+  margin: 5px 0;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+}
+.ticket__client-info p strong {
+  font-weight: bold;
+  color: #00aaff;
+}
+.ticket__total {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #00aaff;
+  margin-top: 15px;
+  text-align: center;
+}
+.ticket__actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.ticket__actions .btn {
+  padding: 10px 20px;
+  background-color: #00aaff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.ticket__actions .btn--disabled {
+  background-color: #555555;
+  cursor: not-allowed;
+}
+
+/*# sourceMappingURL=main.css.map */

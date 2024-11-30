@@ -1,113 +1,80 @@
 @use '../base/variables' as vars;
-
 @use '../base/reset' as *;
 
-.ticket__container {
-  background-color: vars.$color-fondo-card;
-  color: vars.$color-texto;
-  border-radius: 10px;
-  padding: 20px;
-  width: 90%;
-  max-width: 600px;
-  margin: 50px auto;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+.ticket {
+  &__container {
+    background-color: vars.$color-fondo-card; // Color de fondo para el ticket
+    color: vars.$color-texto;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
 
-  .ticket__title {
+  &__title {
+    font-size: vars.$font-size-h1;
     font-family: vars.$font-primary;
-    font-size: 2.5rem;
-    text-align: center;
+    font-weight: bold;
     color: vars.$primary-color;
+    text-align: center;
     margin-bottom: 20px;
   }
 
-  .ticket__movie,
-  .ticket__details {
+  &__details {
+    font-size: vars.$font-size-base;
     font-family: vars.$font-secondary;
-    font-size: 1.1rem;
+    line-height: 1.6;
     margin-bottom: 10px;
+
+    strong {
+      font-weight: bold;
+      color: vars.$primary-color;
+    }
   }
 
-  .ticket__movie {
-    font-weight: bold;
-  }
-
-  .ticket__details {
-    color: vars.$color-texto-secundario;
-  }
-
-  h2 {
-    font-family: vars.$font-primary;
-    font-size: 1.8rem;
-    color: vars.$primary-color;
+  &__client-info {
     margin-top: 30px;
-    margin-bottom: 10px;
+
+    p {
+      margin: 5px 0;
+      font-size: vars.$font-size-base;
+      font-family: vars.$font-secondary;
+      line-height: 1.6;
+
+      strong {
+        font-weight: bold;
+        color: vars.$primary-color;
+      }
+    }
   }
 
-  .ticket__client-info p {
-    margin: 5px 0;
-    font-size: 1rem;
-    color: vars.$color-texto-secundario;
-  }
-
-  .ticket__total {
-    font-size: 1.4rem;
+  &__total {
+    font-size: vars.$font-size-large;
     font-weight: bold;
     color: vars.$primary-color;
     margin-top: 15px;
+    text-align: center;
   }
 
-  // Estilo para el bloque de asientos
-  .ticket__asientos {
-    margin-top: 20px;
-    font-size: 1.1rem;
-    color: vars.$color-texto-secundario;
-
-    span {
-      font-weight: bold;
-      color: vars.$color-destacado;
-    }
-
-    .asiento {
-      display: inline-block;
-      background-color: vars.$color-asiento-disponible;
-      padding: 5px 10px;
-      margin-right: 5px;
-      margin-bottom: 5px;
-      border-radius: 5px;
-      color: vars.$color-texto;
-      font-size: 0.9rem;
-    }
-
-    .asiento-ocupado {
-      background-color: vars.$color-asiento-ocupado;
-    }
-
-    .asiento-seleccionado {
-      background-color: vars.$color-asiento-seleccionado;
-    }
-  }
-
-  // Botón para imprimir o realizar acciones
-  .ticket__actions {
+  &__actions {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 30px;
 
     .btn {
       padding: 10px 20px;
       background-color: vars.$primary-color;
-      color: vars.$color-texto;
       border: none;
       border-radius: 5px;
-      font-size: 1.1rem;
+      font-size: vars.$font-size-base;
+      color: vars.$color-texto;
       cursor: pointer;
       transition: background-color 0.3s;
 
-      &:hover {
-        background-color: lighten(vars.$primary-color, 15%);
-      }
 
-      &.disabled {
+      &--disabled {
         background-color: vars.$color-boton-reserva-disabled;
         cursor: not-allowed;
       }

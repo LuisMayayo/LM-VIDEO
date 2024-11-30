@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -63,28 +64,47 @@ p {
 
 .pelicula {
   display: flex;
-  gap: 30px;
-  max-width: 1200px;
-  width: 100%;
+  flex-direction: column;
+  gap: 20px;
   align-items: center;
+  margin-bottom: 30px;
+  /* Llamada al mixin para aplicar estilos generales */
 }
-.pelicula__image {
-  max-width: 230px;
+.pelicula .pelicula__image {
+  max-width: 25%;
   height: auto;
   object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.pelicula__info {
-  flex: 1;
-  text-align: left;
+.pelicula .pelicula__info {
+  text-align: center;
   color: #fff;
 }
-.pelicula__info .pelicula__title {
-  font-size: 2rem;
+.pelicula .pelicula__info .pelicula__title {
   font-family: "Bebas Neue", sans-serif;
-  margin-bottom: 15px;
+  font-size: 2rem;
+  color: #00aaff;
+  margin-bottom: 10px;
+}
+.pelicula .pelicula__info .pelicula__description {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #b3b3b3;
+  margin-bottom: 10px;
+}
+.pelicula .pelicula__info .pelicula__duration {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
   color: #fff;
+}
+.pelicula__image {
+  max-width: 230px; /* Específico para este diseño */
+  height: auto;
+}
+.pelicula__info {
+  flex: 1; /* Asegura que el contenido de información ocupe el espacio disponible */
+  text-align: left; /* Ajusta la alineación específica para este diseño */
 }
 
 @media (max-width: 768px) {
@@ -93,7 +113,7 @@ p {
     text-align: center;
   }
   .pelicula__image {
-    width: 80%;
+    width: 80%; /* Imagen más pequeña en pantallas pequeñas */
     margin-bottom: 20px;
   }
   .pelicula__info {

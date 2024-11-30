@@ -28,7 +28,7 @@
     </button>
     <div class="navbar__menu">
       <button class="navbar__close" aria-label="Cerrar menú">✕</button>
-      <a href="../html/index.html" class="navbar__item">HOME</a>
+      <a href="../html/home.html" class="navbar__item">HOME</a>
       <a href="../html/cartelera.html" class="navbar__item">CARTELERA</a>
       <a href="../html/proximos-estrenos.html" class="navbar__item">PRÓXIMOS ESTRENOS</a>
       <a href="../html/sobre-nosotros.html" class="navbar__item">SOBRE NOSOTROS</a>
@@ -36,7 +36,7 @@
     </div>
   </nav>
 
-  <main>
+  <main class="pagina-detalle">
     <!-- Información de la película -->
     <div class="pelicula">
       <img id="peliculaImagen" src="" alt="Imagen de la película" class="pelicula__image">
@@ -46,16 +46,15 @@
         <p id="peliculaDuracion" class="pelicula__duration">Cargando...</p>
       </div>
     </div>
-
+  
     <!-- Información de la función -->
     <div class="funcion-info">
       <p id="funcionHorario" class="funcion-info__horario">Horario: Cargando...</p>
       <p id="funcionSala" class="funcion-info__sala">Sala: Cargando...</p>
-      <p class="asientos__titulo">ASIENTOS SELECCIONADOS: <span id="asientosSeleccionados">Cargando...</span></p>
+      <p class="asientos__titulo">Asientos seleccionados: <span id="asientosSeleccionados">Cargando...</span></p>
       <p class="precio__titulo" id="precioTotal">Total: Cargando...</p>
     </div>
-
-
+  
     <!-- Formulario de pago -->
     <form class="formulario-pago" id="formularioPago" novalidate>
       <div class="formulario-pago__row">
@@ -76,6 +75,7 @@
       <button type="button" class="boton-pago" id="botonPago">PAGAR AHORA</button>
     </form>
   </main>
+  
 
   <!-- Footer -->
   <footer class="footer">

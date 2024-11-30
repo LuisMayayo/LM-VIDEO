@@ -1,93 +1,119 @@
 @charset "UTF-8";
-/* _reset.scss */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Roboto", sans-serif; /* Puedes usar una fuente predeterminada aquí si lo necesitas */
-  background-color: #000; /* Esto depende de las variables, pero aún no han sido importadas aquí */
-  color: #fff; /* También depende de las variables */
+main {
+  font-family: "Roboto", sans-serif;
+  background-color: #000;
+  color: #fff;
   margin: 0;
   padding: 20px;
 }
 
-.pelicula {
+h1, h2 {
+  font-size: 2rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
+  color: #00aaff;
+  margin: 20px 0;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  h1, h2 {
+    font-size: 2.5rem;
+  }
+}
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 1.25rem;
+  }
+}
+.pagina-detalle {
   display: flex;
-  flex-direction: column; /* Asegura que en móviles esté en columna */
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+  padding: 20px; /* Espaciado interno */
+  background-color: #000; /* Fondo del main */
+  box-sizing: border-box;
+}
+.pagina-detalle .pelicula {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
-  max-width: 1200px;
-  width: 100%;
   align-items: center;
   margin-bottom: 30px;
+  /* Llamada al mixin */
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 30px;
 }
-.pelicula__image {
-  max-width: 100%; /* La imagen ocupa el 100% del ancho disponible */
+.pagina-detalle .pelicula .pelicula__image {
+  max-width: 25%;
   height: auto;
   object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.pelicula__info {
-  text-align: center; /* Centra el texto en móviles */
+.pagina-detalle .pelicula .pelicula__info {
+  text-align: center;
   color: #fff;
-  max-width: 100%;
 }
-.pelicula__info .pelicula__title {
-  font-size: 1.5rem; /* Tamaño más pequeño en móviles */
+.pagina-detalle .pelicula .pelicula__info .pelicula__title {
   font-family: "Bebas Neue", sans-serif;
-  margin-bottom: 15px;
-  color: #fff;
+  font-size: 2rem;
+  color: #00aaff;
+  margin-bottom: 10px;
 }
-.pelicula__info .pelicula__description {
-  font-size: 1rem;
+.pagina-detalle .pelicula .pelicula__info .pelicula__description {
   font-family: "Roboto", sans-serif;
-  line-height: 1.6;
-  margin-bottom: 15px;
-  color: white;
-}
-.pelicula__info .pelicula__duration {
   font-size: 1rem;
-  font-family: "Bebas Neue", sans-serif;
+  color: #b3b3b3;
+  margin-bottom: 10px;
+}
+.pagina-detalle .pelicula .pelicula__info .pelicula__duration {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
   color: #fff;
-  margin-top: 10px;
 }
-
-.funcion-info {
-  font-size: 1.2rem;
-  font-family: "Bebas Neue", sans-serif;
-  color: #00aaff;
-  text-align: center;
-  margin: 9px;
+.pagina-detalle .pelicula__image {
+  max-width: 25%; /* Ajusta el tamaño máximo de la imagen */
 }
-
-.funcion-info__horario,
-.funcion-info__sala,
-.precio__titulo {
-  font-size: 1.2rem;
-  font-weight: 400 !important;
-  margin: 5px;
-  color: #00aaff;
+.pagina-detalle .funcion-info {
+  text-align: center; /* Centrar texto */
+  margin-bottom: 30px;
+  font-size: 1rem;
+  color: #fff;
 }
-
-.asientos__titulo {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  color: #00aaff;
-  text-align: center;
-  font-weight: 400 !important;
-  margin: 5px;
+.pagina-detalle .formulario-pago {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #181818;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  width: 100%;
 }
-
-.formulario-pago__row {
+.pagina-detalle .formulario-pago__row {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 15px;
 }
-.formulario-pago__row input {
+.pagina-detalle .formulario-pago__row input {
   padding: 10px;
   border: 1px solid #333;
   border-radius: 5px;
@@ -96,8 +122,7 @@ body {
   color: #fff;
   box-sizing: border-box;
 }
-
-.boton-pago {
+.pagina-detalle .boton-pago {
   background-color: #00aaff;
   color: #ffffff;
   width: 100%;
@@ -107,28 +132,24 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-}
-.boton-pago:hover {
-  background-color: #0088cc;
+  font-family: "Bebas Neue", sans-serif;
+  margin-top: 20px;
 }
 
+/* Estilo responsivo */
 @media (min-width: 768px) {
   .pelicula {
-    flex-direction: row; /* En pantallas grandes, los elementos estarán en fila */
+    flex-direction: row; /* Fila en pantallas grandes */
     justify-content: space-between;
   }
   .pelicula__image {
-    max-width: 350px; /* Limitar el tamaño de la imagen en pantallas grandes */
-  }
-  .pelicula__info {
-    text-align: left;
-    max-width: 600px;
+    max-width: 30%; /* Ajusta el tamaño máximo de la imagen en pantallas grandes */
   }
   .formulario-pago__row {
     flex-direction: row;
   }
   .formulario-pago__row input {
-    flex: 1;
+    flex: 1; /* Ajusta inputs al mismo tamaño */
   }
 }
 

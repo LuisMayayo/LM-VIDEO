@@ -1,0 +1,42 @@
+@use '../base/variables' as vars;
+@mixin estilo-pelicula($titulo-color: vars.$primary-color, $texto-color: vars.$color-texto) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 30px;
+  
+    .pelicula__image {
+      max-width: 25%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  
+    .pelicula__info {
+      text-align: center;
+      color: $texto-color;
+  
+      .pelicula__title {
+        font-family: vars.$font-primary;
+        font-size: vars.$font-size-h1;
+        color: $titulo-color;
+        margin-bottom: 10px;
+      }
+  
+      .pelicula__description {
+        font-family: vars.$font-secondary;
+        font-size: vars.$font-size-base;
+        color: vars.$color-texto-secundario;
+        margin-bottom: 10px;
+      }
+  
+      .pelicula__duration {
+        font-family: vars.$font-secondary;
+        font-size: vars.$font-size-base;
+        color: $texto-color;
+      }
+    }
+  }
+  

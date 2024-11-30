@@ -1,12 +1,14 @@
-
-// Primero importamos las variables
-@use '../base/variables' as vars;
+// Primero importamos las variables globales
+@use 'base/variables' as vars;
 
 // Luego importamos el reset
-@use '../base/reset' as *;
+@use 'base/reset' as *;
 
+// Importamos los archivos de diseño (header, footer, etc.)
 @use 'layout/header';
 @use 'layout/footer';
+
+// Importamos las páginas
 @use 'pages/cartelera';
 @use 'pages/home';
 @use 'pages/proximos-estrenos';

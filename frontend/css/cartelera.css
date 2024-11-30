@@ -93,9 +93,6 @@ p {
   text-align: center;
   text-transform: uppercase;
 }
-.movies__info-button:hover {
-  background-color: #0088cc;
-}
 @media (min-width: 768px) {
   .movies__card {
     flex-direction: row;
