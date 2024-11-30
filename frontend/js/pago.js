@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             ciudad: document.getElementById("ciudad").value,
             correoElectronico: document.getElementById("correoElectronico").value,
             telefono: document.getElementById("telefono").value,
-            totalPagado: totalPagado, // Agregar el total pagado a los datos del pago
+            totalPagado: totalPagado,
         };
 
         try {

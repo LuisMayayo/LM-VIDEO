@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const pagoId = urlParams.get("pagoId");
     const totalPagado = parseFloat(urlParams.get("totalPagado"));
 
-    console.log("totalPagado desde URL:", totalPagado); // Verifica que el valor sea correcto
+    console.log("totalPagado desde URL:", totalPagado);
 
     if (!pagoId) {
         alert("ID de pago no encontrado.");
@@ -27,10 +27,10 @@ document.addEventListener("DOMContentLoaded", async function () {
             const response = await fetch(apiUrl);
             if (!response.ok) throw new Error(`Error al obtener la película: ${response.statusText}`);
             const pelicula = await response.json();
-            return pelicula.titulo; // Devuelve el nombre de la película
+            return pelicula.titulo;
         } catch (error) {
             console.error("Error al cargar el nombre de la película:", error.message);
-            return "Desconocido"; // Valor predeterminado si falla la solicitud
+            return "Desconocido";
         }
     }
 

@@ -18,15 +18,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Clase Carousel
   const track = document.querySelector('.carousel__track');
-  const prevButton = document.querySelector('.carousel__control--prev'); // Clase corregida
-  const nextButton = document.querySelector('.carousel__control--next'); // Clase corregida
+  const prevButton = document.querySelector('.carousel__control--prev');
+  const nextButton = document.querySelector('.carousel__control--next');
 
   let currentSlide = 0;
-  const totalSlides = document.querySelectorAll('.carousel__item').length; // Clase corregida
+  const totalSlides = document.querySelectorAll('.carousel__item').length; 
   const slidesPerView = 3;
 
   const moveCarousel = () => {
-    const slideWidth = document.querySelector('.carousel__item').offsetWidth; // Clase corregida
+    const slideWidth = document.querySelector('.carousel__item').offsetWidth;
     track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
   };
 
