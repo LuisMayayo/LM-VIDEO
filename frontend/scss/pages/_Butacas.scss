@@ -43,11 +43,11 @@
     }
 
     &-precio {
-      margin-top: 10px; // Espacio extra debajo de la leyenda
+      margin-top: 10px;
       font-size: 0.9rem;
       color: vars.$color-texto;
       text-align: center;
-      width: 100%; // Ocupa todo el ancho de la leyenda
+      width: 100%;
     }
   }
 
@@ -114,10 +114,10 @@
     font-size: 12px;
     font-family: vars.$font-secondary;
     color: vars.$color-texto;
-    text-align: right; // Alinea el texto hacia la derecha
+    text-align: right;
     display: flex;
-    justify-content: flex-end; // Mueve el contenido a la derecha
-    align-items: center; // Centra verticalmente el contenido
+    justify-content: flex-end;
+    align-items: center;
 
     &-lista {
       margin-left: 5px;

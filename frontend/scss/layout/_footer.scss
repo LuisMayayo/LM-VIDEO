@@ -1,11 +1,11 @@
 @use '../base/variables' as vars;
 
 .footer {
-  background-color: vars.$color-destacado; // Fondo del footer
-  color: vars.$color-fondo; // Color del texto
+  background-color: vars.$color-destacado;
+  color: vars.$color-fondo;
   padding: 20px;
   text-align: center;
-  font-family: vars.$font-secondary; // Fuente secundaria
+  font-family: vars.$font-secondary;
 
   &__top {
     display: flex;
@@ -14,10 +14,10 @@
     margin-bottom: 15px;
 
     .footer__link {
-      color: vars.$color-fondo; // Color de los enlaces
+      color: vars.$color-fondo;
       text-decoration: none;
       font-weight: bold;
-      font-size: 0.65rem; // Tamaño de letra reducido
+      font-size: 0.65rem;
 
       &:hover {
         text-decoration: underline;
@@ -43,7 +43,7 @@
     gap: 10px;
 
     .footer__copyright {
-      font-size: 0.75rem; // Tamaño de letra reducido
+      font-size: 0.75rem;
     }
 
     .footer__social {
@@ -51,12 +51,12 @@
       gap: 15px;
 
       .footer__social-icon {
-        font-size: 1.2rem; // Tamaño de los iconos de redes sociales
-        color: vars.$color-fondo; // Color inicial
+        font-size: 1.2rem;
+        color: vars.$color-fondo;
         transition: color 0.3s ease;
 
         &:hover {
-          color: vars.$color-texto; // Cambia el color al pasar el cursor
+          color: vars.$color-texto;
         }
       }
     }

@@ -1,43 +1,43 @@
 @use '../base/variables' as vars;
 @mixin estilo-pelicula {
   display: flex;
-  flex-direction: row; /* Los elementos de la película se colocan en fila */
-  align-items: center; /* Centra los elementos verticalmente */
-  justify-content: space-between; /* Espacio entre la imagen y la información */
-  gap: 20px; /* Espaciado entre los elementos */
-  padding: 20px; /* Espaciado interno */
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
-  max-width: 800px; /* Ancho máximo del contenedor */
-  width: 100%; /* Ocupa todo el ancho disponible */
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  width: 100%;
 
   .pelicula__image {
-    width: 40%; /* Ajusta la imagen al 40% del contenedor */
-    height: auto; /* Mantén la proporción de la imagen */
-    border-radius: 10px; /* Bordes redondeados */
-    object-fit: cover; /* Ajusta la imagen al contenedor */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    width: 40%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
   .pelicula__info {
-    width: 60%; /* Ajusta el ancho del contenedor de información */
+    width: 60%;
     display: flex;
-    flex-direction: column; /* Coloca los elementos de información en columna */
-    gap: 10px; /* Espaciado entre los elementos */
+    flex-direction: column;
+    gap: 10px;
 
     .pelicula__title {
-      font-size: vars.$font-size-h1; /* Tamaño de fuente del título */
-      font-family: vars.$font-primary; /* Fuente principal */
-      color: vars.$color-destacado; /* Color destacado */
-      margin: 0; /* Elimina márgenes */
+      font-size: vars.$font-size-h1;
+      font-family: vars.$font-primary;
+      color: vars.$color-destacado;
+      margin: 0;
     }
 
     .pelicula__description,
     .pelicula__duration {
-      font-size: vars.$font-size-base; /* Tamaño base de fuente */
-      font-family: vars.$font-secondary; /* Fuente secundaria */
-      color: vars.$color-texto-secundario; /* Color del texto secundario */
-      line-height: 1.6; /* Altura de línea */
+      font-size: vars.$font-size-base;
+      font-family: vars.$font-secondary;
+      color: vars.$color-texto-secundario;
+      line-height: 1.6;
     }
   }
 }

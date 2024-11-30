@@ -2,20 +2,20 @@
 $color-fondo-card: #181818;
 $color-fondo: #000;
 $color-texto: #fff;
-$color-texto-secundario: #b3b3b3; // Nuevo
+$color-texto-secundario: #b3b3b3;
 $color-destacado: #00aaff;
 $color-borde: #333;
-$color-borde-icono: #666666; // Nuevo
+$color-borde-icono: #666666;
 $color-fondo-menu:rgb(27 27 27 / 79%);
-$color-fondo-asientos: #101010; // Nuevo
+$color-fondo-asientos: #101010;
 $highlight-color: #00aaff;
 $background-color: #000;
-$primary-color: #00aaff; // Azul claro como color principal
+$primary-color: #00aaff;
 
 // Colores interactivos
 $color-boton-reserva: $primary-color;
-$color-boton-reserva-disabled: #555555; // Nuevo
-$color-pantalla: #d6d6c2; // Nuevo
+$color-boton-reserva-disabled: #555555;
+$color-pantalla: #d6d6c2;
 
 // Fuentes
 $font-primary: 'Bebas Neue', sans-serif;
@@ -28,6 +28,6 @@ $font-size-h1: 2rem;
 $font-size-h1-large: 2.5rem;
 
 // Variables para los asientos
-$color-asiento-disponible: #4ead4e; // Verde (disponible)
-$color-asiento-ocupado: #ff0000;   // Rojo (ocupado)
-$color-asiento-seleccionado: #00aaff; // Azul (seleccionado)
+$color-asiento-disponible: #4ead4e;
+$color-asiento-ocupado: #ff0000;
+$color-asiento-seleccionado: #00aaff;

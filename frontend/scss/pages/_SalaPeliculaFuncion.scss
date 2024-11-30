@@ -5,10 +5,10 @@
 // Contenido Principal
 .main-background {
   position: relative;
-  background-size: cover; // La imagen cubre todo el fondo
-  background-position: center; // Centrar la imagen
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh; // Asegura que ocupe toda la altura de la ventana
+  min-height: 100vh;
   overflow: hidden;
 
   // Capa semitransparente
@@ -19,11 +19,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(27, 27, 27, 0.85); // Color semitransparente oscuro
+    background-color: rgba(27, 27, 27, 0.85);
     z-index: 1;
   }
 
-  // Asegurar que todo el contenido sea legible encima del fondo
   * {
     position: relative;
     z-index: 2;
@@ -31,17 +30,17 @@
 }
 
 .pelicula {
-  @include estilo-pelicula; /* Aplicación del mixin para estilizar la sección */
+  @include estilo-pelicula;
 
   &__image {
-    max-width: 230px; /* Especificación para ajustar el tamaño máximo de la imagen */
+    max-width: 230px;
     height: auto;
-    border-radius: 10px; /* Mantén bordes redondeados */
+    border-radius: 10px;
   }
 
   &__info {
-    flex: 1; /* Asegura que el contenido de información ocupe el espacio disponible */
-    text-align: left; /* Ajusta la alineación específica para este diseño */
+    flex: 1;
+    text-align: left;
   }
 }
 

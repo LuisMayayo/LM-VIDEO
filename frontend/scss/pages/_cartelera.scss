@@ -1,7 +1,6 @@
 @use '../base/variables' as vars;
 @use '../base/reset' as *;
 
-// Sección de películas
 .movies {
   display: flex;
   flex-direction: column;
@@ -16,8 +15,8 @@
 
   &__card {
     display: flex;
-    flex-direction: column; /* Organización vertical para mobile */
-    align-items: center; /* Centrar contenido horizontalmente */
+    flex-direction: column;
+    align-items: center;
     background-color: vars.$color-fondo-card;
     border: 1px solid vars.$color-borde;
     border-radius: 10px;
