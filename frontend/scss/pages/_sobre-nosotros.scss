@@ -1,65 +1,46 @@
 @use '../base/variables' as vars;
-
 @use '../base/reset' as *;
-.content {
-  padding: 20px;
-}
 
-.hero__image {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 10px;
-}
+.about-page {
+  &__hero {
+    text-align: center;
+    margin-bottom: 20px;
 
-.nosotros,
-.about-us {
-  margin: 40px 20px;
-  padding: 20px;
-  border-radius: 10px;
-}
+    &-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
 
-.nosotros__title,
-.about-us__title {
-  font-size: 2rem;
-  font-family: vars.$font-family-primary;
-  color: vars.$color-destacado;
-  text-align: center;
-  margin-bottom: 20px;
-}
+  &__section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 
-.nosotros__description,
-.about-us__description {
-  font-size: 1.1rem;
-  font-family: vars.$font-family-secondary;
-  color: vars.$color-texto;
-  text-align: justify;
-  margin-bottom: 20px;
-}
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
-.nosotros__description:last-child,
-.about-us__description:last-child {
-  margin-bottom: 0;
-}
+  &.about-us {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
-p {
-  line-height: 1.8;
+  &.what-is {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 @media (min-width: 768px) {
-  .nosotros,
-  .about-us {
+  .about-page__section {
     max-width: 800px;
     margin: 40px auto;
-  }
-
-  .nosotros__title,
-  .about-us__title {
-    font-size: 2.5rem;
-  }
-
-  .nosotros__description,
-  .about-us__description {
-    font-size: 1.2rem;
   }
 }

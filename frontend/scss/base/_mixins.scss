@@ -1,42 +1,43 @@
 @use '../base/variables' as vars;
-@mixin estilo-pelicula($titulo-color: vars.$primary-color, $texto-color: vars.$color-texto) {
+@mixin estilo-pelicula {
+  display: flex;
+  flex-direction: row; /* Los elementos de la película se colocan en fila */
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: space-between; /* Espacio entre la imagen y la información */
+  gap: 20px; /* Espaciado entre los elementos */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  max-width: 800px; /* Ancho máximo del contenedor */
+  width: 100%; /* Ocupa todo el ancho disponible */
+
+  .pelicula__image {
+    width: 40%; /* Ajusta la imagen al 40% del contenedor */
+    height: auto; /* Mantén la proporción de la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+    object-fit: cover; /* Ajusta la imagen al contenedor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  }
+
+  .pelicula__info {
+    width: 60%; /* Ajusta el ancho del contenedor de información */
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    margin-bottom: 30px;
-  
-    .pelicula__image {
-      max-width: 25%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex-direction: column; /* Coloca los elementos de información en columna */
+    gap: 10px; /* Espaciado entre los elementos */
+
+    .pelicula__title {
+      font-size: vars.$font-size-h1; /* Tamaño de fuente del título */
+      font-family: vars.$font-primary; /* Fuente principal */
+      color: vars.$color-destacado; /* Color destacado */
+      margin: 0; /* Elimina márgenes */
     }
-  
-    .pelicula__info {
-      text-align: center;
-      color: $texto-color;
-  
-      .pelicula__title {
-        font-family: vars.$font-primary;
-        font-size: vars.$font-size-h1;
-        color: $titulo-color;
-        margin-bottom: 10px;
-      }
-  
-      .pelicula__description {
-        font-family: vars.$font-secondary;
-        font-size: vars.$font-size-base;
-        color: vars.$color-texto-secundario;
-        margin-bottom: 10px;
-      }
-  
-      .pelicula__duration {
-        font-family: vars.$font-secondary;
-        font-size: vars.$font-size-base;
-        color: $texto-color;
-      }
+
+    .pelicula__description,
+    .pelicula__duration {
+      font-size: vars.$font-size-base; /* Tamaño base de fuente */
+      font-family: vars.$font-secondary; /* Fuente secundaria */
+      color: vars.$color-texto-secundario; /* Color del texto secundario */
+      line-height: 1.6; /* Altura de línea */
     }
   }
-  
+}

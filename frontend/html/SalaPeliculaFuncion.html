@@ -5,52 +5,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
-
-  <!-- CSS Local -->
-  <link rel="stylesheet" href="../css/SalaPeliculaFuncion.css">
-  <link rel="stylesheet" href="../css/footer.css">
-  <link rel="stylesheet" href="../css/header.css">
-
-  <!-- Fuentes y Estilos Externos -->
+  <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="navbar__logo">
-        <img src="../Fotos/logo.png" alt="Logo LM Video" class="navbar__logo-image">
-      </div>
-      <button class="navbar__toggle" aria-label="Abrir menú">
-        <span class="navbar__toggle-icon"></span>
-        <span class="navbar__toggle-icon"></span>
-        <span class="navbar__toggle-icon"></span>
-      </button>
-      <div class="navbar__menu">
-        <button class="navbar__close" aria-label="Cerrar menú">✕</button>
-        <a href="../html/home.html" class="navbar__item">HOME</a>
-        <a href="../html/cartelera.html" class="navbar__item">CARTELERA</a>
-        <a href="../html/proximos-estrenos.html" class="navbar__item">PRÓXIMOS ESTRENOS</a>
-        <a href="../html/sobre-nosotros.html" class="navbar__item">SOBRE NOSOTROS</a>
-        <a href="../html/contacto.html" class="navbar__item">CONTACTO</a>
-      </div>
-    </nav>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar__logo">
+      <img src="../Fotos/logo.png" alt="Logo LM Video" class="navbar__logo-image">
+    </div>
+    <button class="navbar__toggle" aria-label="Abrir menú">
+      <span class="navbar__toggle-icon"></span>
+      <span class="navbar__toggle-icon"></span>
+      <span class="navbar__toggle-icon"></span>
+    </button>
+    <div class="navbar__menu">
+      <button class="navbar__close" aria-label="Cerrar menú">✕</button>
+      <a href="../html/home.html" class="navbar__item">HOME</a>
+      <a href="../html/cartelera.html" class="navbar__item">CARTELERA</a>
+      <a href="../html/proximos-estrenos.html" class="navbar__item">PRÓXIMOS ESTRENOS</a>
+      <a href="../html/sobre-nosotros.html" class="navbar__item">SOBRE NOSOTROS</a>
+      <a href="../html/contacto.html" class="navbar__item">CONTACTO</a>
+    </div>
+  </nav>
 
   <main class="main-background">
     <h2 class="funciones__titulo">SELECCIONE DIA Y HORA DE LA PELICULA</h2>
     <!-- Información de la película -->
     <div class="pelicula">
-      <img src="" alt="Título de la película" class="pelicula__image">
+      <img id="peliculaImagen" src="" alt="Imagen de la película" class="pelicula__image">
       <div class="pelicula__info">
-        <h3 class="pelicula__title">VENOM: EL ÚLTIMO BAILE</h3>
-        <p class="pelicula__description">
-          Eddie y Venom están prófugos. Perseguidos por sus dos mundos y con la red cerrándose sobre ellos, el dúo se ve obligado a tomar una decisión devastadora.
-        </p>
-        <p class="pelicula__duration">Duración: 1 hora 49 minutos</p>
+        <h1 id="peliculaTitulo" class="pelicula__title">Cargando...</h1>
+        <p id="peliculaDescripcion" class="pelicula__description">Cargando...</p>
+        <p id="peliculaDuracion" class="pelicula__duration">Cargando...</p>
       </div>
     </div>
-  
+
     <!-- Contenedor para las funciones -->
     <section class="funciones">
       <div class="funciones__list">
@@ -68,10 +60,10 @@
         </div>
       </div>
     </section>
-</main>
+  </main>
 
-  
-  
+
+
 
   <!-- Footer -->
   <footer class="footer">

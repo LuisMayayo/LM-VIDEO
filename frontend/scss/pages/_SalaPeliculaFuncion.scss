@@ -31,45 +31,17 @@
 }
 
 .pelicula {
-  @include estilo-pelicula; /* Llamada al mixin para aplicar estilos generales */
+  @include estilo-pelicula; /* Aplicación del mixin para estilizar la sección */
 
   &__image {
-    max-width: 230px; /* Específico para este diseño */
+    max-width: 230px; /* Especificación para ajustar el tamaño máximo de la imagen */
     height: auto;
+    border-radius: 10px; /* Mantén bordes redondeados */
   }
 
   &__info {
     flex: 1; /* Asegura que el contenido de información ocupe el espacio disponible */
     text-align: left; /* Ajusta la alineación específica para este diseño */
-  }
-}
-
-// Media query para pantallas pequeñas
-@media (max-width: 768px) {
-  .pelicula {
-    flex-direction: column; 
-    text-align: center; 
-
-    &__image {
-      width: 80%; /* Imagen más pequeña en pantallas pequeñas */
-      margin-bottom: 20px;
-    }
-
-    &__info {
-      text-align: center;
-
-      .pelicula__title {
-        font-size: 1.8rem;
-      }
-
-      .pelicula__description {
-        font-size: 1rem;
-      }
-
-      .pelicula__duration {
-        font-size: 1rem;
-      }
-    }
   }
 }
 
@@ -92,7 +64,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    justify-items: center; 
+    justify-items: center;
     margin: 0 auto;
   }
 
@@ -101,7 +73,7 @@
     flex-direction: column;
     align-items: center;
     gap: 6px;
-    margin: 0 auto; 
+    margin: 0 auto;
   }
 
   .funcion {

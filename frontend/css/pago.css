@@ -42,57 +42,54 @@ p {
 .pagina-detalle {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra verticalmente */
-  align-items: center; /* Centra horizontalmente */
-  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
-  padding: 20px; /* Espaciado interno */
-  background-color: #000; /* Fondo del main */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #000;
   box-sizing: border-box;
 }
 .pagina-detalle .pelicula {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  margin-bottom: 30px;
-  /* Llamada al mixin */
-  max-width: 800px;
-  width: 100%;
-  margin-bottom: 30px;
+  flex-direction: row; /* Los elementos de la película se colocan en fila */
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: space-between; /* Espacio entre la imagen y la información */
+  gap: 20px; /* Espaciado entre los elementos */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  max-width: 800px; /* Ancho máximo del contenedor */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  /* Aplica el mixin */
 }
 .pagina-detalle .pelicula .pelicula__image {
-  max-width: 25%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 40%; /* Ajusta la imagen al 40% del contenedor */
+  height: auto; /* Mantén la proporción de la imagen */
+  border-radius: 10px; /* Bordes redondeados */
+  object-fit: cover; /* Ajusta la imagen al contenedor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
 }
 .pagina-detalle .pelicula .pelicula__info {
-  text-align: center;
-  color: #fff;
+  width: 60%; /* Ajusta el ancho del contenedor de información */
+  display: flex;
+  flex-direction: column; /* Coloca los elementos de información en columna */
+  gap: 10px; /* Espaciado entre los elementos */
 }
 .pagina-detalle .pelicula .pelicula__info .pelicula__title {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 2rem;
-  color: #00aaff;
-  margin-bottom: 10px;
+  font-size: 2rem; /* Tamaño de fuente del título */
+  font-family: "Bebas Neue", sans-serif; /* Fuente principal */
+  color: #00aaff; /* Color destacado */
+  margin: 0; /* Elimina márgenes */
 }
-.pagina-detalle .pelicula .pelicula__info .pelicula__description {
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  color: #b3b3b3;
-  margin-bottom: 10px;
-}
+.pagina-detalle .pelicula .pelicula__info .pelicula__description,
 .pagina-detalle .pelicula .pelicula__info .pelicula__duration {
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  color: #fff;
-}
-.pagina-detalle .pelicula__image {
-  max-width: 25%; /* Ajusta el tamaño máximo de la imagen */
+  font-size: 1rem; /* Tamaño base de fuente */
+  font-family: "Roboto", sans-serif; /* Fuente secundaria */
+  color: #b3b3b3; /* Color del texto secundario */
+  line-height: 1.6; /* Altura de línea */
 }
 .pagina-detalle .funcion-info {
-  text-align: center; /* Centrar texto */
+  text-align: center;
   margin-bottom: 30px;
   font-size: 1rem;
   color: #fff;
@@ -134,23 +131,6 @@ p {
   transition: background-color 0.3s;
   font-family: "Bebas Neue", sans-serif;
   margin-top: 20px;
-}
-
-/* Estilo responsivo */
-@media (min-width: 768px) {
-  .pelicula {
-    flex-direction: row; /* Fila en pantallas grandes */
-    justify-content: space-between;
-  }
-  .pelicula__image {
-    max-width: 30%; /* Ajusta el tamaño máximo de la imagen en pantallas grandes */
-  }
-  .formulario-pago__row {
-    flex-direction: row;
-  }
-  .formulario-pago__row input {
-    flex: 1; /* Ajusta inputs al mismo tamaño */
-  }
 }
 
 /*# sourceMappingURL=pago.css.map */

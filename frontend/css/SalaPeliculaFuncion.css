@@ -64,71 +64,53 @@ p {
 
 .pelicula {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  margin-bottom: 30px;
-  /* Llamada al mixin para aplicar estilos generales */
+  flex-direction: row; /* Los elementos de la película se colocan en fila */
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: space-between; /* Espacio entre la imagen y la información */
+  gap: 20px; /* Espaciado entre los elementos */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  max-width: 800px; /* Ancho máximo del contenedor */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  /* Aplicación del mixin para estilizar la sección */
 }
 .pelicula .pelicula__image {
-  max-width: 25%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 40%; /* Ajusta la imagen al 40% del contenedor */
+  height: auto; /* Mantén la proporción de la imagen */
+  border-radius: 10px; /* Bordes redondeados */
+  object-fit: cover; /* Ajusta la imagen al contenedor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
 }
 .pelicula .pelicula__info {
-  text-align: center;
-  color: #fff;
+  width: 60%; /* Ajusta el ancho del contenedor de información */
+  display: flex;
+  flex-direction: column; /* Coloca los elementos de información en columna */
+  gap: 10px; /* Espaciado entre los elementos */
 }
 .pelicula .pelicula__info .pelicula__title {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 2rem;
-  color: #00aaff;
-  margin-bottom: 10px;
+  font-size: 2rem; /* Tamaño de fuente del título */
+  font-family: "Bebas Neue", sans-serif; /* Fuente principal */
+  color: #00aaff; /* Color destacado */
+  margin: 0; /* Elimina márgenes */
 }
-.pelicula .pelicula__info .pelicula__description {
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  color: #b3b3b3;
-  margin-bottom: 10px;
-}
+.pelicula .pelicula__info .pelicula__description,
 .pelicula .pelicula__info .pelicula__duration {
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  color: #fff;
+  font-size: 1rem; /* Tamaño base de fuente */
+  font-family: "Roboto", sans-serif; /* Fuente secundaria */
+  color: #b3b3b3; /* Color del texto secundario */
+  line-height: 1.6; /* Altura de línea */
 }
 .pelicula__image {
-  max-width: 230px; /* Específico para este diseño */
+  max-width: 230px; /* Especificación para ajustar el tamaño máximo de la imagen */
   height: auto;
+  border-radius: 10px; /* Mantén bordes redondeados */
 }
 .pelicula__info {
   flex: 1; /* Asegura que el contenido de información ocupe el espacio disponible */
   text-align: left; /* Ajusta la alineación específica para este diseño */
 }
 
-@media (max-width: 768px) {
-  .pelicula {
-    flex-direction: column;
-    text-align: center;
-  }
-  .pelicula__image {
-    width: 80%; /* Imagen más pequeña en pantallas pequeñas */
-    margin-bottom: 20px;
-  }
-  .pelicula__info {
-    text-align: center;
-  }
-  .pelicula__info .pelicula__title {
-    font-size: 1.8rem;
-  }
-  .pelicula__info .pelicula__description {
-    font-size: 1rem;
-  }
-  .pelicula__info .pelicula__duration {
-    font-size: 1rem;
-  }
-}
 .funciones {
   width: 100%;
   max-width: 800px;

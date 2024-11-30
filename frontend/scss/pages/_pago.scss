@@ -5,26 +5,19 @@
 .pagina-detalle {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra verticalmente */
-  align-items: center; /* Centra horizontalmente */
-  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
-  padding: 20px; /* Espaciado interno */
-  background-color: vars.$color-fondo; /* Fondo del main */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: vars.$color-fondo;
   box-sizing: border-box;
 
   .pelicula {
-    @include estilo-pelicula; /* Llamada al mixin */
-    max-width: 800px;
-    width: 100%;
-    margin-bottom: 30px;
-
-    &__image {
-      max-width: 25%; /* Ajusta el tamaño máximo de la imagen */
-    }
+    @include estilo-pelicula; /* Aplica el mixin */
   }
 
   .funcion-info {
-    text-align: center; /* Centrar texto */
+    text-align: center;
     margin-bottom: 30px;
     font-size: 1rem;
     color: vars.$color-texto;
@@ -70,26 +63,5 @@
     transition: background-color 0.3s;
     font-family: vars.$font-primary;
     margin-top: 20px;
-
-  }
-}
-
-/* Estilo responsivo */
-@media (min-width: 768px) {
-  .pelicula {
-    flex-direction: row; /* Fila en pantallas grandes */
-    justify-content: space-between;
-
-    &__image {
-      max-width: 30%; /* Ajusta el tamaño máximo de la imagen en pantallas grandes */
-    }
-  }
-
-  .formulario-pago__row {
-    flex-direction: row;
-
-    input {
-      flex: 1; /* Ajusta inputs al mismo tamaño */
-    }
   }
 }
