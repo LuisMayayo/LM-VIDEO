@@ -1,46 +1,37 @@
 @use '../base/variables' as vars;
-
 @use '../base/reset' as *;
 
-#asientos-container {
+.asientos {
   margin: 0 auto;
-  padding: 20px;
-  max-width: 90%; // Para pantallas pequeñas, usar todo el ancho
   text-align: center;
 
-  h1 {
-    color: vars.$color-texto;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-  }
-
-  .leyenda {
+  &__leyenda {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 20px;
     flex-wrap: wrap;
 
-    .leyenda__item {
+    &-item {
       display: flex;
       align-items: center;
       gap: 8px;
       margin: 5px;
 
-      .icon {
+      .asientos__icon {
         width: 15px;
         height: 15px;
         border-radius: 3px;
         border: 1px solid vars.$color-borde;
 
-        &.disponible {
+        &--disponible {
           background-color: vars.$color-asiento-disponible;
         }
 
-        &.seleccionado {
+        &--seleccionado {
           background-color: vars.$color-asiento-seleccionado;
         }
 
-        &.ocupado {
+        &--ocupado {
           background-color: vars.$color-asiento-ocupado;
         }
       }
@@ -52,10 +43,10 @@
     }
   }
 
-  .pantalla {
+  &__pantalla {
     width: 90%;
     height: 20px;
-    background-color: #d6d6c2;
+    background-color: vars.$color-pantalla;
     border-radius: 5px;
     margin: 20px auto;
     text-align: center;
@@ -65,12 +56,12 @@
     font-family: vars.$font-secondary;
   }
 
-  #asientos {
+  &__grid {
     display: grid;
-    grid-template-columns: repeat(8, 1fr); // Diseño inicial para pantallas pequeñas
+    grid-template-columns: repeat(8, 1fr);
     gap: 10px;
 
-    .asiento {
+    &__asiento {
       height: 40px;
       background-color: vars.$color-asiento-disponible;
       border-radius: 5px;
@@ -82,18 +73,18 @@
       font-weight: bold;
       color: vars.$color-texto;
 
-      &.ocupado {
+      &--ocupado {
         background-color: vars.$color-asiento-ocupado;
         cursor: not-allowed;
       }
 
-      &.seleccionado {
+      &--seleccionado {
         background-color: vars.$color-asiento-seleccionado;
       }
     }
   }
 
-  #reservar {
+  &__boton {
     margin-top: 20px;
     padding: 10px 20px;
     background-color: vars.$color-boton-reserva;
@@ -110,105 +101,16 @@
     }
   }
 
-  #seleccionados {
+  &__seleccionados {
     margin-top: 10px;
     font-size: 1rem;
     font-family: vars.$font-secondary;
     color: vars.$color-texto;
 
-    .seleccionados__lista {
+    &-lista {
       margin-left: 5px;
       font-weight: bold;
     }
   }
 
-  #total-pagar {
-    margin-top: 10px;
-    font-size: 1rem;
-    font-family: vars.$font-secondary;
-    color: vars.$color-texto;
-  }
-}
-
-// Media Queries para Pantallas Medianas
-@media (min-width: 768px) {
-  #asientos-container {
-    max-width: 600px;
-
-    h1 {
-      font-size: 2rem;
-    }
-
-    .leyenda {
-      justify-content: space-around;
-
-      .leyenda__item {
-        .icon {
-          width: 20px;
-          height: 20px;
-        }
-
-        span {
-          font-size: 1rem;
-        }
-      }
-    }
-
-    .pantalla {
-      height: 25px;
-      font-size: 1rem;
-    }
-
-    #asientos {
-      grid-template-columns: repeat(8, 1fr); // Ajustar a 6 columnas
-      gap: 15px;
-
-      .asiento {
-        width: 50px;
-        height: 50px;
-        font-size: 1rem;
-      }
-    }
-
-    #reservar {
-      padding: 15px 25px;
-      font-size: 1.2rem;
-    }
-
-    #seleccionados {
-      font-size: 1rem;
-    }
-  }
-}
-
-// Media Queries para Pantallas Grandes
-@media (min-width: 1024px) {
-  #asientos-container {
-    max-width: 800px;
-
-    h1 {
-      font-size: 2.5rem;
-    }
-
-    .pantalla {
-      height: 50px;
-      font-size: 1.2rem;
-      align-content: center;
-    }
-
-    #asientos {
-      grid-template-columns: repeat(8, 1fr); // Ajustar a 8 columnas
-      gap: 20px;
-
-      .asiento {
-        width: 60px;
-        height: 60px;
-        font-size: 1.1rem;
-      }
-    }
-
-    #reservar {
-      font-size: 1.3rem;
-    }
-  }
 }

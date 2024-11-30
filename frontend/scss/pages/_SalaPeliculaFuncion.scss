@@ -31,121 +31,116 @@
   }
 }
 
+.pelicula {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
 
+  &__image {
+    max-width: 230px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
 
+  &__info {
+    flex: 1;
+    text-align: left;
+    color: vars.$color-texto;
 
+    .pelicula__title {
+      font-size: 2rem;
+      font-family: vars.$font-primary;
+      margin-bottom: 15px;
+      color: vars.$color-texto;
+    }
+  }
+}
+
+// Media query para pantallas pequeñas
+@media (max-width: 768px) {
   .pelicula {
-    display: flex;
-    gap: 30px;
-    max-width: 1200px;
-    width: 100%;
-    align-items: center;
-
+    flex-direction: column; 
+    text-align: center; 
     &__image {
-      max-width: 230px;
-      height: auto;
-      object-fit: cover;
-      border-radius: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 80%;
+      margin-bottom: 20px; 
     }
 
     &__info {
-      flex: 1;
-      text-align: left;
-      color: vars.$color-texto;
+      text-align: center;
 
       .pelicula__title {
-        font-size: 2rem;
-        font-family: vars.$font-primary;
-        margin-bottom: 15px;
-        color: vars.$color-texto;
+        font-size: 1.8rem;
+      }
+
+      .pelicula__description {
+        font-size: 1rem;
+      }
+
+      .pelicula__duration {
+        font-size: 1rem;
       }
     }
   }
+}
 
-  // Media query para pantallas pequeñas
-  @media (max-width: 768px) {
-    .pelicula {
-      flex-direction: column; // Cambia a disposición vertical
-      text-align: center; // Centra el texto
+.funciones {
+  width: 100%;
+  max-width: 800px;
+  padding-bottom: 2%;
+  border-radius: 10px;
+  margin: 0 auto; 
 
-      &__image {
-        width: 80%; // La imagen ocupa el 80% del ancho del contenedor
-        margin-bottom: 20px; // Separación entre imagen y texto
-      }
 
-      &__info {
-        text-align: center; // Centra el texto
-
-        .pelicula__title {
-          font-size: 1.8rem; // Reduce el tamaño del título
-        }
-
-        .pelicula__description {
-          font-size: 1rem; // Ajusta el tamaño de la descripción
-        }
-
-        .pelicula__duration {
-          font-size: 1rem; // Ajusta el tamaño de la duración
-        }
-      }
-    }
+  &__dia {
+    font-size: 1.5rem;
+    font-family: vars.$font-primary;
+    color: vars.$color-texto;
+    text-align: center;
+    margin-bottom: 25px;
   }
 
-  .funciones {
-    width: 100%;
-    max-width: 800px;
-    padding-bottom: 2%;
-    border-radius: 10px;
-    margin: 0 auto; // Asegura que el contenedor funciones esté centrado en su contexto
-  
-  
-    &__dia {
-      font-size: 1.5rem;
-      font-family: vars.$font-primary;
-      color: vars.$color-texto;
-      text-align: center;
-      margin-bottom: 25px;
+  &__sesiones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-items: center; 
+    margin: 0 auto;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin: 0 auto; 
+  }
+
+  .funcion {
+    background-color: vars.$primary-color;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 15px 0 15px 0;
+    font-family: vars.$font-primary;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    min-width: 55px;
+
+    span {
+      display: block;
     }
-  
-    &__sesiones {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      justify-items: center; // Centra los elementos dentro de las columnas
-      margin: 0 auto; // Asegura que el grid esté centrado
-    }
-  
-    &__list {
-      display: flex;
-      flex-direction: column;
-      align-items: center; // Centra los elementos en el eje horizontal
-      gap: 6px;
-      margin: 0 auto; // Asegura que la lista esté centrada en su contenedor
-    }
-  
-    .funcion {
-      background-color: vars.$primary-color;
-      color: #ffffff;
-      padding: 8px 16px;
-      border-radius: 15px 0 15px 0;
-      font-family: vars.$font-primary;
-      font-size: 20px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      min-width: 55px;
-  
-      span {
-        display: block;
-      }
-  
-      &:hover {
-        background-color: #0056b3;
-        transform: scale(1.05);
-      }
+
+    &:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
     }
   }
-  
+}

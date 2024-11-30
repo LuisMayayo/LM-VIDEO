@@ -28,59 +28,59 @@
       <span class="navbar__toggle-icon"></span>
     </button>
     <div class="navbar__menu">
-      <a href="#home" class="navbar__item">HOME</a>
-      <a href="#cartelera" class="navbar__item">CARTELERA</a>
-      <a href="#estrenos" class="navbar__item">PRÓXIMOS ESTRENOS</a>
-      <a href="#nosotros" class="navbar__item">SOBRE NOSOTROS</a>
-      <a href="#contacto" class="navbar__item">CONTACTO</a>
+      <button class="navbar__close" aria-label="Cerrar menú">✕</button>
+      <a href="../html/index.html" class="navbar__item">HOME</a>
+      <a href="../html/cartelera.html" class="navbar__item">CARTELERA</a>
+      <a href="../html/proximos-estrenos.html" class="navbar__item">PRÓXIMOS ESTRENOS</a>
+      <a href="../html/sobre-nosotros.html" class="navbar__item">SOBRE NOSOTROS</a>
+      <a href="../html/contacto.html" class="navbar__item">CONTACTO</a>
     </div>
   </nav>
 
-  <!-- Contenedor de asientos -->
   <main>
-    <div id="asientos-container">
-      <h1>Seleccione sus Asientos</h1>
+    <div class="asientos">
+        <h1 class="asientos__titulo">Seleccione sus Asientos</h1>
 
-      <!-- Leyenda -->
-      <div class="leyenda">
-        <div class="leyenda__item">
-          <div class="icon disponible"></div>
-          <span>DISPONIBLE</span>
+        <!-- Leyenda -->
+        <div class="asientos__leyenda">
+            <div class="asientos__leyenda-item">
+                <div class="asientos__icon asientos__icon--disponible"></div>
+                <span>DISPONIBLE</span>
+            </div>
+            <div class="asientos__leyenda-item">
+                <div class="asientos__icon asientos__icon--seleccionado"></div>
+                <span>SELECCIONADO</span>
+            </div>
+            <div class="asientos__leyenda-item">
+                <div class="asientos__icon asientos__icon--ocupado"></div>
+                <span>OCUPADO</span>
+            </div>
         </div>
-        <div class="leyenda__item">
-          <div class="icon seleccionado"></div>
-          <span>SELECCIONADO</span>
+
+        <!-- Pantalla del cine -->
+        <div class="asientos__pantalla">Pantalla</div>
+
+        <!-- Contenedor de asientos -->
+        <div class="asientos__grid"></div>
+
+        <!-- Botón para comprar -->
+        <button class="asientos__boton" disabled>COMPRAR</button>
+
+        <!-- Mostrar asientos seleccionados -->
+        <div class="asientos__seleccionados">
+            <span>ASIENTOS SELECCIONADOS:</span>
+            <span class="asientos__seleccionados-lista"></span>
         </div>
-        <div class="leyenda__item">
-          <div class="icon ocupado"></div>
-          <span>OCUPADO</span>
-        </div>
-      </div>
-
-      <!-- Pantalla del cine -->
-      <div class="pantalla">Pantalla</div>
-
-      <!-- Contenedor de asientos -->
-      <div id="asientos"></div>
-
-      <!-- Botón para comprar -->
-      <button id="reservar" disabled>COMPRAR</button>
-
-      <!-- Mostrar asientos seleccionados -->
-      <div id="seleccionados">
-        <span>ASIENTOS SELECCIONADOS:</span>
-        <span class="seleccionados__lista"></span>
-      </div>
-      <p id="total-pagar">Total a pagar: 0.00€</p>
     </div>
-  </main>
+</main>
 
+  
   <!-- Footer -->
   <footer class="footer">
     <div class="footer__top">
-      <a href="#aviso-legal" class="footer__link">Aviso Legal</a>
-      <a href="#politica-privacidad" class="footer__link">Política de privacidad</a>
-      <a href="#politica-cookies" class="footer__link">Política de Cookies</a>
+      <a href="../html/aviso-legal.html" class="footer__link">Aviso Legal</a>
+      <a href="../html/politica-privacidad.html" class="footer__link">Política de privacidad</a>
+      <a href="../html/politica-cookies.html" class="footer__link">Política de Cookies</a>
     </div>
     <div class="footer__logo">
       <img src="../Fotos/logo.png" alt="Logo LM Video" class="footer__logo-image">
