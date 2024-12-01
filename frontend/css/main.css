@@ -215,7 +215,6 @@ p {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 35px;
 }
 .movies__container {
   display: flex;
@@ -515,7 +514,6 @@ p {
   align-items: center;
   justify-content: center;
   margin: 0;
-  padding: 2rem;
   border-radius: 0;
   background-size: cover;
   background-position: center;
@@ -586,7 +584,6 @@ p {
 
 .legal-notice {
   margin: 40px 20px;
-  padding: 20px;
   border-radius: 10px;
 }
 .legal-notice__heading {
@@ -624,7 +621,6 @@ p {
 
 .cookie-policy {
   margin: 40px 20px;
-  padding: 20px;
   border-radius: 10px;
 }
 .cookie-policy__heading {
@@ -678,7 +674,6 @@ p {
 
 .privacy-policy {
   margin: 40px 20px;
-  padding: 20px;
   border-radius: 10px;
 }
 .privacy-policy__heading {
@@ -1179,7 +1174,6 @@ p {
 
 .contact {
   margin: 20px 10px;
-  padding: 15px;
   border-radius: 10px;
 }
 .contact:last-child {
