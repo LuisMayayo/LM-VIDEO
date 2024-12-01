@@ -308,6 +308,7 @@ p {
   max-width: 960px;
   margin: 0 auto;
   overflow: hidden;
+  margin-bottom: 50px;
 }
 .carousel__wrapper {
   overflow: hidden;
