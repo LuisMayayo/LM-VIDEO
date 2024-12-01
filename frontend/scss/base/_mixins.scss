@@ -1,15 +1,14 @@
 @use '../base/variables' as vars;
+
 @mixin estilo-pelicula {
   display: flex;
-  flex-direction: row;
+  flex-direction: column; /* Diseño inicial para móviles */
   align-items: center;
-  justify-content: space-between;
   gap: 20px;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  max-width: 800px;
   width: 100%;
+  box-sizing: border-box;
 
   .pelicula__image {
     width: 40%;
@@ -20,10 +19,11 @@
   }
 
   .pelicula__info {
-    width: 60%;
+    width: 100%; /* Información ocupa todo el ancho en móvil */
     display: flex;
     flex-direction: column;
     gap: 10px;
+    text-align: center; /* Centrar texto en móviles */
 
     .pelicula__title {
       font-size: vars.$font-size-h1;
@@ -39,5 +39,23 @@
       color: vars.$color-texto-secundario;
       line-height: 1.6;
     }
+  }
+
+  @media (min-width: 768px) { /* Ajustes para pantallas medianas */
+    flex-direction: row; /* Diseño en fila */
+    align-items: flex-start;
+
+    .pelicula__image {
+      width: 25%; /* Imagen ocupa menos espacio */
+    }
+
+    .pelicula__info {
+      width: 60%; /* Información ocupa más espacio */
+      text-align: left; /* Texto alineado a la izquierda */
+    }
+  }
+
+  @media (min-width: 1024px) { /* Ajustes para pantallas grandes */
+    max-width: 800px; /* Limitar el ancho del contenedor */
   }
 }

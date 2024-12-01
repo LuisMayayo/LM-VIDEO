@@ -52,7 +52,7 @@
   }
 
   &__pantalla {
-    width: 90%;
+    width: 55%;
     height: 20px;
     background-color: vars.$color-pantalla;
     border-radius: 5px;
@@ -66,11 +66,13 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(8, 0fr);
     gap: 10px;
+    justify-content: center;
 
     &__asiento {
-      height: 40px;
+      height: 50px;
+      width: 50px;
       background-color: vars.$color-asiento-disponible;
       border-radius: 5px;
       cursor: pointer;

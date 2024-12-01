@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -46,6 +45,47 @@ p {
   background-repeat: no-repeat;
   min-height: 100vh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-background .pelicula {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
+}
+.main-background .pelicula .pelicula__image {
+  width: 40%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.main-background .pelicula .pelicula__info {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main-background .pelicula .pelicula__info .pelicula__title {
+  font-size: 2rem;
+  font-family: "Bebas Neue", sans-serif;
+  color: #00aaff;
+  margin: 0;
+}
+.main-background .pelicula .pelicula__info .pelicula__description,
+.main-background .pelicula .pelicula__info .pelicula__duration {
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  color: #b3b3b3;
+  line-height: 1.6;
 }
 .main-background::before {
   content: "";
@@ -60,55 +100,6 @@ p {
 .main-background * {
   position: relative;
   z-index: 2;
-}
-
-.pelicula {
-  display: flex;
-  flex-direction: row; /* Los elementos de la película se colocan en fila */
-  align-items: center; /* Centra los elementos verticalmente */
-  justify-content: space-between; /* Espacio entre la imagen y la información */
-  gap: 20px; /* Espaciado entre los elementos */
-  padding: 20px; /* Espaciado interno */
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
-  max-width: 800px; /* Ancho máximo del contenedor */
-  width: 100%; /* Ocupa todo el ancho disponible */
-  /* Aplicación del mixin para estilizar la sección */
-}
-.pelicula .pelicula__image {
-  width: 40%; /* Ajusta la imagen al 40% del contenedor */
-  height: auto; /* Mantén la proporción de la imagen */
-  border-radius: 10px; /* Bordes redondeados */
-  object-fit: cover; /* Ajusta la imagen al contenedor */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
-}
-.pelicula .pelicula__info {
-  width: 60%; /* Ajusta el ancho del contenedor de información */
-  display: flex;
-  flex-direction: column; /* Coloca los elementos de información en columna */
-  gap: 10px; /* Espaciado entre los elementos */
-}
-.pelicula .pelicula__info .pelicula__title {
-  font-size: 2rem; /* Tamaño de fuente del título */
-  font-family: "Bebas Neue", sans-serif; /* Fuente principal */
-  color: #00aaff; /* Color destacado */
-  margin: 0; /* Elimina márgenes */
-}
-.pelicula .pelicula__info .pelicula__description,
-.pelicula .pelicula__info .pelicula__duration {
-  font-size: 1rem; /* Tamaño base de fuente */
-  font-family: "Roboto", sans-serif; /* Fuente secundaria */
-  color: #b3b3b3; /* Color del texto secundario */
-  line-height: 1.6; /* Altura de línea */
-}
-.pelicula__image {
-  max-width: 230px; /* Especificación para ajustar el tamaño máximo de la imagen */
-  height: auto;
-  border-radius: 10px; /* Mantén bordes redondeados */
-}
-.pelicula__info {
-  flex: 1; /* Asegura que el contenido de información ocupe el espacio disponible */
-  text-align: left; /* Ajusta la alineación específica para este diseño */
 }
 
 .funciones {

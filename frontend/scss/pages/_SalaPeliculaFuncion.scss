@@ -10,6 +10,13 @@
   background-repeat: no-repeat;
   min-height: 100vh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .pelicula {
+    @include estilo-pelicula;
+  }
 
   // Capa semitransparente
   &::before {
@@ -26,21 +33,6 @@
   * {
     position: relative;
     z-index: 2;
-  }
-}
-
-.pelicula {
-  @include estilo-pelicula;
-
-  &__image {
-    max-width: 230px;
-    height: auto;
-    border-radius: 10px;
-  }
-
-  &__info {
-    flex: 1;
-    text-align: left;
   }
 }
 
