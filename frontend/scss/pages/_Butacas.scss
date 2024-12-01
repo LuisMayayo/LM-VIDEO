@@ -71,8 +71,8 @@
     justify-content: center;
 
     &__asiento {
-      height: 50px;
-      width: 50px;
+      height: 40px;
+      width: 40px;
       background-color: vars.$color-asiento-disponible;
       border-radius: 5px;
       cursor: pointer;
@@ -90,6 +90,13 @@
 
       &--seleccionado {
         background-color: vars.$color-asiento-seleccionado;
+      }
+    }
+
+    @media (min-width: 768px) { /* Media query para pantallas medianas en adelante */
+      &__asiento {
+        height: 50px; /* Cambiar altura a 50px */
+        width: 50px;  /* Cambiar ancho a 50px */
       }
     }
   }

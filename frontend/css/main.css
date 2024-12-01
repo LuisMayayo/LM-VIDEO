@@ -899,8 +899,8 @@ p {
   justify-content: center;
 }
 .asientos__grid__asiento {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   background-color: #4ead4e;
   border-radius: 5px;
   cursor: pointer;
@@ -917,6 +917,13 @@ p {
 }
 .asientos__grid__asiento--seleccionado {
   background-color: #00aaff;
+}
+@media (min-width: 768px) {
+  .asientos__grid { /* Media query para pantallas medianas en adelante */ }
+  .asientos__grid__asiento {
+    height: 50px; /* Cambiar altura a 50px */
+    width: 50px; /* Cambiar ancho a 50px */
+  }
 }
 .asientos__boton {
   margin-top: 20px;
