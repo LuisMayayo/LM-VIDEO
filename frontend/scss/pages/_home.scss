@@ -33,7 +33,7 @@
   &__wrapper {
     overflow: hidden;
   }
-  
+
   &__track {
     display: flex;
     gap: 10px;
@@ -54,16 +54,14 @@
 
   &__control {
     position: absolute;
-    top: 50%;
+    top: 65%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
+    background: none;
+    border: none;
     color: vars.$color-texto;
-    border: 1px solid vars.$color-borde-icono;
-    border-radius: 50%;
-    padding: 15px;
     cursor: pointer;
     z-index: 10;
-    font-size: 20px;
+    font-size: 24px;
 
     &--prev {
       left: 4px;
@@ -74,18 +72,11 @@
     }
 
     &:hover {
-      background: vars.$color-destacado;
+      color: vars.$color-destacado;
     }
 
     i {
       pointer-events: none;
-    }
-  }
-
-  @media (max-width: 768px) {
-    &__control {
-      padding: 10px;
-      font-size: 16px;
     }
   }
 
@@ -98,6 +89,18 @@
   @media (min-width: 1024px) {
     &__item {
       width: calc(25%);
+    }
+
+    &__control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: vars.$color-texto;
+      cursor: pointer;
+      z-index: 10;
+      font-size: 30px;
     }
   }
 }
