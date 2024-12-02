@@ -4,86 +4,134 @@
 .movies {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 45px;
-
+  gap: 15px;
+  padding: 20px;
 
   &__container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // Dos columnas en mobile
+    gap: 15px;
+
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: column; // Cambia a diseño de filas
+      gap: 30px;
+    }
+
+    @media (min-width: 1024px) {
+      display: flex;
+      flex-direction: column; // Mantén diseño de filas
+      gap: 30px;
+    }
   }
 
   &__card {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-between; // Asegura que los elementos se distribuyan
+    align-items: center; // Mantén los elementos centrados en mobile
     background-color: vars.$color-fondo-card;
     border: 1px solid vars.$color-borde;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
     color: vars.$color-texto;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
+    padding: 10px;
+    max-width: 180px; // Tarjetas pequeñas en mobile
+    height: 100%; // Permite que crezca dependiendo del contenido
+    min-height: 300px; // Garantiza suficiente altura uniforme
 
     &:hover {
-      transform: scale(1.03);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+      transform: scale(1.02);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (min-width: 768px) {
+      flex-direction: row; // Diseño horizontal en tabletas
+      align-items: flex-start; // Alinea los elementos al inicio
+      justify-content: space-between; // Asegura que el botón esté al fondo
+      max-width: 100%; // Ajusta al tamaño del contenedor
     }
   }
 
   &__image {
     width: 100%;
-    border-radius: 15px;
-    max-width: 250px;
+    border-radius: 5px;
     height: auto;
+    max-width: 150px; // Tamaño reducido en mobile
     object-fit: cover;
-    border-bottom: 3px solid vars.$color-destacado; 
+    border-bottom: 2px solid vars.$color-destacado;
+
+    @media (min-width: 768px) {
+      width: 150px; // Ajuste de tamaño en tabletas y más grandes
+      height: 220px;
+      border-bottom: none;
+      border-right: 3px solid vars.$color-destacado;
+    }
   }
 
   &__info {
     text-align: center;
-    padding: 15px;
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; // Distribuye título, descripción y botón
+    flex: 1; // Permite que ocupe todo el espacio disponible
+    height: 100%; // Asegura que ocupe toda la altura de la tarjeta
 
+    &-title {
+      font-size: 1.1rem;
+      font-family: vars.$font-primary;
+      margin-bottom: 10px;
+      flex-shrink: 0; // Evita que el título se comprima
+    }
 
+    &-description {
+      font-size: 0.75rem;
+      line-height: 1.4;
+      margin-bottom: 10px;
+      flex-shrink: 0; // Evita que la descripción se comprima
+    }
+
+    &-duration {
+      font-size: 0.8rem;
+      margin-bottom: auto; // Asegura espacio libre entre contenido y botón
+    }
+
+    @media (min-width: 768px) {
+      text-align: left; // Alineación izquierda en tabletas y más grandes
+      padding: 20px;
+
+      &-title {
+        font-size: 1.5rem;
+        font-family: vars.$font-primary;
+        margin-bottom: 10px; // Espaciado entre título y descripción
+      }
+
+      &-description {
+        font-size: 1.2rem;
+        line-height: 1.4;
+        margin-bottom: 10px;
+      }
+
+      &-duration {
+        font-size: 1rem;
+        margin-bottom: auto; // Deja espacio libre antes del botón
+      }
+    }
     &-button {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      margin-top: 15px;
+      padding: 12px 20px; // Aumenta el padding para hacer el botón más grande
+      font-size: 1rem; // Incrementa el tamaño del texto del botón
+      text-transform: uppercase;
       background-color: vars.$color-destacado;
       color: vars.$color-texto;
       border: none;
       border-radius: 5px;
       font-family: vars.$font-primary;
-      font-size: 1rem;
+      margin-top: 15px; // Mantiene el espaciado superior
       cursor: pointer;
-      text-align: center;
-      text-transform: uppercase;
-
+      align-self: stretch; // Hace que el botón ocupe todo el ancho disponible
     }
-  }
-
-  @media (min-width: 768px) {
-    &__card {
-      flex-direction: row; 
-      align-items: flex-start;
-    }
-
-    &__image {
-      width: 150px;
-      height: 220px;
-      border-bottom: none;
-      border-right: 3px solid vars.$color-destacado; 
-    }
-
-    &__info {
-      text-align: left;
-    }
-
-    &-button {
-      width: auto;
-    }
+    
   }
 }

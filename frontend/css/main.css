@@ -214,75 +214,129 @@ p {
 .movies {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 45px;
+  gap: 15px;
+  padding: 20px;
 }
 .movies__container {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+@media (min-width: 768px) {
+  .movies__container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .movies__container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
 }
 .movies__card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   background-color: #181818;
   border: 1px solid #333;
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
   color: #fff;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s, box-shadow 0.3s;
+  padding: 10px;
+  max-width: 180px;
+  height: 100%;
+  min-height: 300px;
 }
 .movies__card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-}
-.movies__image {
-  width: 100%;
-  border-radius: 15px;
-  max-width: 250px;
-  height: auto;
-  object-fit: cover;
-  border-bottom: 3px solid #00aaff;
-}
-.movies__info {
-  text-align: center;
-  padding: 15px;
-  flex: 1;
-}
-.movies__info-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-top: 15px;
-  background-color: #00aaff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 1rem;
-  cursor: pointer;
-  text-align: center;
-  text-transform: uppercase;
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 @media (min-width: 768px) {
   .movies__card {
     flex-direction: row;
     align-items: flex-start;
+    justify-content: space-between;
+    max-width: 100%;
   }
+}
+.movies__image {
+  width: 100%;
+  border-radius: 5px;
+  height: auto;
+  max-width: 150px;
+  object-fit: cover;
+  border-bottom: 2px solid #00aaff;
+}
+@media (min-width: 768px) {
   .movies__image {
     width: 150px;
     height: 220px;
     border-bottom: none;
     border-right: 3px solid #00aaff;
   }
+}
+.movies__info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  height: 100%;
+}
+.movies__info-title {
+  font-size: 1.1rem;
+  font-family: "Bebas Neue", sans-serif;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+.movies__info-description {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+.movies__info-duration {
+  font-size: 0.8rem;
+  margin-bottom: auto;
+}
+@media (min-width: 768px) {
   .movies__info {
     text-align: left;
+    padding: 20px;
   }
-  .movies-button {
-    width: auto;
+  .movies__info-title {
+    font-size: 1.5rem;
+    font-family: "Bebas Neue", sans-serif;
+    margin-bottom: 10px;
   }
+  .movies__info-description {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+  .movies__info-duration {
+    font-size: 1rem;
+    margin-bottom: auto;
+  }
+}
+.movies__info-button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  background-color: #00aaff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: "Bebas Neue", sans-serif;
+  margin-top: 15px;
+  cursor: pointer;
+  align-self: stretch;
 }
 
 .hero {
@@ -1151,9 +1205,6 @@ body.ticket-page {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-}
-.ticket__actions .btn:hover {
-  background-color: #4dc4ff;
 }
 .ticket__actions .btn--disabled {
   background-color: #555555;

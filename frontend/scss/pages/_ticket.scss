@@ -78,10 +78,6 @@ body.ticket-page {
       cursor: pointer;
       transition: background-color 0.3s;
 
-      &:hover {
-        background-color: lighten(vars.$primary-color, 15%);
-      }
-
       &--disabled {
         background-color: vars.$color-boton-reserva-disabled;
         cursor: not-allowed;
