@@ -904,8 +904,8 @@ p {
   justify-content: center;
 }
 .asientos__grid__asiento {
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
   background-color: #4ead4e;
   border-radius: 5px;
   cursor: pointer;
@@ -1032,6 +1032,12 @@ p {
   margin-bottom: 30px;
   font-size: 1rem;
   color: #fff;
+  font-family: "Bebas Neue", sans-serif;
+}
+.pagina-detalle .funcion-info__horario, .pagina-detalle .funcion-info__sala,
+.pagina-detalle .funcion-info .asientos__titulo,
+.pagina-detalle .funcion-info .precio__titulo {
+  font-family: inherit;
 }
 .pagina-detalle .formulario-pago {
   display: flex;
@@ -1072,46 +1078,55 @@ p {
   margin-top: 20px;
 }
 
-.ticket__container {
-  background-color: #181818;
+body.ticket-page {
+  background: url("../Fotos/cine.jpg") no-repeat center center/cover;
   color: #fff;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 90vh;
+  overflow-x: hidden;
+}
+
+.ticket__container {
+  background-color: rgba(0, 0, 0, 0.86);
   border-radius: 10px;
   padding: 20px;
   width: 90%;
   max-width: 600px;
   margin: 50px auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 .ticket__title {
-  font-size: 2rem;
   font-family: "Bebas Neue", sans-serif;
-  font-weight: bold;
   color: #00aaff;
+  font-size: 2rem;
   text-align: center;
   margin-bottom: 20px;
 }
-.ticket__details {
+@media (min-width: 1024px) {
+  .ticket__title {
+    font-size: 2.5rem;
+  }
+}
+.ticket__details, .ticket__client-info p {
   font-size: 1rem;
   font-family: "Roboto", sans-serif;
   line-height: 1.6;
   margin-bottom: 10px;
+  color: #fff;
 }
-.ticket__details strong {
+.ticket__details strong, .ticket__client-info p strong {
   font-weight: bold;
   color: #00aaff;
 }
-.ticket__client-info {
-  margin-top: 30px;
-}
-.ticket__client-info p {
-  margin: 5px 0;
-  font-size: 1rem;
-  font-family: "Roboto", sans-serif;
-  line-height: 1.6;
-}
-.ticket__client-info p strong {
-  font-weight: bold;
-  color: #00aaff;
+@media (min-width: 768px) {
+  .ticket__details, .ticket__client-info p {
+    font-size: 1.25rem;
+  }
 }
 .ticket__total {
   font-size: 1.25rem;
@@ -1127,13 +1142,17 @@ p {
 }
 .ticket__actions .btn {
   padding: 10px 20px;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
   background-color: #00aaff;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
-  color: #fff;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+.ticket__actions .btn:hover {
+  background-color: #4dc4ff;
 }
 .ticket__actions .btn--disabled {
   background-color: #555555;

@@ -21,7 +21,16 @@
     margin-bottom: 30px;
     font-size: 1rem;
     color: vars.$color-texto;
+    font-family: vars.$font-primary;
+
+    &__horario,
+    &__sala,
+    .asientos__titulo,
+    .precio__titulo {
+      font-family: inherit; // Heredan la fuente de .funcion-info
+    }
   }
+
 
   .formulario-pago {
     display: flex;
