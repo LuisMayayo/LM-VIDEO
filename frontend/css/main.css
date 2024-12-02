@@ -215,6 +215,7 @@ p {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 45px;
 }
 .movies__container {
   display: flex;
@@ -885,7 +886,7 @@ p {
   width: 100%;
 }
 .asientos__pantalla {
-  width: 55%;
+  width: 45%;
   height: 20px;
   background-color: #d6d6c2;
   border-radius: 5px;
@@ -1219,7 +1220,6 @@ p {
   border-radius: 5px;
   font-size: 1rem;
   font-family: "Roboto", sans-serif;
-  color: #fff;
   background-color: #fff;
 }
 .contact-form__group input:focus,

@@ -1,5 +1,3 @@
-@charset "UTF-8";
-/* _reset.scss */
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +13,7 @@ main {
 }
 
 h1, h2 {
-  font-size: 2rem; /* Tamaño unificado */
+  font-size: 2rem;
   font-family: "Bebas Neue", sans-serif;
   font-weight: bold;
   color: #00aaff;
@@ -25,7 +23,7 @@ h1, h2 {
 
 @media (min-width: 1024px) {
   h1, h2 {
-    font-size: 2.5rem; /* Tamaño más grande en pantallas grandes */
+    font-size: 2.5rem;
   }
 }
 p {
@@ -37,14 +35,14 @@ p {
 
 @media (min-width: 768px) {
   p {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
 }
 .hero {
   text-align: center;
 }
 .hero__title {
-  margin-bottom: 15px; /* Solo margen si es necesario */
+  margin-bottom: 15px;
 }
 .hero__image {
   width: 100%;
@@ -65,6 +63,7 @@ p {
   max-width: 960px;
   margin: 0 auto;
   overflow: hidden;
+  margin-bottom: 50px;
 }
 .carousel__wrapper {
   overflow: hidden;
@@ -86,16 +85,14 @@ p {
 }
 .carousel__control {
   position: absolute;
-  top: 50%;
+  top: 65%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
+  background: none;
+  border: none;
   color: #fff;
-  border: 1px solid #666666;
-  border-radius: 50%;
-  padding: 15px;
   cursor: pointer;
   z-index: 10;
-  font-size: 20px;
+  font-size: 24px;
 }
 .carousel__control--prev {
   left: 4px;
@@ -104,16 +101,10 @@ p {
   right: 4px;
 }
 .carousel__control:hover {
-  background: #00aaff;
+  color: #00aaff;
 }
 .carousel__control i {
   pointer-events: none;
-}
-@media (max-width: 768px) {
-  .carousel__control {
-    padding: 10px;
-    font-size: 16px;
-  }
 }
 @media (min-width: 768px) {
   .carousel__item {
@@ -123,6 +114,17 @@ p {
 @media (min-width: 1024px) {
   .carousel__item {
     width: 25%;
+  }
+  .carousel__control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 30px;
   }
 }
 
