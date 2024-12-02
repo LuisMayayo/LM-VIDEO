@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Obtener información de la película
     async function obtenerPeliculaPorId(id) {
-        const apiUrl = `http://localhost:5028/api/pelicula/${id}`;
+        const apiUrl = `http://44.214.164.222:5028/api/pelicula/${id}`;
         console.log(`Llamando a la API de película con URL: ${apiUrl}`);
 
         try {
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Obtener funciones por ID de película
     async function obtenerFuncionesPorPeliculaId(peliculaId) {
-        const apiUrl = `http://localhost:5028/api/funcion/pelicula/${peliculaId}`;
+        const apiUrl = `http://44.214.164.222:5028/api/funcion/pelicula/${peliculaId}`;
         console.log(`Llamando a la API de funciones con URL: ${apiUrl}`);
 
         try {
