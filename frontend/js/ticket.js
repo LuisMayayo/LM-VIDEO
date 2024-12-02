@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Función para obtener el nombre de la película
     async function obtenerNombrePelicula(peliculaId) {
-        const apiUrl = `http://localhost:5028/api/pelicula/${peliculaId}`;
+        const apiUrl = `http://44.214.164.222:5028/api/pelicula/${peliculaId}`;
         try {
             const response = await fetch(apiUrl);
             if (!response.ok) throw new Error(`Error al obtener la película: ${response.statusText}`);
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Función para obtener detalles de la función (fecha y hora)
     async function obtenerDetallesFuncion(funcionId) {
-        const apiUrl = `http://localhost:5028/api/funcion/${funcionId}`;
+        const apiUrl = `http://44.214.164.222:5028/api/funcion/${funcionId}`;
         try {
             const response = await fetch(apiUrl);
             if (!response.ok) throw new Error(`Error al obtener la función: ${response.statusText}`);
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     try {
         // Obtener los detalles del pago
-        const apiUrl = `http://localhost:5028/api/pagos/${pagoId}`;
+        const apiUrl = `http://44.214.164.222:5028/api/pagos/${pagoId}`;
         const response = await fetch(apiUrl);
 
         if (!response.ok) throw new Error("No se pudo cargar el ticket.");

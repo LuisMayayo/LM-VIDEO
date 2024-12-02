@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     cargarAsientos();
 
     async function cargarAsientos() {
-        const apiUrl = `http://localhost:5028/api/asiento/Todos/${funcionId}`;
+        const apiUrl = `http://44.214.164.222:5028/api/asiento/Todos/${funcionId}`;
 
         try {
             const response = await fetch(apiUrl);
