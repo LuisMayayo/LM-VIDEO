@@ -104,7 +104,7 @@
       margin: 14px;
 
       &-title {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         font-family: vars.$font-primary;
         margin-bottom: 10px; // Espaciado entre título y descripción
       }
@@ -118,6 +118,10 @@
       &-duration {
         font-size: 1rem;
         margin-bottom: auto; // Deja espacio libre antes del botón
+      }
+
+      &-button {
+        width: 115px;
       }
     }
     &-button {

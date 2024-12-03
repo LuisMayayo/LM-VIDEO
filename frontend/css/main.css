@@ -312,7 +312,7 @@ p {
     margin: 14px;
   }
   .movies__info-title {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-family: "Bebas Neue", sans-serif;
     margin-bottom: 10px;
   }
@@ -324,6 +324,9 @@ p {
   .movies__info-duration {
     font-size: 1rem;
     margin-bottom: auto;
+  }
+  .movies__info-button {
+    width: 115px;
   }
 }
 .movies__info-button {
