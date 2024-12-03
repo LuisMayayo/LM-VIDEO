@@ -308,7 +308,7 @@ p {
 @media (min-width: 768px) {
   .movies__info {
     text-align: left;
-    padding: 20px;
+    padding: 15px;
     margin: 14px;
   }
   .movies__info-title {
@@ -338,7 +338,7 @@ p {
   border: none;
   border-radius: 5px;
   font-family: "Bebas Neue", sans-serif;
-  margin-top: 15px;
+  margin-top: 19px;
   cursor: pointer;
   align-self: stretch;
 }

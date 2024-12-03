@@ -9,18 +9,18 @@
 
   &__container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); // Dos columnas en mobile
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
 
     @media (min-width: 768px) {
       display: flex;
-      flex-direction: column; // Cambia a diseño de filas
+      flex-direction: column;
       gap: 30px;
     }
 
     @media (min-width: 1024px) {
       display: flex;
-      flex-direction: column; // Mantén diseño de filas
+      flex-direction: column; 
       gap: 30px;
     }
   }
@@ -28,8 +28,8 @@
   &__card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; // Asegura que los elementos se distribuyan
-    align-items: center; // Mantén los elementos centrados en mobile
+    justify-content: space-between; 
+    align-items: center; 
     background-color: vars.$color-fondo-card;
     border: 1px solid vars.$color-borde;
     border-radius: 8px;
@@ -38,9 +38,9 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
     padding: 10px;
-    max-width: 180px; // Tarjetas pequeñas en mobile
-    height: 100%; // Permite que crezca dependiendo del contenido
-    min-height: 300px; // Garantiza suficiente altura uniforme
+    max-width: 180px;
+    height: 100%; 
+    min-height: 300px; 
 
     &:hover {
       transform: scale(1.02);
@@ -48,10 +48,10 @@
     }
 
     @media (min-width: 768px) {
-      flex-direction: row; // Diseño horizontal en tabletas
-      align-items: flex-start; // Alinea los elementos al inicio
-      justify-content: space-between; // Asegura que el botón esté al fondo
-      max-width: 100%; // Ajusta al tamaño del contenedor
+      flex-direction: row; 
+      align-items: flex-start; 
+      justify-content: space-between;
+      max-width: 100%;
     }
   }
 
@@ -59,12 +59,12 @@
     width: 100%;
     border-radius: 5px;
     height: auto;
-    max-width: 150px; // Tamaño reducido en mobile
+    max-width: 150px;
     object-fit: cover;
     border-bottom: 2px solid vars.$color-destacado;
 
     @media (min-width: 768px) {
-      width: 150px; // Ajuste de tamaño en tabletas y más grandes
+      width: 150px; 
       height: 278px;
       border-bottom: none;
       border-right: 3px solid vars.$color-destacado;
@@ -75,38 +75,38 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; // Distribuye título, descripción y botón
-    flex: 1; // Permite que ocupe todo el espacio disponible
-    height: 100%; // Asegura que ocupe toda la altura de la tarjeta
+    justify-content: space-between; 
+    flex: 1; 
+    height: 100%; 
 
     &-title {
       font-size: 1.1rem;
       font-family: vars.$font-primary;
       margin-bottom: 10px;
-      flex-shrink: 0; // Evita que el título se comprima
+      flex-shrink: 0; 
     }
 
     &-description {
       font-size: 0.75rem;
       line-height: 1.4;
       margin-bottom: 10px;
-      flex-shrink: 0; // Evita que la descripción se comprima
+      flex-shrink: 0;
     }
 
     &-duration {
       font-size: 0.8rem;
-      margin-bottom: auto; // Asegura espacio libre entre contenido y botón
+      margin-bottom: auto; 
     }
 
     @media (min-width: 768px) {
-      text-align: left; // Alineación izquierda en tabletas y más grandes
-      padding: 20px;
+      text-align: left;
+      padding: 15px;
       margin: 14px;
 
       &-title {
         font-size: 1.7rem;
         font-family: vars.$font-primary;
-        margin-bottom: 10px; // Espaciado entre título y descripción
+        margin-bottom: 10px;
       }
 
       &-description {
@@ -117,7 +117,7 @@
 
       &-duration {
         font-size: 1rem;
-        margin-bottom: auto; // Deja espacio libre antes del botón
+        margin-bottom: auto;
       }
 
       &-button {
@@ -125,17 +125,17 @@
       }
     }
     &-button {
-      padding: 12px 20px; // Aumenta el padding para hacer el botón más grande
-      font-size: 1rem; // Incrementa el tamaño del texto del botón
+      padding: 12px 20px; 
+      font-size: 1rem; 
       text-transform: uppercase;
       background-color: vars.$color-destacado;
       color: vars.$color-texto;
       border: none;
       border-radius: 5px;
       font-family: vars.$font-primary;
-      margin-top: 15px; // Mantiene el espaciado superior
+      margin-top: 19px;
       cursor: pointer;
-      align-self: stretch; // Hace que el botón ocupe todo el ancho disponible
+      align-self: stretch; 
     }
     
   }
