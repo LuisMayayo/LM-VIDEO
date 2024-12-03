@@ -276,7 +276,7 @@ p {
 @media (min-width: 768px) {
   .movies__image {
     width: 150px;
-    height: 220px;
+    height: 278px;
     border-bottom: none;
     border-right: 3px solid #00aaff;
   }
@@ -309,6 +309,7 @@ p {
   .movies__info {
     text-align: left;
     padding: 20px;
+    margin: 14px;
   }
   .movies__info-title {
     font-size: 1.5rem;

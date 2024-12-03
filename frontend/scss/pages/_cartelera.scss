@@ -65,7 +65,7 @@
 
     @media (min-width: 768px) {
       width: 150px; // Ajuste de tamaño en tabletas y más grandes
-      height: 220px;
+      height: 278px;
       border-bottom: none;
       border-right: 3px solid vars.$color-destacado;
     }
@@ -101,6 +101,7 @@
     @media (min-width: 768px) {
       text-align: left; // Alineación izquierda en tabletas y más grandes
       padding: 20px;
+      margin: 14px;
 
       &-title {
         font-size: 1.5rem;
