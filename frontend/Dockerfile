@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM nginx:1.25
 
 # Establecer el directorio de trabajo en Nginx
 WORKDIR /usr/share/nginx/html
