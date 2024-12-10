@@ -5,191 +5,151 @@ document.addEventListener("DOMContentLoaded", async function () {
     const menu = document.querySelector(".navbar__menu");
 
     if (toggleButton) {
-        toggleButton.addEventListener("click", () => {
-            menu.classList.add("is-active");
-        });
+        toggleButton.addEventListener("click", () => menu.classList.add("is-active"));
     }
 
     if (closeButton) {
-        closeButton.addEventListener("click", () => {
-            menu.classList.remove("is-active");
-        });
+        closeButton.addEventListener("click", () => menu.classList.remove("is-active"));
     }
 
-    console.log("DOM completamente cargado.");
-
-    // Función para obtener parámetros de la URL
+    // Utilidades
     function obtenerParametroUrl(nombre) {
         const params = new URLSearchParams(window.location.search);
-        const valor = params.get(nombre);
-        console.log(`Parámetro obtenido: ${nombre} = ${valor}`);
-        return valor;
+        return params.get(nombre);
     }
 
-    // Obtener parámetros de la URL
+    function obtenerAsientosSeleccionados(asientos) {
+        return asientos ? asientos.split(",").map(Number) : [];
+    }
+
+    async function obtenerDatos(url, callback) {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`Error: ${response.statusText}`);
+            const datos = await response.json();
+            callback(datos);
+        } catch (error) {
+            console.error("Error al cargar datos:", error.message);
+        }
+    }
+
+    // Parámetros de la URL
     const peliculaId = obtenerParametroUrl("peliculaId");
     const funcionId = obtenerParametroUrl("funcionId");
     const asientosSeleccionados = obtenerParametroUrl("asientosSeleccionados");
 
-    console.log("Parámetros obtenidos de la URL:", {
-        peliculaId,
-        funcionId,
-        asientosSeleccionados,
-    });
-
     if (!peliculaId || !funcionId) {
-        console.error("Faltan parámetros necesarios en la URL.");
+        alert("Faltan datos necesarios. Por favor, selecciona una película y un horario.");
         return;
     }
 
-    // Mostrar información de la película
-    async function obtenerPelicula(peliculaId) {
-        console.log(`Consultando información de la película con ID: ${peliculaId}`);
-        const apiUrl = `http://localhost:5028/api/pelicula/${peliculaId}`;
+    // Mostrar datos de la película
+    obtenerDatos(`http://localhost:5028/api/pelicula/${peliculaId}`, (pelicula) => {
+        document.querySelector(".pelicula__title").textContent = pelicula.titulo;
+        document.querySelector(".pelicula__description").textContent = pelicula.descripcion;
+        document.querySelector(".pelicula__duration").textContent = `Duración: ${pelicula.duracion}`;
+        document.querySelector(".pelicula__image").src = pelicula.fotoUrl;
+    });
 
-        try {
-            const response = await fetch(apiUrl);
-            if (!response.ok) throw new Error(`Error al obtener la película: ${response.statusText}`);
-            const pelicula = await response.json();
-            console.log("Datos de la película recibidos:", pelicula);
+    // Mostrar datos de la función
+    obtenerDatos(`http://localhost:5028/api/funcion/${funcionId}`, (funcion) => {
+        const hora = funcion.hora.slice(0, 5);
+        const horario = new Date(funcion.fecha).toLocaleDateString() + " " + hora;
+        document.querySelector("#funcionHorario").textContent = `Horario: ${horario}`;
+        document.querySelector("#funcionSala").textContent = `Sala: ${funcion.salaId}`;
+    });
 
-            // Mostrar los datos de la película
-            document.querySelector(".pelicula__title").textContent = pelicula.titulo;
-            document.querySelector(".pelicula__description").textContent = pelicula.descripcion;
-            document.querySelector(".pelicula__duration").textContent = `Duración: ${pelicula.duracion} `;
-            document.querySelector(".pelicula__image").src = pelicula.fotoUrl;
-        } catch (error) {
-            console.error("Error al cargar los datos de la película:", error.message);
-        }
-    }
-
-    // Mostrar información de la función
-    async function obtenerFuncion(funcionId) {
-        console.log(`Consultando información de la función con ID: ${funcionId}`);
-        const apiUrl = `http://localhost:5028/api/funcion/${funcionId}`;
-
-        try {
-            const response = await fetch(apiUrl);
-            if (!response.ok) throw new Error(`Error al obtener la función: ${response.statusText}`);
-            const funcion = await response.json();
-            console.log("Datos de la función recibidos:", funcion);
-
-            // Convertir la hora de la función y mostrarla
-            const hora = funcion.hora.slice(0, 5); // Solo tomar los primeros 5 caracteres (HH:mm)
-            const horario = new Date(funcion.fecha).toLocaleDateString() + " " + hora;
-
-            document.querySelector("#funcionHorario").textContent = `Horario: ${horario}`;
-            document.querySelector("#funcionSala").textContent = `Sala: ${funcion.salaId}`;
-        } catch (error) {
-            console.error("Error al cargar los datos de la función:", error.message);
-        }
-    }
-
-    // Mostrar asientos seleccionados y calcular el total a pagar
+    // Mostrar asientos seleccionados y calcular total
+    let totalPagado = 0;
     function mostrarAsientos(asientos) {
         const asientosTexto = asientos ? asientos.split(",").join(", ") : "No se seleccionaron asientos.";
         document.querySelector("#asientosSeleccionados").textContent = asientosTexto;
 
-        // Calcular el precio total
-        const preciosArray = asientos ? asientos.split(",").map(() => 6.00) : []; // Precio fijo de 6.00 para cada asiento
-        let total = preciosArray.reduce((sum, precio) => sum + precio, 0);
-
-        // Mostrar el precio total en el DOM
-        document.querySelector("#precioTotal").textContent = `Total: ${total.toFixed(2)}€`;
-        console.log("Total calculado:", total);
-
-        // Pasar el total a la URL para el ticket
-        return total;
+        const preciosArray = obtenerAsientosSeleccionados(asientos).map(() => 6.00);
+        totalPagado = preciosArray.reduce((sum, precio) => sum + precio, 0);
+        document.querySelector("#precioTotal").textContent = `Total: ${totalPagado.toFixed(2)}€`;
     }
 
-    // Llamar a las funciones con los datos
-    await obtenerPelicula(peliculaId);
-    await obtenerFuncion(funcionId);
-    const totalPagado = mostrarAsientos(asientosSeleccionados);
+    mostrarAsientos(asientosSeleccionados);
 
-    // Validación de los campos del formulario
+    // Validación del formulario
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    const telefonoRegex = /^[0-9]{9,}$/;
+
     function validarFormulario() {
-        let esValido = true;
-        const nombre = document.getElementById("nombre");
-        const apellido = document.getElementById("apellido");
-        const direccion = document.getElementById("direccion");
-        const codigoPostal = document.getElementById("codigoPostal");
-        const ciudad = document.getElementById("ciudad");
-        const correoElectronico = document.getElementById("correoElectronico");
-        const telefono = document.getElementById("telefono");
+        const errores = [];
+
+        const nombre = document.getElementById("nombre").value.trim();
+        const apellido = document.getElementById("apellido").value.trim();
+        const direccion = document.getElementById("direccion").value.trim();
+        const codigoPostal = document.getElementById("codigoPostal").value.trim();
+        const ciudad = document.getElementById("ciudad").value.trim();
+        const correoElectronico = document.getElementById("correoElectronico").value.trim();
+        const telefono = document.getElementById("telefono").value.trim();
 
         // Validar nombre
-        if (nombre.value.trim() === "") {
-            alert("Por favor, ingresa tu nombre.");
-            esValido = false;
+        if (nombre === "") {
+            errores.push("• Nombre");
         }
 
         // Validar apellido
-        if (apellido.value.trim() === "") {
-            alert("Por favor, ingresa tu apellido.");
-            esValido = false;
+        if (apellido === "") {
+            errores.push("• Apellido");
         }
 
         // Validar dirección
-        if (direccion.value.trim() === "") {
-            alert("Por favor, ingresa tu dirección.");
-            esValido = false;
+        if (direccion === "") {
+            errores.push("• Dirección");
         }
 
         // Validar código postal
-        if (codigoPostal.value.trim() === "") {
-            alert("Por favor, ingresa tu código postal.");
-            esValido = false;
+        if (codigoPostal === "") {
+            errores.push("• Código Postal");
         }
 
         // Validar ciudad
-        if (ciudad.value.trim() === "") {
-            alert("Por favor, ingresa tu ciudad.");
-            esValido = false;
+        if (ciudad === "") {
+            errores.push("• Ciudad");
         }
 
         // Validar correo electrónico
-        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-        if (!emailRegex.test(correoElectronico.value.trim())) {
-            alert("Por favor, ingresa un correo electrónico válido.");
-            esValido = false;
+        if (!emailRegex.test(correoElectronico)) {
+            errores.push("• Correo Electrónico válido");
         }
 
-        // Validar teléfono (9 dígitos o más)
-        const telefonoRegex = /^[0-9]{9,}$/;
-        if (!telefonoRegex.test(telefono.value.trim())) {
-            alert("Por favor, ingresa un número de teléfono válido (9 dígitos o más).");
-            esValido = false;
+        // Validar teléfono
+        if (!telefonoRegex.test(telefono)) {
+            errores.push("• Teléfono válido (9 dígitos o más)");
         }
 
-        return esValido;
+        if (errores.length > 0) {
+            const mensaje = "Por favor, corrige los siguientes campos:\n" + errores.join("\n");
+            alert(mensaje);
+            return false;
+        }
+
+        return true;
     }
 
-    // Al hacer clic en el botón de pago
+    // Procesar el pago
     document.getElementById("botonPago").addEventListener("click", async function () {
-        // Validar formulario
-        if (!validarFormulario()) {
-            return; // Detener el envío si hay errores
-        }
-
-        const asientosSeleccionadosArray = obtenerParametroUrl("asientosSeleccionados") ? obtenerParametroUrl("asientosSeleccionados").split(",").map(Number) : [];
+        if (!validarFormulario()) return;
 
         const formData = {
-            funcionId: obtenerParametroUrl("funcionId"),
-            peliculaId: obtenerParametroUrl("peliculaId"),
-            asientosSeleccionados: asientosSeleccionadosArray,
-            nombre: document.getElementById("nombre").value,
-            apellido: document.getElementById("apellido").value,
-            direccion: document.getElementById("direccion").value,
-            codigoPostal: document.getElementById("codigoPostal").value,
-            ciudad: document.getElementById("ciudad").value,
-            correoElectronico: document.getElementById("correoElectronico").value,
-            telefono: document.getElementById("telefono").value,
-            totalPagado: totalPagado,
+            funcionId,
+            peliculaId,
+            asientosSeleccionados: obtenerAsientosSeleccionados(asientosSeleccionados),
+            nombre: document.getElementById("nombre").value.trim(),
+            apellido: document.getElementById("apellido").value.trim(),
+            direccion: document.getElementById("direccion").value.trim(),
+            codigoPostal: document.getElementById("codigoPostal").value.trim(),
+            ciudad: document.getElementById("ciudad").value.trim(),
+            correoElectronico: document.getElementById("correoElectronico").value.trim(),
+            telefono: document.getElementById("telefono").value.trim(),
+            totalPagado,
         };
 
         try {
-            // Enviar la solicitud POST para procesar el pago
             const response = await fetch("http://localhost:5028/api/pagos", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -199,9 +159,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             if (!response.ok) throw new Error("Error al procesar el pago");
 
             const pago = await response.json();
-            console.log("Pago registrado:", pago);
-
-            // Redirigir a la página de ticket con el ID del pago
             window.location.href = `../html/ticket.html?pagoId=${pago.id}&totalPagado=${totalPagado}`;
         } catch (error) {
             console.error("Error en el pago:", error.message);
