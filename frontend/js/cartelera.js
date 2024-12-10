@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.warn("Botón de cerrar menú no encontrado.");
   }
 
-  const apiUrl = "http://44.214.164.222:5028/api/pelicula";
+  const apiUrl = "http://localhost:5028/api/pelicula";
   const moviesContainer = document.querySelector(".movies__container");
 
   async function cargarPeliculas() {

@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Mostrar información de la película
     async function obtenerPelicula(peliculaId) {
         console.log(`Consultando información de la película con ID: ${peliculaId}`);
-        const apiUrl = `http://44.214.164.222:5028/api/pelicula/${peliculaId}`;
+        const apiUrl = `http://localhost:5028/api/pelicula/${peliculaId}`;
 
         try {
             const response = await fetch(apiUrl);
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Mostrar información de la función
     async function obtenerFuncion(funcionId) {
         console.log(`Consultando información de la función con ID: ${funcionId}`);
-        const apiUrl = `http://44.214.164.222:5028/api/funcion/${funcionId}`;
+        const apiUrl = `http://localhost:5028/api/funcion/${funcionId}`;
 
         try {
             const response = await fetch(apiUrl);
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         try {
             // Enviar la solicitud POST para procesar el pago
-            const response = await fetch("http://44.214.164.222:5028/api/pagos", {
+            const response = await fetch("http://localhost:5028/api/pagos", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
